@@ -1,0 +1,108 @@
+
+<h1>NV Speech Player</h1>
+<p>Un sintetizador de voz basado en el motor Klatt escrito en c++ Autor: NV
+Access Limited</p>
+
+<h2>Información General</h2>
+
+<p>NV Speech Player es un prototipo de sintetizador de voz libre y de código
+abierto que  se puede utilizar con NVDA. Genera habla utilizando síntesis
+Klatt, haciéndolo parecerse un poco a sintetizadores de voz tales como
+Dectalk y Eloquence.</p>
+
+<h2>Licencia y copyright</h2>
+
+<p>NV Speech Player es Copyright (c) 2014 Colaboradores de NV Speech Player NV
+Speech Player está cubierto por la GNU General Public License (Versión 2).
+eres libre de  compartir o modificar este software de cualquier manera que
+quieras siempre que esté acompañado por la licencia y hagas todo el código
+fuente disponible para quien lo quiera. Esto se aplica tanto a las copias
+originales como a las modificadas de este software, más cualquier trabajo
+derivado.  Para detalles adicionales, puedes ver la licencia en línea:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html</p>
+
+<h2>Antecedentes</h2>
+
+<p>En los años 70 y 80 se vió una gran investigación en la síntesis de voz. Uno
+de los más prominentes modelos de síntesis  que apareció fue una síntesis de
+formantes de frecuencia  conocida como síntesis Klatt. Algunos
+sintetizadores Klatt bien conocidos  son Dectalk y Eloquence. Son muy
+adecuados para su uso por parte de ciegos ya que son extremadamente
+sensibles, su pronunciación es suave y fácil de entender, y son pequeños en
+memoria. Sin embargo, la investigación pronto se trasladó  a otras  formas
+de síntesis tales como el habla concatenativa, ya que aunque ésta era más
+lenta,  era mucho más cercana a la voz humana. Esto era una ventaja para su
+utilización en  aplicaciones de uso común tales como unidades de GPS o
+sistemas de telefonía, pero no fue necesariamente una ventaja para los
+ciegos, quienes tienden a preocuparse más de la capacidad de respuesta y la
+inteligibilidad.</p>
+
+<p>Aunque los sintetizadores tales como Dectalk y Eloquence continuaron
+manteniéndose y disponibles por casi 20 años, ahora se están volviendo más
+difíciles de conseguir, con múltiples compañías diciendo que éstos, y sus
+variantes, se  han terminado definitivamente y no serán actualizados nunca
+más.</p>
+
+<p>La síntesis concatenativa ahora está comenzando a ser prometedora como un
+reemplazo ya que la capacidad de respuesta y la suavidad está mejorando. Sin
+embargo, la mayoría si no todos los sintetizadores de calidad aceptable son
+commerciales y son bastante caros.</p>
+
+<p>Tanto Dectalk como Eloquence fueron productos comerciales de fuente
+cerrada. No obstante, hay una cantidad sustancial de código fuente y
+recursos materiales sobre síntesis Klatt disponible para la comunidad. NV
+Speech Player trata de tomar ventaja de esto por ser un prototipo moderno de
+un sintetizador Klatt, con la esperanza de ser un reemplazo de
+sintetizadores como Dectalk o Eloquence, o al menos el reinicio de la
+investigación y conversación acerca de este método de síntesis.</p>
+
+<p>El sintetizador eSpeak, en sí un producto libre y de código abierto ha
+demostrado ser bueno como un reemplazo para un cierto número de gente en la
+comunidad, pero mucha gente que lo escuchan señala rápidamente su sonido
+"metálico" y no parecen querer continuar utilizándolo. Aunque los autores de
+NV Speech Player todavía prefieren a eSpeak como su sintetizador de
+elección, aún tratarían de entender mejor esta extraña resistencia a eSpeak
+que puede tener algo que ver con la síntesis de frecuencia espectral de
+versos de eSpeak de la síntesis Klatt. También puede tener que vber con el
+hecho de que las consonantes también se recolectan de voz grabada y por lo
+tanto puede percibirse como se inyectan en  el proceso del habla.</p>
+
+<h2>Implementación</h2>
+
+<p>El motor de síntesis de voz mismo está escrito en C++ utilizando idiomas
+modernos, pero siguiendo de cerca la implementación de klsyn-88, que se
+encuentra en https://linguistics.berkeley.edu/phonlab/resources/</p>
+
+<p>se utiliza eSpeak para interpretar texto en fonemas representados en IPA,
+haciendo uso del procesamiento de diccionarios existente de eSpeak.  eSpeak
+puede encontrarse en: https://espeak.sourceforge.net/</p>
+
+<p>Los datos formantes de Klatt para cada fonema individual fueron recolectados
+en su mayor parte de un proyecto llamado PyKlatt:
+https://code.google.com/p/pyklatt/ Asimismo ha sido modificado aún más
+basándose en las pruebas y la comparación con los propios datos de eSpeak.</p>
+
+<p>Las reglas para longitud de fonemas, cortes, velocidad y entonación han sido
+codificados a mano en Python, aunque los propios datos de entonación de
+eSpeak se trataron de copiar tanto como fuese posible.</p>
+
+<h2>Compilando NV Speech Player</h2>
+
+<p>Necesitarás:</p>
+
+<ul>
+<li>Python 2.7: https://www.python.org</li>
+<li>SCons 2.3.0: https://www.scons.org/</li>
+<li>Visual Studio 2012 para escritorios (Express o professional)</li>
+</ul>
+
+
+<p>Para compilar: ejecuta scons</p>
+
+<p>Después de la compilación, habrá un fichero nvSpeechPlayer_xxx.nvda-addon en
+el directorio raíz, donde xxx es la revisión git o número de versión
+codificado.  Instalando este complemento en NVDA te permitirá utilizar el
+sintetizador Speech Player en NVDA. Ten en cuenta que cada vez que lo
+necesites está en el complemento, no se necesitan dlls extra o ficheros a
+copiar.</p>
+

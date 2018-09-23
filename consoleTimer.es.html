@@ -1,0 +1,65 @@
+
+<h1>Console Timer</h1>
+<ul>
+<li>Autor: Derek Riemer</li>
+<li>Download <a href="https://addons.nvda-project.org/files/get.php?file=cont">Stable Version</a></li>
+</ul>
+
+
+<h1>consoleTimer</h1>
+
+<p>consoleTimer fue escrito por derek riemer, y es GPL V2, sewgún se requería
+para un complemento de NVDA.</p>
+
+<ul>
+<li><a href="https://github.com/derekriemer/consoleTimer">Fuentes disponibles en
+Github:</a></li>
+</ul>
+
+
+<h2>Fondo</h2>
+
+<p>Cuando se utilizan líneas de órdenes sobre ssh, normalmente, hay retrasos de
+red. Este retraso es lo esperado, no obstante, el modo en el que NVDA maneja
+el movimiento del cursor no es amigable con el retraso en terminales, porque
+esta operación es síncrona. Esto causa que NVDA anuncie erróneamente  la
+letra incorrecta al moverse a otra letra con las teclas de flechas. Por
+ejemplo, si el usuario está en la p de grep, y pulsa la flecha derecha,
+podrá escuchar "t" en lugar de espacio. Esto se debe a que NVDA no espera el
+tiempo suficiente para manejar correctamente este movimiento del cursor.
+Este complemento se escribió porque hago mucha administración de servidores,
+y quería que la navegación del cursor funcionase.</p>
+
+<h2>TLDR instrucciones de uso</h2>
+
+<p>Cuando se está en una consola, si NVDA no lee letras o las repite según te
+mueves por ella, simplemente pulsa nvda+shift+rePág para enseñarle a ser más
+paciente, o si tiene demasiado retraso, pulsa nvda+shift+avPág para
+enseñarle a ser menos paciente. Este complemento no tendrá efecto fuera de
+terminales, y la paciencia cambia un .01 por cada pulsación de teclas.</p>
+
+<h2>Cómo hacer que esto funcione con terminales personales</h2>
+
+<p>Si eres un desarrollador que quiere que NVDA reconozca una sección o porción
+de tu aplicación como una terminal, y no lo es ya, deberías implementar un
+appModule para este propósito, para obtener el comportamiento pertinente,
+por ejemplo el anunciado de texto nuevo escrito a stdout, etc. por favor
+eleva un ticket contra <a href="https://github.com/nvaccess/nvda/issues/new">NVDA</a>,
+y nosotros podemos ayudarte a obtener tu appModule de terminal en el lector
+de pantalla. La compatibilidad con Putty, Cygwin (Mintty), y secureCRT ya
+está implementada. Aplicaciones como R podrán implementarse en el futuro.
+Si tu aplicación se reconoce apropiadamente como una terminal por NVDA, (El
+comportamiento de la termminal se inyecta apropiadamente en tiempo de
+ejecución), este complemento debería de funcionar. si no lo hace , por favor
+házmelo saber a través de un error. Cómo escribir un app module está fuera
+del alcance de este documento, pero está bien documentado en la <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">guía de
+desarrollo de
+NVDA</a>.
+Este ejemplo ilustra <a href="https://github.com/nvaccess/nvda/blob/master/source/appModules/putty.py">un appModule para enseñar a NVDA que la ventana de
+terminal en PuTTY es una
+terminal</a>.
+También, <a href="https://github.com/nvaccess/nvda/blob/master/source/appModules/mintty.py">Aquí hay un ejemplo de implementación para
+MinTTY</a>.
+La cosa más importante para asegurarse de qué sucede es que
+NVDAObjects.behaviors.Terminal se inyecta a la class list.</p>
+

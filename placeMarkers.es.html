@@ -1,0 +1,202 @@
+
+<h1>placeMarkers</h1>
+<ul>
+<li>Autores: Noelia, Chris.</li>
+<li>descargar <a href="https://addons.nvda-project.org/files/get.php?file=pm">versión estable</a></li>
+<li>descarga <a href="https://addons.nvda-project.org/files/get.php?file=pm-dev">versión de desarrollo</a></li>
+</ul>
+
+
+<p>Este complemento se utiliza para guardar y restaurar cadenas de texto
+específicas o marcas. Puede utilizarse en páginas web o en documentos en el
+modo exploración de NVDA. También puede utilizarse para guardar o buscar
+cadenas de texto en controles multilínea; en este caso, si no es posible
+actualizar el cursor, la cadena correspondiente se copiará al portapapeles,
+tal que se pueda buscar utilizando otras herramientas.  El plugin guarda las
+cadenas especificadas y marcas en ficheros cuyos nombres se basan en el
+título y URL del documento actual.  Este complemento se basa en
+SpecificSearch y Bookmark&amp;Search, desarrollados por el mismo autor. Deberías
+desinstalarlos para utilizar éste, ya que tienen las mismas combinaciones de
+teclas y características.</p>
+
+<h2>Órdenes de teclado:</h2>
+
+<ul>
+<li>control+shift+NVDA+f: abre un diálogo con un cuadro de edición que muestra
+la última búsqueda guardada; en este diálogo también puedes seleccionar
+las búsquedas anteriormente guardadas desde un cuadro combinado o eliminar
+la cadena seleccionada desde el historial utilizando una casilla de
+verificación. Puedes elegir si el texto contenido en el cuadro de edición
+se añadirá al histórico de textos guardados. Finalmente, elegir una acción
+del siguiente grupo de botones de opción (entre buscar siguiente, buscar
+anterior o no buscar), y especificar si NVDA hará una búsqueda sensible a
+las mayúsculas. Cuando pulses Aceptar, NVDA buscará esta cadena.</li>
+<li>control+shift+NVDA+k: guarda la posición actual como una marca. Si quieres
+proporcionar un nombre para esta marca, selecciona algún texto de esta
+posición antes de guardarla.</li>
+<li>control+shift+NVDA+suprimir: elimina la marca correspondiente a esta
+posición.</li>
+<li>NVDA+k: mueve a la marca siguiente.</li>
+<li>shift+NVDA+k: mueve a la marca anterior.</li>
+<li>control+shift+k: copia el nombre del fichero donde se guardarán los datos
+de marcadores al portapapeles, sin una extensión.</li>
+<li>alt+NVDA+k: abre un diálogo con las marcas guardadas para este
+documento. Puedes escribir una nota para cada marca; pulsa Guardar Nota
+para guardar cambios. Pulsando Aceptar puedes moverte al a la posición
+seleccionada.</li>
+<li>Sin asignar: guarda la posición actual como una marca temporal.</li>
+<li>Sin asignar: Se mueve a la marca temporal para el documento actual.</li>
+</ul>
+
+
+<h2>Submmenú Place markers (NVDA+N)</h2>
+
+<p>Utilizando el submenú Place markers en el menú Preferencias, puedes acceder
+a</p>
+
+<ul>
+<li>Carpeta de búsqueda específica: abre una carpeta de búsquedas específicas
+guardadas previamente.</li>
+<li>Carpeta de marcas: abre una carpeta con las marcas guardadas.</li>
+<li>Copiar carpeta de marcadores: puedes guardar una copia de la carpeta de
+marcadores.</li>
+<li>Restaurar marcadores: Puedes guardar tus marcas desde una carpeta de
+marcadores guardada anteriormente.</li>
+</ul>
+
+
+<p>Nota: La posición de la marca se basa en el número de caracteres; y por lo
+tanto en páginas con contenido dinámico es mejor usar la búsqueda específica
+y no las marcas.</p>
+
+<h2>Cambios para 11.0</h2>
+
+<ul>
+<li>Compatible con NVDA 2018.3 o posterior (requerido).</li>
+<li>Si fuese necesario, puedes descargar la [última versión compatible con
+NVDA 2017.3][3].</li>
+</ul>
+
+
+<h2>Cambios para 19.0</h2>
+
+<ul>
+<li>En Edge, los gestos asociados con la selección de marcas, tales como
+NVDA+k, NVDA+shift+k o NVDA+alt+k, se enviarán a la aplicación en lugar de
+intentar mover el cursor a las marcas, para evitar errores, especialmente
+en documentos largos.</li>
+<li>Ahora se admite la búsqueda específica en Edge.</li>
+</ul>
+
+
+<h2>Cambios para 9.0</h2>
+
+<ul>
+<li>Al moverse a una marca desde el cuadro de diálogo Notas, El cursor de
+revisión sigue al cursor del sistema.</li>
+<li>La orden para seleccionar la marca anterior funciona de nuevo
+adecuadamente.</li>
+<li>Las marcas pueden eliminarse desde el cuadro de diálogo Notas.</li>
+<li>Ahora puedes asignar gestos para guardar y moverte a una marca temporal
+para cada documento.</li>
+</ul>
+
+
+<h2>Cambios para 8.0</h2>
+
+<ul>
+<li>Eliminados fragmentos de identificadores de nombres de ficheros de
+marcador,  los cuales pueden evitar problemas en VitalSource Bookshelf
+ePUB READER.</li>
+<li>Se añadió un diálogo Notas, para asociar comentarios para marcas guardadas
+y para moverte a la posición seleccionada.</li>
+</ul>
+
+
+<h2>Cambios para 7.0</h2>
+
+<ul>
+<li>El diálogo para guardar una cadena de texto para una búsqueda específica
+se ha eliminado. Esta funcionalidad ahora se incluye el diálogo Búsqueda
+Específica, el cual se ha rediseñado para permitir acciones diferentes al
+pulsar el botón Aceptar.</li>
+<li>Se ha mejorado la presentación visual del diálogo, adhiriéndose a la
+apariencia de los diálogos mostrados en NVDA.</li>
+<li>Al realizar una orden Buscar siguiente o buscar anterior en Modo
+exploración ahora se hará correctamente una búsqueda sensible a las
+mayúsculas si la búsqueda original era sensible a las mayúsculas.</li>
+<li>Se requiere de NVDA 2016.4 o posterior.</li>
+<li>Ahora puedes asignar gestos para abrir los diálogos Copiar y Restaurar
+marcadores.</li>
+<li>NVDA presentará un mensaje para notificar cuando se haya copiado o
+restaurado los marcadores con los diálogos correspondientes.</li>
+</ul>
+
+
+<h2>Cambios para 6.0</h2>
+
+<ul>
+<li>Cuando las características del complemento no son usables, los gestos se
+envían a la aplicación correspondiente.</li>
+</ul>
+
+
+<h2>Cambios para 5.0</h2>
+
+<ul>
+<li>Añadida búsqueda sensible a las mayúsculas.</li>
+<li>Eliminada la opción para abrir documentación desde el menú Place markers.</li>
+<li>Órdenes de teclado más intuitivas.</li>
+</ul>
+
+
+<h2>Cambios para  4.0</h2>
+
+<ul>
+<li>Eliminados fragmentos de identificadores de nombres de ficheros de
+marcador,  los cuales pueden evitar problemas en el complemento de Firefox
+ePUBREADER.</li>
+<li>La ayuda del complemento está disponible desde el Administrador de
+Complementos.</li>
+</ul>
+
+
+<h2>Cambios para 3.1</h2>
+
+<ul>
+<li>Actualización de traducciones y nuevos idiomas.</li>
+<li>Ahora no se anuncia la posición del marcador en la lectura superficial.</li>
+</ul>
+
+
+<h2>Cambios para 3.0</h2>
+
+<ul>
+<li>Añadido el soporte para lectura superficial.</li>
+</ul>
+
+
+<h2>Cambios para 2.0</h2>
+
+<ul>
+<li>Añadidas opciones para guardar y eliminar diferentes búsquedas para cada
+archivo.</li>
+<li>Solucionado un problema que rompía cuando las rutas contenían caracteres
+no latinos.</li>
+<li>Los atajos de teclado ahora pueden reasignarse utilizando el diálogo de
+Entrada de gestos de NVDA.</li>
+</ul>
+
+
+<h2>Cambios para 1.0</h2>
+
+<ul>
+<li>Versión inicial.</li>
+<li>Traducido a: Alemán, Coreano, Eslovaco, Esloveno, Español, Farsi,
+Finlandés, Francés, Gallego, Italiano, Japonés, Nepalí, Portugués,
+Portugués del Brasil, Tamil.</li>
+</ul>
+
+
+<p>https://github.com/nvdaes/placeMarkers/releases/download/10.2/placeMarkers-10.2.nvda-addon</p>
+

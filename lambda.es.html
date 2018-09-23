@@ -1,0 +1,265 @@
+
+<h1>Complemento de LAMBDA para NVDA</h1>
+<ul>
+<li>Autor: Alberto Zanella y el equipo de lambda-nvda.</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=lambda">versión estable</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=lambda-dev">versión en desarrollo</a></li>
+</ul>
+
+
+<p>Este proyecto es un módulo de aplicación para el software Lambda. Ha sido inspirado por el trabajo de Peter Lecky en la Comenius University.
+LAMBDA (Linear Access to Mathematic for Braille Device and Audio-synthesis, acceso lineal a las matemáticas mediante pantallas braille y síntesis de audio) es un programa que ayuda a las personas ciegas a leer y escribir matemáticas usando una pantalla braille y/o un sintetizador de audio.
+LAMBDA es el resultado de un proyecto EU. Para más información acerca de LAMBDA por favor visite <a href="https://www.lambdaproject.org/">https://www.lambdaproject.org/</a>.<br />
+La versión actual de este complemento tiene tablas braille solo para los
+idiomas italiano y español pero su interfaz está disponible en la mayoría de
+idiomas oficiales de NVDA, porque el complemento es traducido por la
+comunidad de traductores de NVDA.
+Si es usted un usuario no italiano de LAMBDA y le gustaría contribuír con
+traducciones en su idioma, siéntase libre de contactar al autor (consulte
+más abajo) o subscribirse a la lista de correo del proyecto.</p>
+
+<p><strong>Nota:</strong> Este complemento ha sido desarrollado por Alberto Zanella como una actividad voluntaria. Ni el autor ni los contribuyentes están relacionados con la venta o el desarrollo del programa LAMBDA. si quisiera obtener más información sobre LAMBDA, reportar problemas u obtener soporte, por favor contacte con su distribuidor local (en España, ONCE-CIDAT). Si está encontrando dificultades usando o instalando este complemento, por favor contacte con el autor o use el enlace "Issues" (errores) disponible en la página del proyecto en Github.</p>
+
+<h3><a href="https://github.com/lambda-nvda/lambdaNvda/">Repositorio Oficial en GitHub</a></h3>
+
+<h2>Características del complemento:</h2>
+
+<h3>Soporte para habla:</h3>
+
+<ul>
+<li>Se informa de los menús y diálogos correctamente;</li>
+<li>Soporte para habla natural de las fórmulas matemáticas usando el motor
+interno de LAMBDA (p.ej. "raíz compuesta 3 de raíz compuesta 3 x más 24,
+fin de raíz, menos 3 igual 0");</li>
+<li>lectura por carácter, palabra, línea y Verbalizar Todo implementada;</li>
+<li>Habla cuando un bloque de texto está seleccionado o es extendido  (usando
+CTRL+B y SHIFT+CTRL+B);</li>
+<li>Habla al moverse por el texto con comandos de Windows y con comandos
+específicos de Lambda;</li>
+<li>Tanto el modo de habla corto como el extendido están soportados (puede
+establecerlo usando el menú Herramientas de LAMBDA);</li>
+<li>Ventanas de diálogos especiales como la del modo estructura, la
+calculadora, y la de matriz son ahora correctamente reportadas y NVDA lee
+correctamente al mover el cursor por ellas o al introducir texto;</li>
+<li>El eco de escritura utiliza el procesador de texto de Lambda, de forma que
+se informará correctamente de símbolos y marcadores.</li>
+</ul>
+
+
+<h3>Soporte para Braille:</h3>
+
+<ul>
+<li>El complemento instala (dentro del directorio de perfil de usuario) y
+activa un perfil de NVDA con una tabla braille. Esta tabla puede diferir
+en distintos idiomas. La tabla ha sido construida desde la presente en los
+scripts de Jaws para LAMBDA (archivo jbt). Entonces los símbolos y
+marcadores son representados mediante los mismos patrones de puntos;</li>
+<li>El complemento crea un perfil de configuración y establece la
+configuración de braille estándar. De forma que la salida a la tabla
+braille personalizada solo está establecida cuando LAMBDA está activo;</li>
+<li>Los diálogos y menús son correctamente braillificados;</li>
+<li>El contenido del editor es correctamente adaptado para braille y el
+usuario puede moverse usando las teclas de desplazamiento braille y de
+ruta del cursor;</li>
+<li>Empezando desde la versión del complemento 1.1.0 existen dos formas en las
+cuales el contenido es representado: "Modo plano" y "Modo no
+plano". Cuando el "Modo plano" está activado, NVDA usará el Modelo de
+Mostrado para obtener el contenido desde Lambda y para determinar la
+posición del cursor braille. Esto es especialmente beneficioso cuando el
+usuario necesita moverse por la pantalla, incluso por los espacios en
+blanco del editor. Cuando el "Modo plano" está establecido a
+"Desactivado", la representación del texto en la pantalla braille es más
+estable, ya que NVDA usa Windows API para obtenerla. De modo que, cuando
+el usuario se mueve entre espacios en blanco el cursor en la pantalla
+braille no seguirá al cursor real hasta que un espacio no en blanco sea
+insertado por el usuario.</li>
+</ul>
+
+
+<p>El "Modo plano" está activo por defecto. Puede alternar el "Modo plano"
+entre activado y desactivado pulsando NVDA+SHIFT+F.</p>
+
+<p>Se recomienda vivamente deshabilitar el "Modo plano" cuando se use DPI
+personalizado en Windows (opción de Tamaño personalizado), especialmente
+cuando se tiene una configuración de pantalla de más de 96 DPI (más largo
+que 100%).</p>
+
+<ul>
+<li>La estructura de los cuadros de diálogo es más sencilla, eliminando
+información repetida;</li>
+<li>La selección es marcada correctamente usando los puntos 7 y 8, y
+correctamente refrescada al presionar comandos estándar de Windows
+(SHIFT+FLECHAS) o comandos específicos de Lambda (CTRL+B, CTRL+SHIFT+B).</li>
+</ul>
+
+
+<h2>Antes de empezar a usar este complemento.</h2>
+
+<p>Este complemento crea un perfil de NVDA nombrado como "lambda" que está
+asociado con la aplicación lambda.exe. Este perfil está configurado con
+todas las opciones en lo que a las opciones braille, a la tabla braille
+personalizada, a la localización del foco y a las opciones del modo plano se
+refiere.</p>
+
+<p>Si un perfil previamente existente con el mismo nombre está presente en su
+sistema, no será sobreescrito y deberá ajustar manualmente el perfil de
+configuración.</p>
+
+<p>Para salir de esta situación, si tiene configuraciones espcíficas que le
+gustaría preservar, puede usar el "Asistente de Reversión del perfil
+LAMBDA". La tecla rápida para abrir esta herramienta es NVDA+alt+r (cuando
+se está dentro de LAMBDA).</p>
+
+<p>Una opción fácil es también borrar viejas versiones del perfil "lambda"
+después de la instalación del complemento. Para hacer esto, abra el menú de
+NVDA, seleccione el elemento de menú "Perfiles de configuración" y pulse
+ENTER.</p>
+
+<p>En el diálogo de Perfiles de configuración, podrá localizar y borrar el
+perfil "lambda". El perfil será creado nuevamente la próxima vez que se
+inicie Lambda.</p>
+
+<p>Eliminar el perfil "lambda" debería de ser una solución fácil también cuando
+encuentre algún fallo que "aparezca" en algún punto mientras se use el
+complemento. Por ejemplo, si la tabla braille no está correctamente
+establecida, en lugar de configurar manualmente el perfil puede simplemente
+borrarlo. El complemento creará uno nuevo la próxima vez que abra el editor
+Lambda.</p>
+
+<p>Cada vez que el editor Lambda es arrancado, el complemento verifica si
+existe un perfil con el nombre "lambda". Si no existe crea automáticamente
+un perfil con la siguiente forma:</p>
+
+<pre><code class="filename : userData\profiles\lambda.ini :">
+[braille]
+    readByParagraph = False
+    tetherTo = focus
+    translationTable = path-to-the-addon-brailleTable-dir\tableName
+
+[lambda]
+    brailleFlatMode = True
+</code></pre>
+
+<p>Donde :</p>
+
+<ul>
+<li>path-to-the-addon-brailleTable-dir : Es la ruta absoluta del directorio
+del complemento + "\brailleTables"</li>
+<li>tableName : Depende del idioma seleccionado. Actualmente las tablas
+braille italiana y española, "lambda-ita.utb" y "lambda-esp.utb"
+respectivamente, están presentes.</li>
+</ul>
+
+
+<h2>Teclas Rápidas del Complemento:</h2>
+
+<ul>
+<li><strong>NVDA+Shift+f</strong>: Alterna el modo plano de braille entre activado y
+desactivado;</li>
+<li><strong>NVDA+alt+r</strong>: Abre el "Asistente de Reversión del Perfil LAMBDA";</li>
+<li><strong>NVDA+d</strong>: Duplicar líneas, use esto en lugar de CTRL+d.</li>
+</ul>
+
+
+<h2>Errores conocidos:</h2>
+
+<p>Debido a un error presente en LAMBDA; el complemento proporciona una lógica
+adicional que informa de los espacio en blanco. Esta lógica puede fallar en
+las siguientes situaciones:</p>
+
+<ul>
+<li>Cuando palabras como "space", "spazio", "espacio", etc. son insertadas en
+el texto, éstas pueden ser reportadas en el idioma del NVDA del usuario.</li>
+<li>El motor de habla de LAMBDA no informa de líneas en blanco. el usuario
+escuchará la traducción de la palabra "espacio" en su lugar. Esto puede
+ser tanto una línea en blanco como una línea conteniendo solamente la
+palabra "espacio".</li>
+</ul>
+
+
+<h2>Consejos útiles</h2>
+
+<p>Este es un conjunto de consejos que te ayudarán a usar este complemento de
+una manera más eficiente.</p>
+
+<ul>
+<li>Lectura caracter por caracter: normalmente, cuando está escribiendo
+matemáticas le gusta que NVDA diga aquello que está escribiendo caracter
+por caracter. Para hacer esto, hay unos cuantos simples pasos: asegúrese
+de tener focalizada la ventana de LAMBDA o una de sus variantes (la
+representación en seis puntos, por ejemplo); presione NVDA+2 (número dos)
+o navegue a menú NVDA&gt;Preferencias&gt;Opciones de teclado y marque la casilla
+para reportar caracteres al escribir; diríjase a
+LAMBDA&gt;Herramientas&gt;Parámetros de voz y asegúrese de que la casilla "Eco"
+está marcada, de otro modo NVDA no recibirá nada del motor de voz mientras
+usted escribe. Y hecho, NVDA leerá los caracteres escritos, pero no se
+preocupe, solo en LAMBDA, los ajustes de otras aplicaciones serán dejados
+como estaban.</li>
+</ul>
+
+
+<h2>Lista de correo del complemento:</h2>
+
+<p>Para reportar errores, sugerencias o si quiere contribuir puede subscribirse
+al grupo del complemento (en inglés). Puede subscribirse desde el sitio web:
+<a href="https://groups.io/g/lambda-nvda">https://groups.io/g/lambda-nvda</a>.</p>
+
+<h2>Registro de cambios</h2>
+
+<p>Abajo se encuentra una lista de cambios entre las diferentes versiones del
+complemento. Al lado del numero de versión, entre paréntesis, está el estado
+de desarrollo. La versión actualmente en desarrollo no se incluye ya que
+podría haber cambios hasta que sea marcada como estable o descartada como
+candidata.</p>
+
+<h3>Versión 1.2.2 (estable)</h3>
+
+<ul>
+<li>Se ha mejorado la compatibilidad con WXPython versión 4 (introducida en
+NVDA 2018.3). La advertencia relacionada con wx.NewID() ya no se muestra
+en el registro de depuración.</li>
+<li>Ahora se utiliza el módulo guiHelper para mejorar la apariencia visual de
+los diálogos.</li>
+<li>Nuevos idiomas. Traducciones actualizadas.</li>
+</ul>
+
+
+<h3>Versión 1.2.1A (estable)</h3>
+
+<p>Esta actualización ha sido concebida como una versión con soporte durante
+largo tiempo. Esto significa que hasta, al menos, junio de 2018, no está
+prevista la liberación de una versión tan estable como ésta. Hacemos esto
+para proporcionar a los estudiantes máxima estabilidad y para minimizar los
+cambios durante el curso académico.</p>
+
+<ul>
+<li>Nuevos idiomas. Traducciones actualizadas.</li>
+</ul>
+
+
+<h3>Versión 1.2.1 (estable)</h3>
+
+<ul>
+<li>Añadida compatibilidad con la manera que NVDA 2017.3 usa para administrar
+el Braille. Compatibilidad con versiones antiguas mantenida.</li>
+<li>arregladas varias incidencias relacionadas con el braille.</li>
+</ul>
+
+
+<h3>Versión 1.2.0 (desarrollo)</h3>
+
+<p>Esta versión no fue publicada como estable porque la 1.2.1 incluía arreglos
+importantes.</p>
+
+<ul>
+<li>Nuevos idiomas. Traducciones actualizadas.</li>
+</ul>
+
+
+<h3>Versión 1.1.8 (estable)</h3>
+
+<ul>
+<li>Primera versión estable.</li>
+</ul>
+
+

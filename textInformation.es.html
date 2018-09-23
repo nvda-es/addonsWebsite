@@ -1,0 +1,63 @@
+
+<h1>Text Information</h1>
+<ul>
+<li>Autor: Carter Temm</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=txtinfo">versión estable</a></li>
+</ul>
+
+
+<p>Este complemento permite obtener información según el texto
+seleccionado. Simplemente selecciona algo y usa un atajo de teclado para
+obtener información. Con suerte, se debería presentar algo que encaje con el
+contexto.</p>
+
+<p>Nota: este paquete se distribuye bajo los términos de la GNU General Public
+License, versión 2 o posterior. Por favor, consulta el archivo copying.txt
+para más detalles.</p>
+
+<h2>Atajos de teclado</h2>
+
+<p>Nota: estos atajos de teclado asumen que usas la distribución de teclado en
+inglés, y podrían no funcionar en otros casos. Si hay un problema, intenta
+cambiarlos primero en el diálogo de gestos de entrada.</p>
+
+<ul>
+<li>NVDA+; (punto y coma): proporciona información basada en el texto
+seleccionado</li>
+<li>NVDA+shift+; (punto y coma): proporciona información basada en el
+contenido del portapapeles</li>
+<li>NVDA+ctrl+; (punto y coma): verbaliza la última información que se
+recibió. Pulsa este atajo dos veces para mostrarla en un diálogo.</li>
+</ul>
+
+
+<h2>Servicios soportados</h2>
+
+<p>Actualmente, se soportan las siguientes funciones:</p>
+
+<ul>
+<li>Información de una dirección ip usando la API de IPInfoDB. Se proporciona
+una clave de API. Sin embargo, no se puede garantizar que vaya a funcionar
+siempre. Puedes generar la tuya propia, e introducirla en la parte
+superior de <strong>init</strong>.py, reemplazando la antigua.</li>
+<li>Definiciones de diccionario en inglés de la Princeton Wordnetweb. Nota:
+estas definiciones no son las mejores, y la base de datos carece de
+definiciones para palabras simples, como could, you, etc.</li>
+<li>Búsqueda de ISBN mediante la API de libros de Google</li>
+<li>Verificación del tipo de tarjeta de crédito</li>
+</ul>
+
+
+<p>Nota: se emplean expresiones regulares para verificar los datos. Hay algunas
+que en este momento no se usan, como las de correos electrónicos o números
+de teléfono. Esto podría cambiar en el futuro.</p>
+
+<h2>Cómo contribuir</h2>
+
+<p>Las contribuciones son muy bienvenidas. Puedes enviar una solicitud de
+cambios, o contactar con el autor mediante las siguientes vías:</p>
+
+<p>Twitter: @cartertemm</p>
+
+<p>Correo electrónico: crtbraille@gmail.com</p>
+
