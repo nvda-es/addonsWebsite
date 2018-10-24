@@ -2,7 +2,8 @@
 <h1>ToolbarsExplorer</h1>
 <ul>
 <li>Autor: Alberto Buffolino</li>
-<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=tbx">versión de desarrollo</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=tbx">versión estable</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=tbx-dev">versión de desarrollo</a></li>
 </ul>
 
 
@@ -28,7 +29,7 @@ barra de herramientas actual;</li>
 <li>Enter: activa la barra de herramientas o su elemento;</li>
 <li>Espacio: simula un click izquierdo del ratón en la barra de herramientas o
 su elemento;</li>
-<li>Aplicaciones: simula un click derecho del ratón en la barra de
+<li>Aplicaciones / shift+f10: simula un click derecho del ratón en la barra de
 herramientas o su elemento;</li>
 <li>Escape: salir de la exploración.</li>
 </ul>
@@ -38,12 +39,29 @@ herramientas o su elemento;</li>
 utilizando cualquier gesto proporcionado por NVDA, exactamente como al
 moverse a objetos con la navegación de objetos estándar.</p>
 
-<h2>Notas y sugerencias</h2>
+<h2>Notas</h2>
+
+<p>La exploración termina de forma explícita al presionar escape, e
+implíccitamente:</p>
 
 <ul>
-<li>La exploración termina de forma explícita al presionar escape, e
-implíccita realizando una acción sobre la barra de herramientas o su
-elemento;</li>
+<li>realizando una acción en una barra de herramientas o en su elemento (con
+espacio, aplicaciones / shift+f10, pulsar intro);</li>
+<li>pulsando un gesto que te lleve fuera de los objetos de una barra de
+herramientas (alt, Windows, tabulador, NVDA+f1, gestos de navegación por
+objetos, etc).</li>
+</ul>
+
+
+<p>Otros gestos que no contengan alt o Windows (como h, 1, shift, shift+h,
+ctrl+z) simplemente no hacen nada.</p>
+
+<h2>Sugerencias</h2>
+
+<ul>
+<li>La primera vez después de la instalación / actualización del complemento,
+este puede fallar en las aplicaciones de Mozilla; por favor, reinicia
+tanto NVDA como las aplicaciones de Mozilla para resolver este fallo;</li>
 <li>En LibreOffice, la mejor configuración es probablemente la barra de
 herramientas por defecto o una sola, establécelo en el menú ver/posición
 de barra de herramientas.</li>
