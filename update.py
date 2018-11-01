@@ -6,6 +6,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/calibre.es.html",
 "https://addons.nvda-project.org/addons/systrayList.es.html",
 "https://addons.nvda-project.org/addons/dropbox.es.html",
 "https://addons.nvda-project.org/addons/extendedWinamp.es.html",
