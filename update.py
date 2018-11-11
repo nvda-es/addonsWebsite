@@ -1,3 +1,4 @@
+#-*- coding: utf-8-*-
 import requests
 import codecs
 from codecs import open
@@ -81,9 +82,14 @@ addresses=[
 "https://addons.nvda-project.org/addons/word.es.html",
 "https://addons.nvda-project.org/addons/instantTranslate.es.html"
 ]
+warnings={
+"sentenceNav":"Alteración de fuente: URL externa de complemento sustituida por propia",
+}
 
 for a in addresses:
 	r=requests.get(a)
 	f=open(a.split("/")[-1], "w", encoding="utf-8")
 	f.write(r.content.split('<div id="content">')[-1].split("</div>")[0])
 	f.close()
+for b in warnings:
+	print(u"Advertencia en %s: %s. Téngase en cuenta en la edición."%(b, warnings[b]))
