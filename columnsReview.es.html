@@ -1,0 +1,64 @@
+
+<h1>Columns Review</h1>
+<ul>
+<li>Autor: Alberto Buffolino.</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=cr">versión estable</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=cr-dev">versión en desarrollo</a></li>
+</ul>
+
+
+<p>Columns Review es un complemento para leer y copiar elementos de una lista
+columna por columna. Soporta listas con un número potencialmente infinito de
+columnas, y puedes navegar por ellas utilizando el teclado y los dígitos del
+teclado numérico. Los encabezados de columna pueden leerse pero no copiarse,
+o viceversa.</p>
+
+<p>Adicionalmente, proporciona un método de interactuar con encabezados de
+columna, y puede anunciar "0 elements" (0 elementos) cuando una lista está
+vacía.</p>
+
+<p>Mira abajo para más información sobre listas soportadas.</p>
+
+<h2>Órdenes de teclas</h2>
+
+<p>Las teclas asociadas por defecto a los números son NVDA y control, pero
+puedes personalizarlas desde los ajustes del complemento. consulta también
+los ajustes para el modo de diseño teclado o teclado numérico.</p>
+
+<ul>
+<li>NVDA+control+dígitos del 1 al 0 (modo teclado) o del 1 al 9 (modo teclado
+numérico): pulsado una vez, lee la columna elegida, presionado dos veces,
+la copia;</li>
+<li>NVDA+control+menos teclado numérico (modo teclado numérico): leer o copiar
+la columna décima, vigésima, etc.;</li>
+<li>NVDA+control+- (por defecto, distribución en-US, modo teclado): en una
+lista con 10+ columnas, te permite cambiar el intervalo y leer columnas de
+la 11 a la 20, de la 21 a la 30, etc.; consulta los ajustes para cambiar
+el último carácter en consonancia con tu distribución;</li>
+<li>NVDA+control+más teclado numérico (modo teclado numérico): Exactamente
+igual al atajo anterior;</li>
+<li>NVDA+control+intro (también intro del teclado numérico en modo teclado
+numérico): abrir administrador de encabezados de columna;</li>
+<li>Flechas (en lista vacía): mensaje "0 elements" (0 elementos).</li>
+</ul>
+
+
+<h2>Para desarrolladores y usuarios avanzados</h2>
+
+<p>Los tipos de lista soportados por los gestos nméricos son:</p>
+
+<ul>
+<li>SysListView32;</li>
+<li>DirectUIHWND (presente en sistemas de 64 bits);</li>
+<li>WindowsForms10.SysListView32.* (aplicaciones que usen .net);</li>
+<li>Tabla Mozilla (normalmente la lista de mensajes de Thunderbird,
+soportándose la agrupación por hilo).</li>
+</ul>
+
+
+<p>todos los gestos numéricos están asociados a, y solamente a, listas
+soportadas, cuando éstas no están vacías.</p>
+
+<p>Cualquier vista de lista soporta potencialmente el anuncio de vacía (por
+tanto, ni DirectUIHWND ni tabla Mozilla).</p>
+
