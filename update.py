@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/columnsReview.es.html",
 "https://addons.nvda-project.org/addons/AudioChart.es.html",
 "https://addons.nvda-project.org/addons/BluetoothAudio.es.html",
 "https://addons.nvda-project.org/addons/textnav.es.html",
