@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/browsernav.es.html",
 "https://addons.nvda-project.org/addons/trainingKeyboardCommands.es.html",
 "https://addons.nvda-project.org/addons/outlookExtended.es.html",
 "https://addons.nvda-project.org/addons/columnsReview.es.html",
