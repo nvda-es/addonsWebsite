@@ -51,9 +51,6 @@ lector de pantalla NVDA.</li>
 características son parte de NVDA, no se aplican porque el complemento no
 da soporte a versiones antiguas de Windows 10, o se han hecho cambios a
 las aplicaciones que permiten que ya no sea necesario aplicarlas.</li>
-<li>La comprobación de actualización independiente de este complemento se ha
-eliminado. Para futuras actualizaciones de complementos, por favor utiliza
-el complemento Add-on Updater.</li>
 </ul>
 
 
@@ -63,19 +60,17 @@ complemento, consulta el documento <a href="https://github.com/josephsl/wintenap
 <h2>General</h2>
 
 <ul>
-<li>Cambios internos para hacer el complemento compatible con versiones
-futuras de NVDA.</li>
-<li>Pequeños cambios relacionados con la forma de mostrar los mensajes en
-idiomas distintos al inglés.</li>
+<li>NVDA ya no reproducirá tonos de error o se quedará sin hacer nada si este
+complemento se activa en Windows 7 u 8.1.</li>
 <li>Se reconocen los elementos de los submenús en diversas aplicaciones,
 incluyendo el menú de contexto para los elementos del menú Inicio y el
 menú de aplicación de Microsoft Edge (Redstone 5).</li>
-<li>Ahora se reconocen ciertos diálogos como diálogos apropiadamente y se
-anuncian como tales, como el diálogo Insider Preview (aplicación de
-configuración). Esta función ahora es parte de NVDA 2018.3.</li>
+<li>Además de los diálogos reconocidos como tales por NVDA, ahora se reconocen
+más diálogos y se anuncian adecuadamente, como el diálogo Insider Preview
+(aplicación de configuración).</li>
 <li>NVDA puede anunciar cuenta de sugerencias cuando se realiza una búsqueda
 en la mayoría de casos. Esta opción se controla por "Anunciar información
-de posición del objeto" en el diálogo/panel Presentación de Objetos.</li>
+de posición del objeto" en el panel Presentación de Objetos.</li>
 <li>En ciertos menús de contexto (tales como en Edge), la información de
 posición (ej.: 1 de 2) ya no se anuncia.</li>
 <li>Se reconocen los siguientes eventos UIA: active text position change,
@@ -91,6 +86,8 @@ universales.</li>
 ID del escritorio actual (escritorio 2, por ejemplo).</li>
 <li>NVDA ya no anuncia Menú Inicio tamaño de texto al cambiar la resolución de
 pantalla o la orientación.</li>
+<li>En la compilación 18323 y posteriores, NVDA ahora anunciará los cambios de
+volumen del audio y brillo.</li>
 </ul>
 
 
@@ -186,7 +183,7 @@ para conmutar la pantalla completa.</li>
 <h2>Teclado Moderno</h2>
 
 <p>Nota: la mayoría de las siguientes características ya son parte de NVDA
-2018.3.</p>
+2018.3 o posterior.</p>
 
 <ul>
 <li>Soporte para el panel de entrada de Emoji en la versión 1709 (Fall
@@ -214,10 +211,11 @@ el teclado moderno y sus funciones. Esto incluye no verbalizar más
 hardware y permanecer en silencio cuando ciertas teclas del teclado táctil
 disparan un evento de cambio de nombre en algunos sistemas.</li>
 <li>NVDA ya no reproducirá tonos de error o se quedará sin hacer nada al
-cerrar el panel de emojis en las versiones más recientes de 19H1 Insider
-Preview.</li>
+cerrar el panel de emojis en las versiones más recientes de Windows
+Insider Preview 19H1. Esto será parte de NVDA 2019.1.</li>
 <li>En la Versión 1809 (October 2018 Update) y posteriores, NVDA verbalizará
-los resultados de búsqueda para emojis si es posible.</li>
+los resultados de búsqueda para emojis si es posible. Esta función formará
+parte de NVDA 2019.1.</li>
 </ul>
 
 
