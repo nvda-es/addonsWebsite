@@ -2,15 +2,20 @@
 <h1>Access8Math</h1>
 <ul>
 <li>Autores: Woody Tseng</li>
-<li>descargar <a href="https://addons.nvda-project.org/files/get.php?file=access8math">versión estable</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=access8math">versión estable</a></li>
 </ul>
 
 
-<p>Este complemento mejora la funcionalidad de lectura de matemáticas en
-NVDA. Aunque NVDA viene con soporte para MathPlayer, hay ciertas
-características que faltan, incluyendo un modo de navegación más fácil para
-contenido matemático largo, útil para la comprensión de la estructura de las
-expresiones matemáticas.</p>
+<p>Este complemento de NVDA proporciona funciones para la lectura de contenido
+matemático. Aunque NVDA originalmente posee esta capacidad gracias a
+MathPlayer, todavía es necesario mejorar algunas funciones, especialmente
+cuando MathPlayer no proporciona un modo de navegación a causa del idioma.</p>
+
+<p>El modo navegación es importante para leer grandes cantidades de contenido
+matemático. Ayuda a entender fácilmente la estructura de contenido
+matemático largo.</p>
+
+<h2>funciones</h2>
 
 <p>Access8Math permite:</p>
 
@@ -19,49 +24,374 @@ expresiones matemáticas.</p>
 (Mozilla Firefox, Microsoft Internet Explorer y Google Chrome).</li>
 <li>Leer contenido matemático en Microsoft Word escrito en MathType. (solo con
 MathPlayer instalado)</li>
-<li>Navegar por el contenido matemático pulsando "Espacio" en él. También,
-puedes explorar parcialmente partes en una expresión y mover o ampliar el
-contenido entre las partes.</li>
-<li>En el modo navegación, indica el significado de las partes en la parte
-superior de la capa.</li>
-</ul>
-
-
-<h2>Órdenes</h2>
+<li><p>Al pulsar "espacio" en el contenido matemático se abre la "ventana de
+interacción de Access8Math", que contiene los botones "Interactivo" y
+"Copiar".</p>
 
 <ul>
-<li>Control+Alt+M: cambia el proveedor entre Access8Math y MathPlayer (solo
-MathPlayer instalado).</li>
-<li>Órdenes del modo Navegación:
-
-<ul>
-<li>Flecha abajo: aplicar el zoom  en una parte más pequeña del contenido matemático.</li>
-<li>Flecha arriba: Mandar el zoom a una parte más grande del contenido matemático.</li>
-<li>Flecha izquierda: Moverse al contenido matemático anterior.</li>
-<li>Flecha derecha: Moverse al contenido matemático siguiente.</li>
-<li>Inicio: Moverse al comienzo del contenido matemático.</li>
-<li>Control+C: Copiar el código fuente del contenido matemático del objeto actual.</li>
-<li>Números del 1 al 9 del teclado numérico: Utilizar cursor de revisión para leer el contenido matemático.</li>
-<li>Escape: Salir del modo navegación.</li>
+<li>interacción: dentro del contenido matemático para navegar y
+explorar. Además, puedes explorar parcialmente los componentes de una
+expresión y moverte o hacer zoom en el contenido entre los
+componentes.</li>
+<li>copiar: copia el código fuente del objeto MathML.</li>
 </ul>
 </li>
+<li><p>En el modo navegación, indica el significado de las partes en la parte
+superior de la capa.</p></li>
+<li><p>En el modo de órdenes de navegación：</p>
+
+<ul>
+<li>"Flecha abajo": aumenta el zoom en una subparte más pequeña del
+contenido matemático.</li>
+<li>"Flecha arriba": saca el zoom hacia una subparte mayor del contenido
+matemático.</li>
+<li>"Flecha izquierda": se mueve al contenido matemático anterior.</li>
+<li>"Flecha derecha": se mueve al siguiente contenido matemático.</li>
+<li>"Inicio": se mueve al principio del contenido matemático completo.</li>
+<li>"CTRL+c": copia el código fuente del objeto MathML</li>
+<li>"Números del 1 al 9 del bloque numérico": lee el contenido matemático
+como texto serializado usando las órdenes de revisión de texto de
+NVDA.</li>
+<li>"ESC": sale del modo navegación.</li>
+</ul>
+</li>
+<li><p>"Control+Alt+M": cambia el proveedor entre Access8Math y MathPlayer (solo
+MathPlayer instalado).</p></li>
+<li><p>Menú:</p>
+
+<ul>
+<li><p>Diálogo de Opciones generales:</p>
+
+<ul>
+<li>Idioma: idioma de lectura de Access8Math</li>
+<li>Intervalo de tiempo del elemento: establece el tiempo de pausa
+entre elementos. Admite valores entre 1 y 100. Cuanto menor sea el
+valor menos durará la pausa, y cuanto mayor sea más durará.</li>
+<li>Analizar el significado matemático del contenido: analiza el
+contenido matemático semánticamente, siguiendo reglas específicas,
+leyendo el significado matemático de esas reglas.</li>
+<li>Leer el significado del patrón definido en el diccionario: cuando
+hay un patrón definido en el diccionario, utiliza el diccionario
+para leer el significado de una parte en el nivel superior.</li>
+<li>Leer el significado de patrón autogenerado: cuando el patrón no
+está bien definido o está incompleto en el diccionario, utiliza la
+función de generación automática para leer el significado de una
+parte en el nivel superior.</li>
+</ul>
+</li>
+<li><p>Diálogo de configuración de reglas: elige si se activan reglas
+específicas.</p></li>
+</ul>
+</li>
+<li><p>El "diccionario Unicode" permite personalizar el método de lectura del
+texto de cada símbolo.</p></li>
+<li>La "regla matemática" permite personalizar el método de lectura para cada
+tipo de matemáticas.</li>
+<li>"Añadir nuevo idioma" permite añadir idiomas que no vienen incorporados en
+el sistema. El nuevo idioma se añadirá a "Opciones generales", y la
+personalización multiidioma se puede llevar a cabo leyendo la definición
+de "diccionario Unicode" y "regla matemática".</li>
 </ul>
 
 
-<h2>Diálogo de Opciones</h2>
+<h2>Reglas matemáticas</h2>
+
+<p>Access8Math establece 43 reglas matemáticas según el tipo matemático y la
+lógica para decidir el orden y método de lectura matemática. En función de
+lógica local de lectura matemática, el texto y orden de lectura matemática
+puede cambiarse. El método es como sigue:</p>
+
+<p>Editar: tras entrar en la "regla matemática", la ventana lista 43 reglas
+matemáticas. Elige cualquiera de ellas y pulsa "Editar" para modificar la
+entrada.</p>
+
+<p>La "edición de entrada" puede dividirse en dos bloques principales, el
+"orden serializado" y el "rol del hijo".</p>
 
 <ul>
-<li>Idioma: idioma de lectura de Access8Math.</li>
+<li>Orden serializado: las regla matemática se divide en varios bloques según
+el orden de lectura. En este área, el orden de lectura del nodo hijo y el
+texto de delimitación del inicio, la mitad y el final puede
+cambiarse. Tomando la regla fraccional mfrac como ejemplo, esta regla se
+divide en cinco bloques de lectura. Los órdenes 0, 2 y 4 representan el
+símbolo inicial, el símbolo de proyección de la segmentación y el símbolo
+final, respectivamente, y sus textos de significado pueden cambiarse en
+cada campo. Los órdenes 1 y 3 ajustan la secuencia de lectura del nodo
+hijo, que puede modificarse en el menú desplegable.</li>
+<li>Rol del hijo: el subelemento del siguiente nivel de la regla
+matemática. Tomando la regla fraccional mfrac como ejemplo, la regla
+contiene el numerador y el denominador. El significado del subcontenido
+dentro del contenido de nivel superior puede cambiarse en el campo de rol
+del nodo hijo.</li>
+</ul>
+
+
+<p>Ejemplo: puedes probar el orden de lectura de la regla matemática tras
+editarla. Después de pulsarlo, se presenta un contenido matemático que
+contiene la regla elegida para confirmar si el método de lectura es el
+esperado.</p>
+
+<p>Restaurar por defecto: restaura la lista de reglas matemáticas a sus valores
+por defecto.</p>
+
+<p>Importar: importa archivos con reglas matemáticas, que pueden servir para
+cargar reglas nuevas.</p>
+
+<p>Exportar: guarda el fichero de reglas matemáticas a la ruta especificada
+para que pueda compartirse o conservarse.</p>
+
+<h2>otros</h2>
+
+<p>Las reglas únicas son versiones simplificadas de varias reglas. Cuando el
+contenido tiene un único elemento, para que se pueda leer y entender mejor y
+sin confusiones, puedes elegir que no se lea el script antes y después del
+contenido.</p>
+
+<p>Las definiciones y reglas de contenido matemático están en constante
+crecimiento.</p>
+
+<p>Ahora nos centramos en el lenguaje escrito con marcas de presentación
+MathML, ya que las herramientas gráficas de entrada MathML como Word, Math
+type y el MathML generado con Wiris son de este tipo.</p>
+
+<p>Todos los contenidos matemáticos en wikis están escritos en MathML.</p>
+
+<ul>
+<li>Multiplicación de matrices (en inglés):
+https://en.wikipedia.org/wiki/Matrix_multiplication</li>
+<li>Función cúbica (en inglés): https://en.wikipedia.org/wiki/Cubic_function</li>
+</ul>
+
+
+<h2>Ejemplo</h2>
+
+<h3>Ecuación de segundo grado</h3>
+
+<p>-b&#xB1;b2-4ac2a</p>
+
+<h3>Teorema binomial</h3>
+
+<p>
+
+
+
+(
+1
++
+x
+
+)
+
+α
+
+
+=
+
+∑
+
+n
+=
+0
+
+
+∞
+
+
+C
+(
+α
+,
+n
+)
+
+x
+
+n
+
+
+
+∀
+x
+:
+
+|
+x
+|
+
+&lt;
+1
+,
+∀
+α
+∈
+
+C
+
+
+
+{\displaystyle (1+x)^{\alpha }=\sum _{n=0}^{\infty }C(\alpha ,n)x^{n}\quad \forall x:\left|x\right|&lt;1,\forall \alpha \in \mathbb {C} }
+
+</p>
+
+<p>Código fuente: https://github.com/tsengwoody/Access8Math</p>
+
+<p>No dudes en informar de cualquier fallo que encuentres o comentar lo que
+quieras, ¡gracias!</p>
+
+<h1>Actualización de Access8Math v2.1</h1>
+
+<ul>
+<li>En "Opciones generales" se puede elegir si la "ventana de interacción de
+Access8Math" se muestra automáticamente al entrar en modo interacción.</li>
+<li>En el modo interactivo, se puede mostrar manualmente la "ventana de
+interacción" pulsando ctrl+m cuando no se muestra por defecto.</li>
+<li>Corregido fallo de cambio entre varios idiomas.</li>
+<li>Se ha añadido la traducción al turco. Gracias al trabajo de traducción de
+cagri (çağrı doğan).</li>
+<li>Actualización de los indicadores del fichero manifest.ini para dar
+compatibilidad con NVDA 2019.1.</li>
+<li>Optimización del código fuente de las ventanas de diálogo.</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.0</h1>
+
+<ul>
+<li>Se han añadido ajustes multiidioma personalizables, y tres ventanas
+nuevas: "Diccionario Unicode", "Regla matemática" y "Añadir nuevo idioma"</li>
+<li>El "diccionario Unicode" puede personalizar la forma de leer el texto de
+cada símbolo matemático.</li>
+<li>"Regla matemática" puede personalizar el método de lectura y previsualizar
+la modificación mediante el botón de ejemplo antes de aplicar los cambios.</li>
+<li>"Añadir nuevo idioma" permite añadir un nuevo idioma no incorporado en el
+sistema. El nuevo idioma se añadirá a las opciones generales, y la
+personalización multiidioma se puede llevar a cabo mediante las
+definiciones de lectura del "diccionario Unicode" y las "reglas
+matemáticas".</li>
+<li>mejoras en el modo interactivo: se pueden usar las teclas numéricas del 7
+al 9 para leer secuencias de texto en la unidad de línea.</li>
+</ul>
+
+
+<h1>Registro de actualización de Access8Math v1.5</h1>
+
+<ul>
+<li>En el diálogo "Opciones generales" se añade un ajuste de pausa entre
+elementos. Admite valores entre 1 y 100. Cuanto más pequeño sea el valor
+más corta será la pausa, y cuanto más alto más larga.</li>
+<li>Corregido un fallo que impedía que el diálogo de configuración guardara
+los ajustes en NVDA 2018.2.</li>
+</ul>
+
+
+<h1>Registro de actualización de Access8Math v1.4</h1>
+
+<ul>
+<li>El diálogo de configuración se divide en los diálogos "Opciones generales"
+y "configuración de reglas". "Opciones generales" es el antiguo diálogo
+"Ajustes de Access8Math", y el diálogo "Configuración de reglas" sirve
+para seleccionar si se habilitan ciertas reglas.</li>
+<li><p>Nuevas reglas</p>
+
+<ul>
+<li>regla de vector: cuando hay un símbolo "⇀" encima de dos
+identificadores, el elemento se lee como "vector...".</li>
+<li>regla de: cuando hay un símbolo " ⌢ " sobre dos identificadores, el
+elemento se lee como "de...".</li>
+</ul>
+</li>
+<li><p>Fallo corregido.</p></li>
+</ul>
+
+
+<h1>Registro de actualización de Access8Math v1.3</h1>
+
+<ul>
+<li><p>Nueva regla</p>
+
+<ul>
+<li>regla positivo: lee "positivo" en vez de "más" cuando haya un signo
+más en el primer elemento o el elemento anterior sea un operador
+concreto.</li>
+<li>regla del cuadrado: cuando el exponente de la potencia sea 2, el
+elemento se lee como "al cuadrado".</li>
+<li>regla cúbica: cuando el exponente de la potencia sea 3, el elemento se
+lee como "al cubo".</li>
+<li>regla de línea: cuando haya un síbolo "↔" sobre dos identificadores,
+el elemento se lee como "línea...".</li>
+<li>regla del segmento de línea: cuando haya un símbolo "¯" sobre dos
+identificadores, el elemento se lee como "segmento de línea...".</li>
+<li>regla de la raya: cuando haya un símbolo "→" sobre dos
+identificadores, el elemento se lee como "raya..."</li>
+</ul>
+</li>
+<li><p>Se ha añadido una ventana de interacción. Se puede pulsar "espacio" en el
+contenido matemático para abrir la "ventana de interacción de
+Access8Math", que contiene los botones "Copiar" e "Interactuar".</p>
+
+<ul>
+<li>interacción: en el contenido matemático para navegar y explorar.</li>
+<li>copiar: copia el código fuente del objeto MathML.</li>
+</ul>
+</li>
+<li><p>Añadido idioma de interfaz zh_CN (.po).</p></li>
+<li>Ajuste de la relación de herencia entre reglas para asegurar el uso
+adecuado de las reglas apropiadas y evitar conflictos.</li>
+<li>Fallo corregido.</li>
+</ul>
+
+
+<h1>Registro de actualización de Access8Math v1.2</h1>
+
+<ul>
+<li><p>Nueva regla</p>
+
+<ul>
+<li>regla del número negativo: lee 'negativo' en vez de 'signo menos'
+cuando el signo menos sea el primer elemento o su elemento anterior
+sea un operador concreto.</li>
+<li>regla de suma de entero y fracción: lee 'suma' entre el entero y la
+fracción cuando el elemento anterior a una fracción sea un entero.</li>
+</ul>
+</li>
+<li><p>Mejora de la arquitectura del programa</p>
+
+<ul>
+<li>se ha añadido una clase hermana</li>
+<li>se ha añadido una clase de generación dinámica complementaria</li>
+</ul>
+</li>
+<li><p>Fallo corregido</p></li>
+</ul>
+
+
+<h1>Registro de actualización de Access8Math v1.1</h1>
+
+<ul>
+<li>En el modo de órdenes de navegación, "ctrl+c" copia el código fuente del
+objeto MathML.</li>
+<li><p>Diálogo de Opciones en preferencias:</p>
+
+<ul>
+<li>Idioma: idioma de lectura de Access8Math en el contenido matemático.</li>
 <li>Analizar el significado matemático del contenido: analiza el contenido
 matemático semánticamente, siguiendo reglas específicas, leyendo el
 significado matemático de esas reglas.</li>
-<li>Leer el significado del patrón definido en el diccionario: cuando hay un
-patrón definido en el diccionario, utiliza el diccionario para leer el
-significado de una parte en el nivel superior.</li>
-<li>Leer el significado de patrón autogenerado: cuando el patrón no está bien
-definido o está incompleto en el diccionario, utiliza la función de
-generación automática para leer el significado de una parte en el nivel
-superior.</li>
+<li>Leer el significado del patrón definido en el diccionario: cuando hay
+un patrón definido en el diccionario, utiliza el diccionario para leer
+el significado de una parte en el nivel superior.</li>
+<li>Leer el significado de patrón autogenerado: cuando el patrón no está
+bien definido o está incompleto en el diccionario, utiliza la función
+de generación automática para leer el significado de una parte en el
+nivel superior.</li>
+</ul>
+</li>
+<li><p>Se han añadido algunas reglas simples. Las reglas únicas son versiones
+simplificadas de diversas reglas. Cuando el contenido sólo tenga un
+elemento, para que se entienda mejor y se lea sin confusión, puedes omitir
+la lectura de los elementos anteriores y posteriores al contenido.</p></li>
+<li>Actualizado unicode.dic.</li>
+<li>Fallo corregido.</li>
 </ul>
 
 
