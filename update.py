@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/ImageDescriber.es.html",
 "https://addons.nvda-project.org/addons/browsernav.es.html",
 "https://addons.nvda-project.org/addons/trainingKeyboardCommands.es.html",
 "https://addons.nvda-project.org/addons/outlookExtended.es.html",
@@ -50,7 +51,7 @@ addresses=[
 "https://addons.nvda-project.org/addons/reportSymbols.es.html",
 "https://addons.nvda-project.org/addons/switchSynth.es.html",
 "https://addons.nvda-project.org/addons/objPad.es.html",
-"https://addons.nvda-project.org/addons/weatherPlus.es.html",
+"https://addons.nvda-project.org/addons/Weather_Plus.es.html",
 "https://addons.nvda-project.org/addons/classicSelection.es.html",
 "https://addons.nvda-project.org/addons/AudioThemes3D.es.html",
 "https://addons.nvda-project.org/addons/reviewCursorCopier.es.html",
