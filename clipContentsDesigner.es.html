@@ -10,7 +10,8 @@
 
 <p>Este complemento se utiliza para agregar texto al portapapeles, el cual
 puede ser útil cuando quieras unir secciones de texto listas para pegar
-juntas.  El contenido del portapapeles también puede limpiarse.</p>
+juntas.  El contenido del portapapeles también puede limpiarse y mostrarse
+en modo exploración.</p>
 
 <h2>Órdenes de teclado</h2>
 
@@ -21,6 +22,7 @@ con el cursor de revisión, al portapapeles.</li>
 <li>NVDA+windows+x: Limpia el contenido del portapapeles.</li>
 <li>NVDA+windows+f9: Marca la posición actual del cursor de revisión como el comienzo del texto a añadir al portapapeles. Si utilizas NVDA+F9, el texto no se añadirá.</li>
 <li> No asignado: Copia (o corta) al/del portapapeles, con la posibilidad de ser preguntado por una confirmación previa.</li>
+<li> Sin asignar: Muesra el texto de portapapeles en modo exploración, o lo anuncia si el portapapeles está vacío o si tiene contenidos que no se pueden presentar en un mensaje navegable, por ejemplo si se están copiando archivos o carpetas desde el Explorador de Windows..</li>
 </ul>
 
 
@@ -31,7 +33,8 @@ Preferencias, Diálogo Gestos de Entrada, Categoría Revisión de Texto.</p>
 
 <ul>
 <li>Opciones de Clip Contents Designer: te permite poner un separador que se pueda  utilizar para encontrar los segmentos de texto una vez todo el texto añadido sea pegado.
-También es posible elegir si el texto añadido se anexará o se antepondrá, si hay acciones disponibles (añadir, vaciar portapapeles, emular copiar y emular cortar) deberían realizarse inmediatamente o después de una confirmación, y si hay confirmaciones se preguntará sólo si el texto está contenido en el portapapeles.</li>
+También es posible elegir si el texto añadido se anexará o se antepondrá, si hay acciones disponibles (añadir, vaciar portapapeles, emular copiar y emular cortar) deberían realizarse inmediatamente o después de una confirmación, y de haber confirmaciones si se preguntará siempre, sólo si hay texto en el portapapeles o si el portapapeles no está vacío.
+Adicionalmente, es posible cambiar el formato y el número máximo de caracteres del texto del portapapeles que se mostrará en modo exploración. Por favor, ten en cuenta que incrementar este límite podría causar problemas cuando el portapapeles contenga largas cadenas de texto. El límite por defecto es 100000 caracteres.</li>
 </ul>
 
 
@@ -42,6 +45,18 @@ También es posible elegir si el texto añadido se anexará o se antepondrá, si
 Preferencias, diálogo Gestos de Entrada, Categoría Configuración.</li>
 <li>No se deberían solicitar confirmaciones cuando siga abierto un cuadro de
 mensaje de NVDA. En esos casos, las acciones se realizarán inmediatamente</li>
+</ul>
+
+
+<h2>Cambios para 9.0</h2>
+
+<ul>
+<li>Añadida la posibilidad de mostrar el texto del portapapeles en modo
+exploración.</li>
+<li>Añadida una opción para elegir si se requerirá confirmación si el
+portapapeles no está vacío, por ejemplo, si se están copiando archivos o
+carpetas.</li>
+<li>Se requiere de NVDA 2018.4 o posterior.</li>
 </ul>
 
 
