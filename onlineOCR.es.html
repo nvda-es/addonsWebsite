@@ -1,0 +1,700 @@
+
+<h1>Descriptor de im&#xE1;genes en l&#xED;nea</h1>
+<ul>
+<li>Autor: Larry Wang</li>
+<li>Compatibilidad con NVDA: de 2018.3 a 2019.1</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=oid-dev">versión de desarrollo</a></li>
+</ul>
+
+
+<p>Este complemento pretende añadir motores de reconocimiento de imágenes en
+línea a NVDA. Hay dos tipos de motores, OCR y descriptor de imágenes. El OCR
+extrae texto de las imágenes. El descriptor de imágenes describe lo que se
+muestra visualmente en la imagen y lo muestra como texto (descripción
+general, puntos de referencia de color y demás). Es necesaria una conexión a
+Internet para utilizar este complemento, ya que la descripción de imágenes
+es proporcionada por servicios en línea. Estos servicios se conocen como
+motores en este complemento.</p>
+
+<h2>Configuración de motor</h2>
+
+<p>Puedes elegir motores de reconocimiento y configurarlos en detalle en la
+categoría <em>Online image describer</em> del diálogo de opciones de NVDA.</p>
+
+<p>El autor de este complemento ha registrado cuentas con cuota de API gratuita
+y ha configurado un servidor proxy en www.nvdacn.com para permitir que este
+complemento sea más fácil de probar al principio. La cuota de pruebas está
+limitada y puede ser cancelada por el proveedor de la API en cualquier
+momento. Se recomienda encarecidamente que registres tu propia clave
+siguiendo la guía de cada motor.</p>
+
+<p>Los siguientes ajustes se aplican a todos los motores.</p>
+
+<ul>
+<li>Copiar resultado al portapapeles después del reconocimiento: si se activa,
+el texto del resultado del reconocimiento se copiará al portapapeles tras
+el reconocimiento.</li>
+<li>Usar mensaje explorable para el texto del resultado: si se activa, el
+texto del resultado del reconocimiento se mostrará en una ventana
+emergente en lugar de enviarse por mensajes de voz y braille.</li>
+<li>Intercambiar el efecto de gestos repetidos con los que no están repetidos:
+por defecto, sólo se muestra un documento virtual con el resultado si
+pulsas el gesto correspondiente dos veces. Si haces esto frecuentemente
+puedes activar esta opción, de tal forma que sólo pulses una vez para
+abrir el visor de resultados.</li>
+<li>Activar registro más detallado con propósitos de depuración: algunos
+registros son esenciales para depurar, pero afectan al rendimiento y
+consumen mucho espacio. Activa esta opción sólo si el autor del
+complemento o un desarrollador de NVDA te lo pide.</li>
+<li>Tipo de proxy: indica el tipo de proxy que estás usando. Si no sabes qué
+es un proxy, no modifiques esta opción.</li>
+<li>Dirección del proxy: URL completa del proxy. Si no sabes qué es un proxy
+no cambies esta opción. Si eliges usar un proxy, este se verificará antes
+de guardar. Tras la verificación, un mensaje te indicará el resultado.</li>
+</ul>
+
+
+<p>Los siguientes ajustes significan lo mismo en todos los motores, por lo que
+se describen aquí para ahorrar espacio:</p>
+
+<ul>
+<li>Tipo de acceso a la API: controla cómo accedes a las distintas APIs de los
+servicios. Si eliges "Usar cuota pública", estarás usando la cuota
+gratuita de una cuenta registrada proporcionada por el autor del
+complemento. Si eliges "Usar tu propia clave de API", este complemento
+usará la cuota de tu propia cuenta.</li>
+<li>ID de aplicación, clave de API o clave secreta de API: si quieres usar la
+cuota de tu propia cuenta será necesario que dispongas de los tokens de
+acceso correspondientes. Algunos motores sólo necesitan una clave de
+API. Algunos motores necesitan dos tokens. Estos sólo son válidos si
+eliges "Usar tu propia clave de API" en tipo de acceso a la API.</li>
+</ul>
+
+
+<p>Ten en cuenta que la calidad y la precisión de los resultados dependen de
+muchos factores:</p>
+
+<ul>
+<li>Modelos y técnicas empleados por el proveedor del motor</li>
+<li>Calidad de la imagen subida</li>
+<li>Navegador de objetos oculto tras algo</li>
+<li>Resolución de pantalla</li>
+</ul>
+
+
+<h2>Descripción de imágenes en línea</h2>
+
+<h3>Órdenes de teclado</h3>
+
+<p>NVDA+alt+p reconoce el objeto bajo el navegador de objetos y lee el
+resultado. Si se pulsa dos veces, abre un documento virtual con el
+resultado.</p>
+
+<p>Ctrl+shift+NVDA+p reconoce la imagen desde el portapapeles. Después lee el
+resultado. Si se pulsa dos veces abre un documento virtual con el
+resultado. Se aceptan dos tipos de contenido:</p>
+
+<p>El primero es una imagen real(CF_DIB), que puedes poner en el portapapeles
+tomando una captura de pantalla con la tecla Imprimir pantalla o copiándola
+desde el navegador.</p>
+
+<p>El segundo es un archivo copiado desde el explorador de archivos.(CF_HDROP)</p>
+
+<p>Si no es una imagen, el complemento dirá "No hay imagen en el
+portapapeles". Si sólo hay texto en el portapapeles, el complemento
+intentará usarlo como una ruta local hacia un archivo. Si el texto no es una
+ruta, el complemento dirá "El texto del portapapeles no es una ruta
+válida". Si el archivo correspondiente no es una imagen, el complemento dirá
+"El archivo especificado en el portapapeles no es una imagen".</p>
+
+<p>Hay tres motores disponibles.</p>
+
+<h3>Motor de aprendizaje automático de Oliver Edholm</h3>
+
+<p>Se trata de un motor gratuito que describe imágenes. Si hay texto en ella le
+aplicará un OCR. Hay dos ajustes para este motor.</p>
+
+<ul>
+<li>Tipos de acceso: el autor de este complemento ha instalado un proxy en
+www.nvdacn.com para los usuarios que no pueden acceder a los servicios de
+Google. Si quieres usar este proxy, elige la opción "usar el proxy de
+www.nvdacn.com" el la configuración de tipos de acceso. Si quieres usar tu
+propia clave en los siguientes dos motores, sigue la guía que se encuentra
+en la sección del OCR de Microsoft Azure.</li>
+<li>Idioma del resultado: por defecto, inglés. Si configuras un idioma
+distinto al inglés, la descripción podría presentar problemas de
+traducción, ya que se genera automáticamente a partir del servicio de
+traducción inteligente.</li>
+</ul>
+
+
+<p>Seguridad:</p>
+
+<ul>
+<li>Las imágenes se envían a un script alojado en Google Cloud Platform para
+su análisis. Después del análisis las imágenes se eliminan del servidor y
+nunca se las vuelve a ver por allí.</li>
+</ul>
+
+
+<h3>Analizador de imágenes de Microsoft Azure</h3>
+
+<p>Este motor extrae un rico conjunto de características visuales basadas en el
+contenido de la imagen. Este motor está sólo en inglés. Si quieres que la
+descripción se muestre en otros idiomas, puedes usar el descriptor de
+imágenes de Microsoft Azure</p>
+
+<p>Entre las características visuales se incluyen:</p>
+
+<ul>
+<li>Adulto - detecta si la imagen es de naturaleza pornográfica (representa la
+desnudez o un acto sexual). También se detecta el contenido sexualmente
+sugerente.</li>
+<li>Marcas - detecta diversas marcas dentro de la imagen, incluyendo su
+ubicación aproximada. El argumento de marcas sólo está disponible en
+inglés.</li>
+<li>Categorías - clasifica el contenido de la imagen según una taxonomía
+definida en la documentación.</li>
+<li>Color - determina el color más llamativo, el color predominante y si la
+imagen está en blanco y negro.</li>
+<li>Descripción - describe el contenido de la imagen con una frase completa en
+los idiomas soportados.</li>
+<li>Caras - detecta si hay caras presentes. Si las hay, identifica sus
+coordenadas, género y edad.</li>
+<li>Tipo de imagen - detecta si la imagen es prediseñada o se ha dibujado a
+mano.</li>
+<li>Objetos - detecta diversos objetos dentro de la imagen, incluyendo su
+ubicación aproximada. El argumento de objetos sólo está disponible en
+inglés.</li>
+<li>Etiquetas - etiqueta la imagen con una lista detallada de palabras
+relacionadas con su contenido.</li>
+</ul>
+
+
+<p>Algunas características también proporcionan detalles adicionales:</p>
+
+<ul>
+<li>Famosos - identifica personas famosas si se detectan en la imagen.</li>
+<li>Puntos de referencia - identifica puntos de referencia si se detectan en
+la imagen.</li>
+</ul>
+
+
+<h3>Descriptor de imágenes de Microsoft Azure</h3>
+
+<p>Este motor genera descripciones de imágenes en un lenguaje natural con
+frases completas. La descripción se basa en una colección de etiquetas de
+contenido, también devueltas por la operación. Se puede generar más de una
+descripción para cada imagen. Las descripciones se ordenan según su
+puntuación de confianza. Hay dos ajustes para este motor.</p>
+
+<ul>
+<li>Idioma: el idioma que usará el servicio para devolver una descripción de
+la imagen. Por defecto, inglés.</li>
+<li>Número máximo de candidatos: cantidad máxima de descripciones candidatas
+que se devuelven. Por defecto 1.</li>
+</ul>
+
+
+<h2>OCR en línea</h2>
+
+<p>Los motores en línea se apoyan en el uso y presencia de los siguientes
+servicios.</p>
+
+<p>https://www.nvdacn.com</p>
+
+<p>https://ocr.space/ocrapi</p>
+
+<p>https://azure.microsoft.com/en-us/services/cognitive-services/</p>
+
+<p>http://ai.qq.com</p>
+
+<p>http://ai.baidu.com</p>
+
+<p>http://ai.sogou.com/</p>
+
+<h3>Órdenes de teclado</h3>
+
+<p>NVDA+alt+r reconoce el objeto actual del navegador de objetos con un motor
+OCR en línea y lee el resultado. Si se pulsa dos veces, abre un documento
+virtual con el resultado.</p>
+
+<p>Ctrl+shift+NVDA+r reconoce la imagen del portapapeles con un motor OCR en
+línea y después lee el resultado. Si se pulsa dos veces, abre un documento
+virtual con el resultado. Acepta dos tipos de contenido:</p>
+
+<p>El primero es una imagen real(CF_DIB), que puedes poner en el portapapeles
+tomando una captura de pantalla con la tecla Imprimir pantalla o copiándola
+desde el navegador.</p>
+
+<p>El segundo es un archivo copiado del explorador.(CF_HDROP) Si no es una
+imagen, el complemento dirá "No hay imagen en el portapapeles". Si sólo hay
+texto en el portapapeles, el complemento intentará utilizarlo como ruta a un
+archivo local. Si no es una ruta, el complemento dirá "El texto del
+portapapeles no es una ruta válida". Si el archivo correspondiente no es una
+imagen, el complemento dirá "El archivo especificado en el portapapeles no
+es una imagen".</p>
+
+<p>Existe también un gesto para cancelar el reconocimiento actual. Este gesto
+puede ser útil si piensas que has esperado demasiado tiempo y quieres
+cancelar. Además hay veces en las que no te gustaría que el mensaje de
+reconocimiento te molestara porque quieres revisar los mensajes que han
+llegado después de iniciar el reconocimiento. Este gesto se encuentra sin
+asignar.</p>
+
+<h2>Motores</h2>
+
+<p>Hay cinco motores disponibles.</p>
+
+<h3>OCR space</h3>
+
+<p>Este servicio consta de una API de pago con cuota gratuita proporcionada por
+https://ocr.space</p>
+
+<p>Soporta 24 idiomas, incluyendo:</p>
+
+<ul>
+<li>Árabe</li>
+<li>Búlgaro</li>
+<li>Chino (simplificado)</li>
+<li>Chino (tradicional)</li>
+<li>Croata</li>
+<li>Checo</li>
+<li>Danés</li>
+<li>Holandés</li>
+<li>Inglés</li>
+<li>Finés</li>
+<li>Francés</li>
+<li>Alemán</li>
+<li>Griego</li>
+<li>Húngaro</li>
+<li>Coreano</li>
+<li>Italiano</li>
+<li>Japonés</li>
+<li>Polaco</li>
+<li>Portugués</li>
+<li>Ruso</li>
+<li>Esloveno</li>
+<li>Español</li>
+<li>Sueco</li>
+<li>Turco</li>
+</ul>
+
+
+<p>Estos son los ajustes de este motor:</p>
+
+<ul>
+<li>Idioma: idioma de reconocimiento del texto. Por defecto inglés.</li>
+<li>Detectar orientación de la imagen: si se activa, la API gira
+automáticamente la imagen correctamente.</li>
+<li>Escalar imagen para mejorar la calidad: si se activa, la API escala la
+imagen internamente. Esto puede mejorar el resultado del OCR de forma
+significativa, especialmente para documentos PDF escaneados con baja
+resolución.</li>
+<li>Optimizar para reconocimiento de tablas: si se activa, la lógica del OCR
+se asegura de que el texto del resultado interpretado siempre se devuelva
+línea a línea. Esta opción se recomienda para hacer OCR en tablas,
+recibos, facturas, y todos los tipos de documentos entrantes que tengan
+estructura de tabla.</li>
+</ul>
+
+
+<p>Si quieres usar tu propia clave, también deberás especificar tu clave de
+API.</p>
+
+<p>Puedes obtener tu propia clave de API gratuita registrándote en <a href="https://ocr.space/ocrapi">OCR
+space</a></p>
+
+<p>Aquí hay una guía simple.</p>
+
+<p>Busca el enlace "Register for free API key". Pulsa en él y llegarás a un
+formulario que tendrás que rellenar.</p>
+
+<p>El formulario te pide que introduzcas los siguientes datos:</p>
+
+<ul>
+<li>Dirección de correo electrónico</li>
+<li>Nombre</li>
+<li>Apellidos</li>
+<li>¿Cómo tienes pensado usar la API del OCR?</li>
+</ul>
+
+
+<p>Después de rellenarlo y enviarlo, podrías tener que resolver un
+captcha. Después recibirás un correo de confirmación. Busca el enlace "Yes,
+subscribe me to this list." en ese correo. Accede a ese enlace y recibirás
+la clave de API pronto.</p>
+
+<h3>Microsoft Azure OCR</h3>
+
+<p>Este motor utiliza la API del OCR de los Servicios Cognitivos de Visión
+Artificial de Microsoft Azure.</p>
+
+<p>Soporta 24 idiomas, incluyendo:</p>
+
+<ul>
+<li>Chino simplificado</li>
+<li>Chino tradicional</li>
+<li>Checo</li>
+<li>Danés</li>
+<li>Holandés</li>
+<li>Inglés</li>
+<li>Finés</li>
+<li>Francés</li>
+<li>Alemán</li>
+<li>Griego</li>
+<li>Húngaro</li>
+<li>Italiano</li>
+<li>Japonés</li>
+<li>Coreano</li>
+<li>Noruego</li>
+<li>Polaco</li>
+<li>Portugués</li>
+<li>Ruso</li>
+<li>Español</li>
+<li>Sueco</li>
+<li>Turco</li>
+<li>Árabe</li>
+<li>Rumano</li>
+<li>Serbio cirílico</li>
+<li>Serbio latino</li>
+<li>Eslovaco</li>
+</ul>
+
+
+<p>Estos son los ajustes de este motor:</p>
+
+<ul>
+<li>Idioma: idioma de reconocimiento del texto. Por defecto detectar
+automáticamente.</li>
+<li>Detectar orientación de la imagen: si se activa, la API gira
+automáticamente la imagen correctamente.</li>
+</ul>
+
+
+<p>Si quieres usar tu propia clave, deberías obtener una clave de suscripción
+para utilizar la API de Visión Artificial de Microsoft desde el siguiente
+enlace:</p>
+
+<p>Paso 1: crea una cuenta.</p>
+
+<p>https://azure.microsoft.com/en-ua/try/cognitive-services/</p>
+
+<p>Ten en cuenta que debes crear una clave para la API de visión artificial. Es
+el primer botón "Obtener clave de API" que encuentras con la navegación de
+una sola letra. Actualmente Microsoft ofrece la opción de crear una clave de
+prueba que funciona durante 7 días. También puedes crear una cuenta gratuita
+de Azure para tener más pruebas. Al registrarse será obligatorio aportar los
+datos de una tarjeta de crédito. Si ya tienes una cuenta con suscripción,
+puedes saltarte este paso.</p>
+
+<p>Paso 2: despliega los servicios cognitivos</p>
+
+<p>Ahora tienes una cuenta de Azure.</p>
+
+<p>Primero, inicia sesión en el <a href="https://portal.azure.com">portal de Azure</a></p>
+
+<p>Espera hasta que oigas el mensaje "El portal está listo, has iniciado sesión
+en el portal de Azure".</p>
+
+<p>Busca el enlace llamado "Todos los recursos" después del botón "Todos los
+servicios" y actívalo.</p>
+
+<p>Espera hasta que oigas el mensaje "La hoja Todos los recursos está
+lista". El foco se encontrará en un cuadro de edición. Pulsa shift+tab hasta
+que llegues a un elemento de menú llamado Agregar y actívalo.</p>
+
+<p>Espera hasta que oigas el mensaje "Buscar en marketplace", escribe cognitive
+services y pulsa flecha abajo.</p>
+
+<p>Espera hasta que oigas el mensaje Lista de opciones Cognitive services 1 de
+5, y a continuación pulsa intro.</p>
+
+<p>Espera hasta que oigas el mensaje La hoja Cognitive Services está
+lista. Pulsa tab o la letra b para buscar un botón llamado Crear y actívalo.</p>
+
+<p>Espera hasta que oigas el mensaje La hoja Crear está lista. El foco se
+encontrará en un cuadro de edición. Escribe un nombre para este recurso. Ten
+en cuenta que el nombre del recurso sólo puede incluir caracteres
+alfanuméricos, '_,-', y no puede terminar con los dos últimos. Por ejemplo,
+podría llamarse nvdaocr.</p>
+
+<p>Pulsa tab para ir al cuadro combinado de suscripción. Normalmente puedes
+dejarlo como está.</p>
+
+<p>Pulsa tabulador para ir al cuadro combinado de región. Elige una que se
+encuentre cerca de tu ubicación actual. Recuerda esta región, ya que tendrás
+que especificarla en la configuración del motor.</p>
+
+<p>Pulsa tabulador para ir al cuadro combinado de capa. Normalmente una capa
+gratuita como f0 es adecuada. Si no es suficiente para ti, puedes elegir
+otra capa después de leer todos los detalles del precio en el enlace "Ver
+detalles completos del precio".</p>
+
+<p>Tabula hasta que llegues a un cuadro de edición llamado Crear nuevo grupo de
+recursos. Deberías crear uno si no tienes ninguno. Busca el botón Crear
+Nuevo. Después busca el botón Crear y actívalo para crear el recurso.</p>
+
+<p>Espera hasta que oigas el mensaje "Despliegue completado_".</p>
+
+<p>Después busca el botón "Ir al recurso". A veces es necesario subir y activar
+el botón Notificaciones para encontrar este botón.</p>
+
+<p>Espera hasta que oigas el mensaje La hoja Primeros pasos está lista.</p>
+
+<p>Busca el enlace llamado Claves y actívalo.</p>
+
+<p>Espera hasta que oigas el mensaje La hoja Gestionar claves está lista.</p>
+
+<p>Busca un cuadro de edición llamado Clave 1 o Clave 2. El contenido de ese
+cuadro de edición es la clave de API que se necesita para la configuración
+del motor. Pulsa ctrl+c para copiarla al portapapeles. Después ya podrás
+rellenar estos dos ajustes en el motor, indispensables si utilizas tu propia
+clave de API.</p>
+
+<ul>
+<li>Región de recursos de Azure: la región que elegiste al desplegar los
+servicios cognitivos en el portal de Azure.</li>
+<li>Clave de API: la clave que obtienes al desplegar con éxito los servicios
+cognitivos en el portal de Azure, se recomienda la clave 2.</li>
+</ul>
+
+
+<h3>Baidu OCR</h3>
+
+<p>Este también ofrece una API de pago con cuota gratuita proporcionada por
+Baidu. El OCR de Baidu soporta 10 idiomas, incluyendo:</p>
+
+<ul>
+<li>Una mezcla entre chino e inglés</li>
+<li>Inglés</li>
+<li>Portugués</li>
+<li>Francés</li>
+<li>Alemán</li>
+<li>Italiano</li>
+<li>Español</li>
+<li>Ruso</li>
+<li>Japonés</li>
+<li>Coreano</li>
+</ul>
+
+
+<p>Este motor también puede obtener la posición de cada carácter</p>
+
+<p>Aquí están sus ajustes:</p>
+
+<ul>
+<li>Obtener posición de cada carácter: permite operar de forma más precisa en
+algunas aplicaciones inaccesibles. Al activar esta opción el
+reconocimiento se volverá algo más lento.</li>
+<li>Usar API precisa: si se habilita usará otro punto de conexión. Esta
+conexión precisa dura más tiempo, pero tiene mejor calidad y (si usas tu
+propia clave de API) el precio es más alto.</li>
+</ul>
+
+
+<p>Tiene cuatro conexiones con límites de cuota separados.</p>
+
+<ul>
+<li>OCR básico sin información sobre la ubicación del texto: actualmente 50000
+veces al día.</li>
+<li>OCR básico con información sobre la ubicación del texto: actualmente 500
+veces al día.</li>
+<li>OCR preciso sin información sobre la ubicación del texto: actualmente 500
+veces al día.</li>
+<li>OCR preciso con información sobre la ubicación del texto: actualmente 50
+veces al día.</li>
+</ul>
+
+
+<p>Si pulsas el gesto que sólo lee el resultado, estarás utilizando la conexión
+que no da información sobre la posición del texto.</p>
+
+<p>Si pulsas el gesto que muestra el visor de resultados, usarás la conexión
+que muestra información sobre la ubicación del texto.</p>
+
+<p>Aunque proporciona una cuota gratuita bastante generosa, su sitio web sólo
+está en chino y no es muy accesible.</p>
+
+<h3>Sougou OCR y Tencent AI OCR</h3>
+
+<p>Estas dos APIs pueden usarse de forma gratuita con límite de frecuencia. Si
+quieres sobrepasar el límite, puedes registrar tu propia clave de API. Las
+webs de estas dos APIs también se encuentran sólo en chino y tampoco son muy
+accesibles.</p>
+
+<p>No hay información sobre los idiomas soportados en la documentación de esta
+API. Según las pruebas realizadas, se soportan el chino, el inglés y una
+mezcla de ambos. No hay configuración adicional para esta API.</p>
+
+<h2>Registro de cambios</h2>
+
+<h3>0.16</h3>
+
+<ul>
+<li>Se ha añadido un gesto para cancelar el reconocimiento</li>
+<li><p>Se han corregido los siguientes problemas:</p>
+
+<ul>
+<li>No se anunciaban los cambios de estado en la lista de casillas de
+verificación</li>
+<li>Se intercambia el efecto del gesto repetido que no funcionaba en
+Online Image Describer</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>0.15</h3>
+
+<ul>
+<li>Se ha añadido una opción para mostrar una ventana que contiene el mensaje
+en vez de usar mensajes de voz y braille para el texto de los resultados</li>
+<li>Las casillas de verificación con las características visuales del
+analizador de imágenes de Microsoft Azure ahora están en una lista.</li>
+<li><p>Se han corregido los siguientes problemas:</p>
+
+<ul>
+<li>No se podía cargar un archivo de imagen JPG desde el portapapeles</li>
+<li>El objeto del documento con el resultado no se mostraba después del
+reconocimiento.</li>
+<li>La posición en los objetos del documento de resultados no era fiable
+si la imagen se redimensionaba internamente.</li>
+<li>El resultado del analizador de imágenes de Microsoft Azure se mostraba
+en una línea, complicando la navegación.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>0.14</h3>
+
+<ul>
+<li><p>Corregidos algunos fallos:</p>
+
+<ul>
+<li>No podías usar tu propia clave de API en los motores de Microsoft
+Azure</li>
+<li>No se podía obtener el texto del resultado si había una pantalla
+braille</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>0.13</h3>
+
+<ul>
+<li>Ahora el complemento funciona al recargar los plugins sin reiniciar
+(NVDA+ctrl+f3)</li>
+</ul>
+
+
+<h3>0.12</h3>
+
+<ul>
+<li>Corregido el mensaje en modo exploración del descriptor de imágenes de
+Microsoft Azure</li>
+<li>El tono del color ahora se representa con la descripción de colores de
+NVDA.</li>
+<li>Se ha mejorado el formato de resultado del analizador de imágenes de
+Microsoft Azure</li>
+<li>Se ha mejorado la documentación a partir de los comentarios de la revisión</li>
+<li>Corregida inconsistencia de gestos.</li>
+<li>Ctrl+shift+NVDA para el portapapeles y NVDA+alt para el navegador de
+objetos</li>
+<li>Se ha corregido un error de información ausente de imagen mientras se
+reconocía.</li>
+</ul>
+
+
+<h3>0.11</h3>
+
+<ul>
+<li>Se ha añadido la capacidad de describir imágenes</li>
+<li>Se ha cambiado la descripción corta del complemento a Online Image
+Describer</li>
+</ul>
+
+
+<h3>0.10</h3>
+
+<ul>
+<li>Corregido un error al utilizar la clave propia de API del usuario en la
+API de Sougou.</li>
+<li>Corregido un problema de panel desconocido añadiendo los ajustes a
+supportedSettings</li>
+</ul>
+
+
+<h3>0.9</h3>
+
+<ul>
+<li>Corregido un problema que provocaba que no hubiera efecto alguno al
+realizar una doble pulsación.</li>
+<li>Se ha revisado la documentación para reflejar los cambios más recientes en
+el código.</li>
+<li>Se ha clarificado qué tipo de imágenes del portapapeles se soportan y cómo
+copiarlas para reconocerlas.</li>
+<li>Solucionado el problema que impedía abrir el visor de resultados cuando se
+hacía el reconocimiento desde el portapapeles.</li>
+<li>Se ha añadido soporte para reconocer una imagen desde una ruta de archivo
+copiada al portapapeles.</li>
+</ul>
+
+
+<h3>0.8</h3>
+
+<ul>
+<li>Se ha añadido un aviso más amigable si el resultado del reconocimiento
+está vacío.</li>
+<li>Resuelto otro problema que provocaba un mal funcionamiento si la ruta a
+los archivos de configuración contiene caracteres no ASCII</li>
+</ul>
+
+
+<h3>0.6</h3>
+
+<ul>
+<li>Se han añadido opciones de proxy para aquellos usuarios que accedan a
+Internet a través de un proxy específico.</li>
+<li>Se han añadido varias opciones generales.</li>
+<li>Se ha corregido un error de decodificación Unicode causado por el envío de
+una URL Unicode a urllib3.</li>
+</ul>
+
+
+<h3>0.5</h3>
+
+<ul>
+<li>Se ha corregido un error Unicode que ocurría si el motor del OCR subía el
+archivo de imagen directamente en vez de codificarlo en Base64.</li>
+<li>Modificado el gesto para reconocer el portapapeles a ctrl+NVDA+shift+r, ya
+que NVDA+shift+r se usa en Word y Excel para definir cabeceras de fila en
+tablas, o para eliminar las definiciones si se pulsan dos veces.</li>
+</ul>
+
+
+<h3>0.4</h3>
+
+<ul>
+<li>Se ha corregido un error de instalación que ocurría cuando la ruta a la
+configuración contenía caracteres no ASCII</li>
+<li>Se ha cambiado el gesto para evitar una colisión con Golden Cursor.</li>
+<li>Se ha cambiado el motor por defecto a Microsoft Azure, ya que es capaz de
+detectar automáticamente el idioma del texto.</li>
+</ul>
+
+
+<h3>0.3</h3>
+
+<ul>
+<li>Se ha añadido documentación detallada sobre cómo obtener la clave de API
+del OCR de Microsoft Azure</li>
+<li>Se ha corregido un problema con las nuevas instalaciones.</li>
+<li>Eliminado el OCR automático, ya que esta función es problemática y puede
+resultar confusa con los motores en línea. AutoOCR se liberará como un
+complemento separado cuando sea suficientemente estable.</li>
+</ul>
+
+

@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/onlineOCR.es.html",
 "https://addons.nvda-project.org/addons/charInfo.es.html",
 "https://addons.nvda-project.org/addons/wordCount.es.html",
 "https://addons.nvda-project.org/addons/ImageDescriber.es.html",
