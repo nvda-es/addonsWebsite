@@ -370,10 +370,23 @@ definiciones.</li>
 <h1>Versión 6.5</h1>
 
 <ul>
+<li>Se corrigió un par de errores en la reproducción de efectos de sonido;
+
+<ul>
+<li>un par de ciclos "for" con valores máximos incorrectos causaron la llamada a un efecto de sonido inexistente.</li>
+</ul>
+</li>
 <li>Solucionado el error en la hora local en "detalles";
 
 <ul>
 <li>La conversión de tiempo de 12 horas dio un error.</li>
+</ul>
+</li>
+<li>Se ha corregido un error en el informe de pronóstico del tiempo de Yahoo;
+
+<ul>
+<li>En algunas ciudades los pronósticos comienzan desde el día anterior y no desde el actual.</li>
+<li>La corrección de estas ciudades conlleva la pérdida de los últimos días de pronóstico proporcional al desajuste de fechas (si los días de pronóstico se establecen en 10).</li>
 </ul>
 </li>
 </ul>

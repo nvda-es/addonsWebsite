@@ -7,24 +7,88 @@
 </ul>
 
 
+<h2>Información de contacto</h2>
+
+<p>El autor está disponible en la mayoría de listas inglesas relacionadas con
+ceguera y programación como program-l, la lista de desarrolladores de
+complementos de NVDA, la lista nvda-devel, y la lista NFB cs. En caso de que
+no se encuentre disponible, puedes contactar con él escribiendo a
+ajborka@gmail.com.</p>
+
+<h2>Documentación</h2>
+
 <p>El kit del desarrollador de NVDA asiste a los desarrolladores ciegos o
 deficientes visuales en la difícil tarea de crear diseños visualmente
-atractivos de cualquier proyecto de desarrollo web o software. Actualmente,
-proporciona la ubicación de los objetos visibles en pantalla. El complemento
-proporciona esta ubicación en píxeles. El punto de inicio de cada objeto es
-la esquina superior izquierda en relación con la esquina superior izquierda
-de la ventana o pantalla. Por ejemplo, si el complemento indica izquierda:
-15, arriba: 100, significa que el objeto con el foco está a 15 píxeles del
-borde izquierdo de la pantalla y a 100 del borde superior. La anchura y
-altura del control también se proporcionan en píxeles. Esto cuenta el
-contenido, relleno y márgenes de cada control involucrado.</p>
+atractivos en cualquier proyecto de desarrollo software o web. Esto lo hace
+proporcionando lo siguiente sobre un objeto o control:</p>
 
-<h2>Atajos de teclado</h2>
+<h3>Posición del objeto (en píxeles)</h3>
 
 <ul>
-<li>NVDA+shift+suprimir del teclado numérico: obtener información de tamaño y
-posición del elemento con el foco o el objeto bajo el navegador de
-objetos.</li>
+<li>borde izquierdo</li>
+<li>borde superior</li>
+<li>borde derecho</li>
+<li>borde inferior</li>
+<li>esquina superior izquierda</li>
+<li>esquina superior derecha</li>
+<li>esquina inferior izquierda</li>
+<li>esquina inferior derecha</li>
+<li>centro absoluto</li>
+<li>altura</li>
+<li>anchura</li>
+</ul>
+
+
+<h3>Compatibilidad con navegadores</h3>
+
+<p>Las herramientas del desarrollador funcionarán con Firefox, Chrome e
+Internet Explorer. Sin embargo, para conseguir que funcionen bien con Chrome
+e Internet Explorer, debes añadir lo siguiente al principio de todos los
+archivos css: <code>* {box-sizing: box-border; }</code>. Esto permite a Chrome e
+Internet Explorer incluir bordes, relleno y contenido del elemento como
+parte del tamaño total del elemento.</p>
+
+<h3>Atajos de teclado</h3>
+
+<p>El kit del desarrollador hace uso de la combinación de teclado ctrl+windows
+como tecla modificadora. Cualquier atajo de los que se listan debe incluir
+la tecla modificadora del kit de herramientas para funcionar adecuadamente</p>
+
+<h4>Atajos de teclado de escritorio (mira más abajo para ver los atajos de teclado portátiles)</h4>
+
+<ul>
+<li>1 del teclado numérico: Obtener la ubicación de la esquina inferior
+izquierda.</li>
+<li>2 del teclado numérico: Obtener la ubicación del borde inferior</li>
+<li>3 del teclado numérico: Obtener la posición de la esquina inferior
+derecha.</li>
+<li>4 del teclado numérico: Obtener la ubicación del borde izquierdo.</li>
+<li>5 del teclado numérico: Obtener la ubicación del centro absoluto.</li>
+<li>6 del teclado numérico: Obtener la ubicación del borde derecho.</li>
+<li>7 del teclado numérico: Obtener la ubicación de la esquina superior
+izquierda.</li>
+<li>8 del teclado numérico: Obtener la ubicación del borde superior</li>
+<li>9 del teclado numérico: Obtener la ubicación de la esquina superior
+derecha.</li>
+<li>más del telcado numérico: Obtener la altura.</li>
+<li>intro del teclado numérico: Obtener la anchura.</li>
+</ul>
+
+
+<h4>Atajos de teclado portátil</h4>
+
+<ul>
+<li>m: Obtener la ubicación de la esquina inferior izquierda.</li>
+<li>coma (,): Obtener la ubicación del borde inferior.</li>
+<li>punto (.): Obtener la ubicación de la esquina inferior derecha.</li>
+<li>j: Obtener la ubicación del borde izquierdo.</li>
+<li>k: Obtener ubicación del centro absoluto.</li>
+<li>l: Obtener la ubicación del borde derecho.</li>
+<li>u: Obtener la ubicación de la esquina superior izquierda.</li>
+<li>i: Obtener la ubicación del borde superior.</li>
+<li>o: Obtener la ubicación de la esquina superior derecha.</li>
+<li>[: Obtener la altura.</li>
+<li>]: Obtener la anchura.</li>
 </ul>
 
 
