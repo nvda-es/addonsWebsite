@@ -8,88 +8,136 @@
 </ul>
 
 
-<h2>Información de contacto</h2>
+<p>Developer Toolkit (DTK) es un complemento para NVDA que asiste a los
+desarrolladores ciegos o con baja visión a la hora de crear interfaces de
+usuario visualmente atractivas o contenido web de forma autónoma. Esto se
+consigue activando DTK, navegando por la interfaz de usuario o el contenido
+web, y pulsando gestos para obtener información sobre el aspecto, la
+posición y el tamaño del control con el foco. Para activar o desactivar DTK,
+pulsa alt+windows+k en tu teclado. Para seguir usando el ordenador con
+normalidad, desactiva DTK antes de continuar con tus tareas.</p>
 
-<p>El autor está disponible en la mayoría de listas inglesas relacionadas con
-ceguera y programación como program-l, la lista de desarrolladores de
-complementos de NVDA, la lista nvda-devel, y la lista NFB cs. En caso de que
-no se encuentre disponible, puedes contactar con él escribiendo a
-ajborka@gmail.com.</p>
+<h2>Gestos</h2>
 
-<h2>Documentación</h2>
-
-<p>El kit del desarrollador de NVDA asiste a los desarrolladores ciegos o
-deficientes visuales en la difícil tarea de crear diseños visualmente
-atractivos en cualquier proyecto de desarrollo software o web. Esto lo hace
-proporcionando lo siguiente sobre un objeto o control:</p>
-
-<h3>Posición del objeto (en píxeles)</h3>
+<p>Los siguientes gestos se encuentran disponibles cuando DTK está activado.</p>
 
 <ul>
-<li>borde izquierdo</li>
-<li>borde superior</li>
-<li>borde derecho</li>
-<li>borde inferior</li>
-<li>esquina superior izquierda</li>
-<li>esquina superior derecha</li>
-<li>esquina inferior izquierda</li>
-<li>esquina inferior derecha</li>
-<li>centro absoluto</li>
-<li>altura</li>
-<li>anchura</li>
+<li>Alt+windows+k - Activa o desactiva las funciones de DTK.</li>
+<li>Flecha izquierda - Moverse al elemento hermano anterior.</li>
+<li>Flecha derecha - Moverse al siguiente elemento hermano.</li>
+<li>Flecha arriba - Moverse al elemento padre.</li>
+<li>Flecha abajo - Moverse al primer elemento hijo.</li>
+<li>Ctrl+inicio - Moverse al elemento padre de más alto nivel.</li>
+<li>A - En el contenido web, verbaliza los atributos HTML. Pulsa dos veces
+rápidamente para copiarlos al portapapeles.</li>
+<li>B - Verbalizar la posición del borde inferior del objeto. Pulsa dos veces
+rápidamente para copiarla al portapapeles.</li>
+<li>C - Verbalizar la cantidad de hijos que contiene el objeto. Pulsa dos
+veces rápidamente para copiarla al portapapeles.</li>
+<li>Ctrl+d - Activar o desactivar mensajes detallados.</li>
+<li>F - En el contenido web, verbaliza la información de fuente y formato del
+objeto. Pulsa dos veces rápidamente para copiarla al portapapeles.</li>
+<li>H - Verbalizar la altura del objeto. Pulsa dos veces rápidamente para
+copiarla al portapapeles.</li>
+<li>L - Verbalizar la posición del borde izquierdo del objeto. Pulsa dos veces
+rápidamente para copiarla al portapapeles.</li>
+<li>R - Verbalizar la posición del borde derecho del objeto. Pulsa dos veces
+rápidamente para copiarla al portapapeles.</li>
+<li>S - Verbalizar la cantidad de hermanos relativos al objeto. Pulsa dos
+veces rápidamente para copiarla al portapapeles.</li>
+<li>T - Verbalizar la posición del borde superior del objeto. Pulsa dos veces
+rápidamente para copiarla al portapapeles.</li>
+<li>V - Verbalizar la versión de Developer Toolkit. Pulsa dos veces
+rápidamente para copiarla al portapapeles.</li>
+<li>W - Verbalizar la anchura del objeto. Pulsa dos veces rápidamente para
+copiarla al portapapeles.</li>
 </ul>
 
 
-<h3>Compatibilidad con navegadores</h3>
-
-<p>Las herramientas del desarrollador funcionarán con Firefox, Chrome e
-Internet Explorer. Sin embargo, para conseguir que funcionen bien con Chrome
-e Internet Explorer, debes añadir lo siguiente al principio de todos los
-archivos css: <code>* {box-sizing: box-border; }</code>. Esto permite a Chrome e
-Internet Explorer incluir bordes, relleno y contenido del elemento como
-parte del tamaño total del elemento.</p>
-
-<h3>Atajos de teclado</h3>
-
-<p>El kit del desarrollador hace uso de la combinación de teclado ctrl+windows
-como tecla modificadora. Cualquier atajo de los que se listan debe incluir
-la tecla modificadora del kit de herramientas para funcionar adecuadamente</p>
-
-<h4>Atajos de teclado de escritorio (mira más abajo para ver los atajos de teclado portátiles)</h4>
+<h2>Notas</h2>
 
 <ul>
-<li>1 del teclado numérico: Obtener la ubicación de la esquina inferior
-izquierda.</li>
-<li>2 del teclado numérico: Obtener la ubicación del borde inferior</li>
-<li>3 del teclado numérico: Obtener la posición de la esquina inferior
-derecha.</li>
-<li>4 del teclado numérico: Obtener la ubicación del borde izquierdo.</li>
-<li>5 del teclado numérico: Obtener la ubicación del centro absoluto.</li>
-<li>6 del teclado numérico: Obtener la ubicación del borde derecho.</li>
-<li>7 del teclado numérico: Obtener la ubicación de la esquina superior
-izquierda.</li>
-<li>8 del teclado numérico: Obtener la ubicación del borde superior</li>
-<li>9 del teclado numérico: Obtener la ubicación de la esquina superior
-derecha.</li>
-<li>más del telcado numérico: Obtener la altura.</li>
-<li>intro del teclado numérico: Obtener la anchura.</li>
+<li>DTK ayuda a los desarrolladores a crear interfaces de usuario. Este
+complemento no es una herramienta de análisis para interfaces de usuario
+de terceros.</li>
+<li>Al usar Chrome, no todos los elementos web aparecerán en el árbol de
+accesibilidad. Para forzar que un elemento aparezca en el árbol de
+accesibilidad, dale un atributo title.</li>
+<li>Al usar Firefox, podrían aparecer elementos fantasma en el árbol de
+accesibilidad. Por ejemplo, un marco de texto puede aparecer como un
+contenedor de bloques de texto. Estos elementos fantasma forman parte de
+la implementación del árbol de accesibilidad de Mozilla.</li>
+<li>Edge no se ha probado completamente. Por lo tanto, cualquier cosa que
+anuncie el complemento debería tratarse con cuidado.</li>
+<li>En el contenido web, todo a excepción de un bloque de texto es un
+contenedor. Por ejemplo, un párrafo (etiqueta p) puede contener varios
+elementos dentro.</li>
+<li>las etiquetas div son anunciadas como secciones en HTML5.</li>
+<li>Para evitar que los nombres de los elementos web aparezcan como "None", da
+siempre a los elementos un atributo title.</li>
+<li>La información de fuente sólo se encuentra disponible en el contenido
+web. Esto debería corregirse en una futura versión.</li>
+<li>El complemento no enseña al usuario conceptos adecuados de diseño de
+contenido web o interfaces de usuario.</li>
 </ul>
 
 
-<h4>Atajos de teclado portátil</h4>
+<h2>Problemas conocidos</h2>
 
 <ul>
-<li>m: Obtener la ubicación de la esquina inferior izquierda.</li>
-<li>coma (,): Obtener la ubicación del borde inferior.</li>
-<li>punto (.): Obtener la ubicación de la esquina inferior derecha.</li>
-<li>j: Obtener la ubicación del borde izquierdo.</li>
-<li>k: Obtener ubicación del centro absoluto.</li>
-<li>l: Obtener la ubicación del borde derecho.</li>
-<li>u: Obtener la ubicación de la esquina superior izquierda.</li>
-<li>i: Obtener la ubicación del borde superior.</li>
-<li>o: Obtener la ubicación de la esquina superior derecha.</li>
-<li>[: Obtener la altura.</li>
-<li>]: Obtener la anchura.</li>
+<li>Los usuarios no son notificados automáticamente del estado de activación o
+desactivación de las funciones de DTK al cambiar de ventana.</li>
+<li>Los márgenes de un control sólo están disponibles en el contenido web, y
+dependen del navegador.</li>
+<li>Los atributos de borde y relleno no están disponibles. Este es un problema
+de larga duración.</li>
+<li>No hay forma de restringir DTK a un tipo de contenido concreto o ventana
+de aplicación.</li>
+<li>La información de fuente que se obtiene al pulsar la f está desordenada,
+pero esto se corregirá en próximas versiones.</li>
+</ul>
+
+
+<h2>Historial de versiones</h2>
+
+<h3>2019.1.2</h3>
+
+<ul>
+<li>DTK ahora anuncia valores de posición y tamaño si estos son 0.</li>
+<li>La navegación ahora respeta el ajuste de mensajes detallados.</li>
+<li>El anuncio de información de tamaño y posición ahora es más conciso.</li>
+<li>Mejoras de estabilidad.</li>
+</ul>
+
+
+<h3>2019.1.1</h3>
+
+<ul>
+<li>DTK ya no intentará cargarse varias veces a sí mismo al anunciar el número
+de versión.</li>
+<li>Las funciones de DTK vendrán desactivadas al instalar. Anteriormente, las
+funciones de DTK se activaban al instalar. Esto es distinto a activar o
+desactivar el complemento desde las herramientas de NVDA &gt; ventana
+Gestionar complementos.</li>
+<li>Los mensajes presentados al usuario ahora pueden contener caracteres no
+ASCII.</li>
+<li>Al pulsar gestos como a, b, c, f, h, l, r, s, t, v y w ya no se interrumpe
+la voz de NVDA si se copia información al portapapeles.</li>
+</ul>
+
+
+<h3>2019.1</h3>
+
+<ul>
+<li>Corregido un problema de compatibilidad por el que DTK declaraba una
+versión mínima de NVDA que todavía no había sido publicada.</li>
+</ul>
+
+
+<h3>2019.0 (versión estable inicial)</h3>
+
+<ul>
+<li>Compilación inicial con navegación básica.</li>
 </ul>
 
 
