@@ -1,31 +1,48 @@
 
 <h1>UnicodeBrailleInput</h1>
 <ul>
-<li>Autores: Mesar Hameed, Patrick Zajda.</li>
+<li>Autores: Mesar Hameed, Patrick Zajda, Leonard de Ruijter.</li>
 <li>descargar <a href="https://addons.nvda-project.org/files/get.php?file=ubi">versión estable</a></li>
-<li>descargar <a href="https://addons.nvda-project.org/files/get.php?file=ubi-dev">versión en desarrollo</a></li>
 </ul>
 
 
 <p>Este complemento te permite convertir texto de braille
-(P.e.. 1345-1236-145-1) a caracteres braille Unicode.</p>
+(P.e.. 1345-1236-145-1) a caracteres braille Unicode. También puedes
+convertir texto utilizando la tabla de entrada Braille seleccionada
+actualmente.</p>
 
 <p>El propósito de este complemento especializado es hacer más fácil el ayudar
 a mejorar las tablas de liblouis y añadir pruebas automáticas para tu
 idioma. Con la incorporación de tablas braille unicode en NVDA 2017.3, este
-complemento ya no se requiere, ya que los usuarios pueden elegir introducir
-braille con la tabla nueva.</p>
+complemento ya no se requiere para esto, ya que los usuarios pueden elegir
+introducir braille con la tabla nueva. Sin embargo, este complemento todavía
+puede ayudar a convertir texto normal en Braille Unicode según una tabla
+particular de entrada.</p>
 
 <h2>Utilización</h2>
 
 <ul>
 <li>Abrir un editor de textos que soporte unicode (por ejemplo Notepad más
-más)</li>
+más).</li>
 <li>Pulsa NVDA+Ctrl+U o elige Entrada de Braille Unicode encontrada en el menú
-herramientas de NVDA</li>
-<li>Escribir el texto braille en forma numérica.</li>
+herramientas de NVDA.</li>
+<li>Elige si tu entrada consta de puntos Braille (p.e. 1345-1236-145-1) o
+texto normal según la tabla Braille actual (p.e. holandés).</li>
+<li>Escribir el texto braille en forma numérica o texto normal,
+respectivamente.</li>
 <li>Pulsar Aceptar.</li>
 <li>Los caracteres Unicode se copiarán en el portapapeles listos para pegarse.</li>
+</ul>
+
+
+<h2>Cambios para 3.0</h2>
+
+<ul>
+<li>Nuevo responsable de mantenimiento: Leonard de Ruijter.</li>
+<li>El complemento es compatible con Python 3 y, por lo tanto, con con NVDA
+2019.3 y posterior.</li>
+<li>Añadida la capacidad de crear Braille Unicode a partir de texto normal
+siguiendo la tabla de entrada Braille seleccionada.</li>
 </ul>
 
 
