@@ -7,6 +7,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/debugHelper.es.html",
+"https://addons.nvda-project.org/addons/notepadPlusPlus.es.html",
 "https://addons.nvda-project.org/addons/beepKeyboard.es.html",
 "https://addons.nvda-project.org/addons/developerToolkit.es.html",
 "https://addons.nvda-project.org/addons/addonsHelp.es.html",
@@ -93,9 +95,7 @@ addresses=[
 "https://addons.nvda-project.org/addons/word.es.html",
 "https://addons.nvda-project.org/addons/instantTranslate.es.html"
 ]
-warnings={
-"sentenceNav":"Alteración de fuente: URL externa de complemento sustituida por propia",
-}
+warnings={}
 
 for a in addresses:
 	r=requests.get(a)
