@@ -12,7 +12,7 @@
 Playlist Studio y otras aplicaciones de StationPlaylist, así como utilidades
 para controlar Studio desde cualquier lugar. Entre las aplicaciones
 soportadas se encuentran Studio, Creator, la herramienta de pista, VT
-Recorder y Streamer, así como los codificadores SAM y SPL.</p>
+Recorder y Streamer, así como los codificadores SAM, SPL y AltaCast.</p>
 
 <p>Para más información acerca del complemento, lee la <a href="https://github.com/josephsl/stationplaylist/wiki/SPLAddonGuide">guía del
 complemento</a>. Para los desarrolladores que busquen cómo compilar el
@@ -104,6 +104,7 @@ personalizadas.</p>
 <li>SPL Controller layer.</li>
 <li>Anunciar el estado de Studio tal como reproducción de pista desde otros
 programas.</li>
+<li>Anunciar el estado del codificador desde otros programas.</li>
 <li>Capa SPL Assistant desde SPL Studio.</li>
 <li>Anuncia el tiempo incluyendo segundos desde SPL Studio.</li>
 <li>Anuncia la temperatura.</li>
@@ -119,10 +120,9 @@ buscador de rango de tiempo.</li>
 </ul>
 
 
-<h2>Órdenes adicionales al utilizar los codificadores Sam o SPL</h2>
+<h2>Órdenes adicionales al utilizar los codificadores</h2>
 
-<p>Las siguientes órdenes  están disponibles al utilizar los codificadores Sam
-o SPL :</p>
+<p>Las siguientes órdenes  están disponibles al utilizar los codificadores:</p>
 
 <ul>
 <li>F9: conecta a un servidor de streaming.</li>
@@ -150,11 +150,12 @@ opciones tales como etiqueta de cadena.</li>
 <li>Control+NVDA+1: posición del codificador.</li>
 <li>Control+NVDA+2: etiqueta de cadena.</li>
 <li>Control+NVDA+3 desde el codificador SAM: formato del codificador.</li>
-<li>Control+NVDA+3 desde el codificador SPL : Opciones del codificador.</li>
+<li>Control+NVDA+3 desde los codificadores SPL y AltaCast: Opciones del
+codificador.</li>
 <li>Control+NVDA+4 desde el codificador SAM: estado de conexión del
 codificador.</li>
-<li>Control+NVDA+4 desde el codificador SPL: velocidad de transferencia o
-estado de la conexión.</li>
+<li>Control+NVDA+4 desde el codificador SPL o AltaCast: velocidad de
+transferencia o estado de la conexión.</li>
 <li>Control+NVDA+5 desde el codificador SAM: descripción del Estado de la
 conexión.</li>
 </ul>
@@ -350,6 +351,19 @@ Windows 8 o posterior y tienes NVDA 2012.3 o posterior instalado, puedes
 realizar algunas órdenes de Studio desde la pantalla táctil. Primero utiliza
 un toque con tres dedos para cambiar a modo SPL, entonces utiliza las
 órdenes táctiles listadas arriba para llevar a cabo tareas.</p>
+
+<h2>Versión 19.10/18.09.12-LTS</h2>
+
+<ul>
+<li>Acortado el mensaje de anuncio de versión de Studio cuando este se inicia.</li>
+<li>Se anunciará información de versión de Creator al iniciarlo.</li>
+<li>19.10: se puede asignar una orden personalizada para la orden de estado
+del codificador desde el controlador SPL (E) de tal forma que se pueda
+usar desde cualquier parte.</li>
+<li>Soporte inicial para el codificador AltaCast (Plugin para Winamp, Studio
+debe reconocerlo). Las órdenes son las mismas que las del codificador SPL.</li>
+</ul>
+
 
 <h2>Versión 19.08.1</h2>
 
