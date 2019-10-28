@@ -1,32 +1,86 @@
 
 <h1>PC Keyboard Braille Input for NVDA</h1>
 <ul>
-<li>Autor: NV Access Limited</li>
-<li>Copyright: 2012-2014 NV Access Limited</li>
+<li>Autor: NV Access Limited, Noelia Ruiz Martínez</li>
+<li>Copyright: 2012-2019 NV Access Limited, Noelia Ruiz Martínez</li>
 <li>Licencia: GNU General Public License versión 2.0</li>
-<li>Descargar: <a href="https://addons.nvda-project.org/files/get.php?file=pckbbrl">versión 2014.1</a></li>
+<li>Descargar: <a href="https://addons.nvda-project.org/files/get.php?file=pckbbrl">versión estable</a> (compatible con NVDA 2019.3 o posterior)</li>
+<li>Descargar: <a href="https://addons.nvda-project.org/files/get.php?file=pckbbrl-dev">versión de desarrollo</a> (compatible con NVDA 2019.3 o
+posterior)</li>
+<li><a href="https://addons.nvda-project.org/files/get.php?file=pckbbrl-o">Versión 2014.1</a> (compatible desde NVDA 2017.3 a 2019.2)</li>
 </ul>
 
 
 <p>Este complemento para NVDA permite introducir braille a través del teclado
-del PC.  Actualmente, sólo se soporta la distribución de teclado QWERTY
-Inglés.</p>
+del PC.  Actualmente se soportan los siguientes teclado:</p>
+
+<ul>
+<li>Teclado QWERTY inglés.</li>
+<li>Francés (Francia).</li>
+<li>Alemán (Alemania).</li>
+<li>Italiano (Italia).</li>
+<li>Persa.</li>
+<li>Portugués (Portugal).</li>
+<li>Español (España y México).</li>
+<li>Turco.</li>
+</ul>
+
+
+<h2>Cómo se configura</h2>
+
+<p>El complemento puede configurarse desde su categoría correspondiente del
+diálogo de opciones de NVDA yendo al menú NVDA, submenú preferencias. Se
+puede asignar un gesto para abrir el panel de opciones de este complemento
+desde el diálogo Gestos de entrada, categoría configuración.</p>
+
+<p>Marca la casilla correspondiente si quieres escribir con una sola mano, o
+asegúrate de que no está marcada si prefieres escribir usando el modo
+estándar (dos manos).</p>
 
 <h2>Cómo se Utiliza</h2>
 
 <ol>
-<li>Pulsa NVDA+z para habilitar la entrada braille.</li>
-<li>Teclea braille pulsando las teclas juntas en el teclado del PC como si fuese un teclado braille.
+<li>Pulsa NVDA+0 para activar la entrada Braille. Se puede modificar este
+gesto desde el diálogo Gestos de entrada, categoría Braille.</li>
+<li><p>Escribe en Braille pulsando las teclas a la vez en el teclado del PC como
+si fuera un teclado Braille.</p>
 
 <ul>
-<li>Utiliza las teclas s, d y f para los puntos 1, 2 y 3 respectivamente.</li>
-<li>Utiliza las teclas j, k y l para los puntos 4, 5 y 6 respectivamente.</li>
-<li>Utiliza las teclas a y ; (punto y coma) para los puntos 7 y 8, respectivamente.</li>
-<li>Puedes también utilizar las teclas en la fila superior; es decir, q, w, e, r, u, i, o y p.</li>
+<li><p>Si quieres introducir texto usando ambas manos, utiliza estas teclas si
+trabajas con un teclado QWERTY inglés, o las teclas situadas en las
+posiciones correspondientes en otras distribuciones:</p>
+
+<ul>
+<li>f, d y s para los puntos 1, 2 y 3, respectivamente.</li>
+<li>j, k y l para los puntos 4, 5 y 6, respectivamente.</li>
+<li>Usa las teclas a y ; (punto y coma) para los puntos 7 y 8,
+respectivamente.</li>
+<li>También puedes emplear las teclas de la fila superior; es decir: q, w,
+e, r, u, i, o y p.</li>
 </ul>
 </li>
-<li>También puedes pulsar la mayoría de las otras teclas habituales, incluyendo espacio, retroceso, intro y teclas de función.</li>
-<li>Pulsa NVDA+z para deshabilitar la entrada braille.</li>
+<li><p>Si quieres escribir texto con una sola mano, puedes componer los
+caracteres pulsando las teclas simultáneamente o en varias pulsaciones,
+añadiendo los puntos correspondientes al carácter deseado. Pulsa g o h
+para escribir el carácter cuando hayas añadido todos sus puntos. Si
+cometes un error construyendo un carácter, puedes eliminar sus puntos
+antes de escribirlo pulsando t o y. Las teclas usadas en el teclado
+inglés son las siguientes:</p>
+
+<ul>
+<li>Mano izquierda: f, d, s, r, e, w, a, q para los puntos 1, 2, 3, 4, 5, 6,
+7 y 8.</li>
+<li>Mano derecha: j, k, l, u, i, o, ; (punto y coma), p para los puntos 1,
+2, 3, 4, 5, 6, 7 y 8.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Puedes pulsar la mayoría de las otras teclas como siempre, incluyendo la
+barra espaciadora, intro, retroceso y las teclas de función. Ten cuidado
+al pulsar alt+shift, ya que cambiar la distribución del teclado puede
+afectar a los puntos introducidos.</p></li>
+<li>Pulsa NVDA+0 para desactivar la entrada braille.</li>
 </ol>
 
 
@@ -34,9 +88,7 @@ Inglés.</p>
 
 <p>Este complemento utiliza el soporte de entrada de Braille de NVDA
 incorporado.  Por lo tanto, la tabla de entrada utilizada es la especificada
-en el cuadro de diálogo Opciones de Braille de NVDA.  NVDA sólo admite la
-entrada de braille computerizado en la actualidad, por lo que esta
-limitación también se aplica a este complemento.</p>
+en el cuadro de diálogo Opciones de Braille de NVDA.</p>
 
 <p>Algunos teclados, en particular los teclados portátiles, no pueden manejar
 ciertas combinaciones de teclas pulsadas.  Cuando esto suceda, ciertas
@@ -50,6 +102,12 @@ permitir estas teclas.</p>
 
 <ul>
 <li>James Teh</li>
+<li>Noelia Ruiz Martínez</li>
+<li>Mohammadreza Rashad</li>
+<li>Cagri Dogan</li>
+<li>Bernd Dorer</li>
+<li>Ângelo Abrantes</li>
+<li>Cyrille Bougot</li>
 </ul>
 
 
