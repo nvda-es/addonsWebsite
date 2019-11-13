@@ -4,7 +4,7 @@
 <li>Autores: Joseph Lee, Derek Riemer y otros usuarios de Windows 10</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10-dev">versión de desarrollo</a></li>
-<li>Compatibilidad con NVDA: 2019.2</li>
+<li>Compatibilidad con NVDA: de 2019.2 a 2019.3</li>
 </ul>
 
 
@@ -80,12 +80,13 @@ tiempo hace la salida braille más consistente al revisar elementos.</li>
 <li>En ciertos menús de contexto (tales como en Edge), la información de
 posición (ej.: 1 de 2) ya no se anuncia.</li>
 <li>Se reconocen los siguientes eventos UIA: Controller for, drag start, drag
-cancel, drag complete, element selected, item status, live region change,
-notification, system alert, text change, tooltip opened, window
-opened. Con NVDA configurado para ejecutarse con el registro de depuración
-habilitado, estos eventos se seguirán, y se oirá un tono de depuración
-para el evento UIA notification si las notificaciones vienen de un lugar
-distinto a la aplicación actual.</li>
+cancel, drag complete, drag target enter, drag target leave, drag target
+dropped, element selected, item status, live region change, notification,
+system alert, text change, tooltip opened, window opened. Con NVDA
+configurado para ejecutarse con el registro de depuración habilitado,
+estos eventos se seguirán, y se oirá un tono de depuración para el evento
+UIA notification si las notificaciones vienen de un lugar distinto a la
+aplicación actual.</li>
 <li>Es posible seguir sólo eventos específicos y/o eventos que vienen de
 aplicaciones específicas.</li>
 <li>Se reconocen y anuncian los consejos para Edge y para aplicaciones
@@ -96,6 +97,9 @@ nombre del escritorio actual (escritorio 2, por ejemplo).</li>
 pantalla o la orientación.</li>
 <li>Ahora se muestran correctamente el nombre y la versión de diversas
 aplicaciones de la Microsoft Store. Esto formará parte de NVDA 2019.3.</li>
+<li>Al reordenar los elementos del menú Inicio o acciones rápidas del centro
+de actividades con alt+shift+flechas, NVDA anunciará información de los
+elementos arrastrados o su nueva posición.</li>
 </ul>
 
 
@@ -114,7 +118,7 @@ expresiones.</li>
 </ul>
 
 
-<h2>calendario</h2>
+<h2>Calendario</h2>
 
 <ul>
 <li>NVDA ya no anuncia "editar" o "sólo lectura" en el cuerpo del mensaje y
@@ -264,13 +268,12 @@ presente.</li>
 <ul>
 <li>Pestañas tales como "pronósticos" y "mapas" se reconocen como propias
 pestañas (parche de Derek Riemer).</li>
-<li>cuando se lea un pronóstico, utiliza las flechas izquierda y derecha para
-moverte entre elementos. Utiliza flechas arriba y abajo para leer los
-elementos individuales. Por ejemplo, pulsando la flecha derecha anunciaría
-"Lunes: 79 grados, parcialmente nublado, ..." pulsando flecha abajo dirá
-"lunes" entonces pulsándola de nuevo leerá el siguiente elemento (como la
-temperatura). Actualmente esto funciona para los pronósticos diarios y
-horarios.</li>
+<li>When reading a forecast, use the left and right arrows to move between
+items. Use the up and down arrows to read the individual items. For
+example, pressing the right arrow might report "Monday: 79 degrees, partly
+cloudy, ..." pressing the down arrow will say "Monday" Then pressing it
+again will read the next item (Like the temperature). This currently works
+for daily and hourly forecasts.</li>
 </ul>
 
 
