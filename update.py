@@ -84,7 +84,6 @@ addresses=[
 "https://addons.nvda-project.org/addons/bgtLullaby.es.html",
 "https://addons.nvda-project.org/addons/mirc.es.html",
 "https://addons.nvda-project.org/addons/mushClient.es.html",
-"https://addons.nvda-project.org/addons/consoleTimer.es.html",
 "https://addons.nvda-project.org/addons/visualStudio.es.html",
 "https://addons.nvda-project.org/addons/speechPlayerInEspeak.es.html",
 "https://addons.nvda-project.org/addons/ventrilo.es.html",
@@ -93,7 +92,6 @@ addresses=[
 "https://addons.nvda-project.org/addons/pcKeyboardBrailleInput.es.html",
 "https://addons.nvda-project.org/addons/quickBooks2014.es.html",
 "https://addons.nvda-project.org/addons/teamViewer.es.html",
-"https://addons.nvda-project.org/addons/word.es.html",
 "https://addons.nvda-project.org/addons/instantTranslate.es.html"
 ]
 warnings={}
