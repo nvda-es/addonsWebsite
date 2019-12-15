@@ -62,7 +62,7 @@ addresses=[
 "https://addons.nvda-project.org/addons/objPad.es.html",
 "https://addons.nvda-project.org/addons/Weather_Plus.es.html",
 "https://addons.nvda-project.org/addons/classicSelection.es.html",
-"https://addons.nvda-project.org/addons/AudioThemes3D.es.html",
+"https://addons.nvda-project.org/addons/AudioThemes.es.html",
 "https://addons.nvda-project.org/addons/reviewCursorCopier.es.html",
 "https://addons.nvda-project.org/addons/clipspeak.es.html",
 "https://addons.nvda-project.org/addons/speakPasswords.es.html",
