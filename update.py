@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/percentageChecker.es.html",
 "https://addons.nvda-project.org/addons/reportPasswords.es.html",
 "https://addons.nvda-project.org/addons/synthRingSettingsSelector.es.html",
 "https://addons.nvda-project.org/addons/debugHelper.es.html",
