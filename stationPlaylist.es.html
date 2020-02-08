@@ -24,8 +24,7 @@ repositorio del código fuente del complemento.</p>
 <p>NOTAS IMPORTANTES:</p>
 
 <ul>
-<li>Este complemento requiere de NVDA 2019.3 o posterior y StationPlaylist
-Suite 5.20 o posterior.</li>
+<li>Este complemento requiere StationPlaylist Suite 5.20 o posterior.</li>
 <li>Si utilizas Windows 8 o posterior, para una mejor experiencia, deshabilita
 el modo atenuación de audio.</li>
 <li>A partir de 2018, los <a href="https://github.com/josephsl/stationplaylist/wiki/splchangelog">registros de cambios para versiones antiguas</a> se
@@ -58,12 +57,22 @@ minutos para el principio de la hora. Pulsando esta orden dos veces
 anunciará los minutos y segundos hasta la hora.</li>
 <li>Alt+NVDA+1 (deslizar dos dedos a la derecha en modo SPL) desde la ventana
 de Studio: abre el diálogo de opciones de fin de pista.</li>
+<li>Alt+NVDA+1 desde la ventana del editor de listas de reproducción de
+Creator: anuncia la hora programada de la lista de reproducción cargada.</li>
 <li>Alt+NVDA+2 (deslizar  con dos dedos hacia a la izquierda en modo táctil
 para SPL) desde la ventana Studio: Abre el diálogo de configuración de
 alarma de intro de la canción.</li>
+<li>Alt+NVDA+2 desde la ventana del editor de listas de reproducción de
+Creator: anuncia la duración total de la lista de reproducción.</li>
 <li>Alt+NVDA+3 desde la ventana Studio: activa o desactiva el explorador de
 cart para aprender las asignaciones de cart.</li>
+<li>Alt+NVDA+3 desde la ventana del editor de listas de reproducción de
+Creator: indica para cuándo se ha programado la reproducción de la pista
+seleccionada.</li>
 <li>Alt+NVDA+4 desde la ventana Studio: Abre el diálogo alarma del micrófono.</li>
+<li>Alt+NVDA+4 desde la ventana del editor de listas de reproducción de
+Creator: anuncia la rotación y categoría asociadas con la lista de
+reproducción cargada.</li>
 <li>Control+NVDA+f desde la ventana de Studio: Abre un diálogo para encontrar
 una pista sobre la base del artista o del nombre de la canción. Pulsa
 NVDA+F3 para buscar hacia adelante o NVDA+Shift+F3 para buscar hacia
@@ -75,15 +84,18 @@ temporizador braille.</li>
 <li>Control+Alt+flecha derecha o izquierda (mientras se enfoca una pista en
 Studio, Creator, o Track Tool): anuncia la columna de la pista siguiente o
 anterior.</li>
+<li>Control+Alt+inicio o fin (mientras se enfoca una pista en Studio, Creator,
+o Track Tool): anuncia la primera o última columna de la pista.</li>
 <li>Control+Alt+flecha abajo/arriba (mientras se enfoque una pista sólo en
-Studio): Mueven a la pista siguiente o anterior y anuncian columnas
-específicas (no disponible en el complemento 15.x).</li>
+Studio): se mueve a la pista siguiente o anterior y anuncia columnas
+específicas.</li>
 <li>Control+NVDA+1 a 0 (mientras se enfoque una pista en Studio, Creator o
 Track Tool): Anuncia el contenido de la columna especificada. Pulsando
 este atajo dos veces mostrará la información de la columna en una ventana
 para modo navegación.</li>
-<li>Control+NVDA+- (guión, en Studio): mostrar datos de todas las columnas de
-una pista en una ventana para modo navegación.</li>
+<li>Control+NVDA+- (guión cuando una pista tiene el foco en Studio, Creator y
+Track Tool): mostrar datos de todas las columnas de una pista en una
+ventana para modo navegación.</li>
 <li>Alt+NVDA+C mientras se enfoca una pista (sólo Studio): anuncia los
 comentarios de pista si los hay.</li>
 <li>Alt+NVDA+0 desde la ventana Studio: abre el diálogo de configuración del
@@ -354,6 +366,40 @@ Windows 8 o posterior y tienes NVDA 2012.3 o posterior instalado, puedes
 realizar algunas órdenes de Studio desde la pantalla táctil. Primero utiliza
 un toque con tres dedos para cambiar a modo SPL, entonces utiliza las
 órdenes táctiles listadas arriba para llevar a cabo tareas.</p>
+
+<h2>Versión 20.02</h2>
+
+<ul>
+<li>Soporte inicial para el editor de listas de reproducción de
+StationPlaylist creator.</li>
+<li>Se han añadido las órdenes alt+NVDA+fila numérica para anunciar diversa
+información de estado en el editor de listas de reproducción. Esto incluye
+fecha y hora de la lista de reproducción (1), duración total de la lista
+de reproducción (2), para cuándo se ha programado la reproducción de la
+pista seleccionada (3), y rotación y categoría (4).</li>
+<li>Mientras una pista esté enfocada en Creator y Track Tool (exceptuando el
+editor de listas de reproducción de Creator), pulsar control+NVDA+guión
+mostrará los datos para todas las columnas en una ventana de modo
+exploración.</li>
+<li>Si NVDA reconoce un elemento de lista de pista con menos de 10 columnas,
+ya no anunciará encabezados de columnas inexistentes si se pulsa
+control+NVDA+fila numérica con columnas fuera de rango.</li>
+<li>En Creator, NVDA ya no anunciará información de columna si se pulsan las
+teclas control+NVDA+fila numérica mientras el foco se encuentre en lugares
+distintos a la lista de pistas.</li>
+<li>Cuando se esté reproduciendo una pista, NVDA ya no anunciará "No hay pista
+en reproducción" si se obtiene información sobre las pistas actual y
+siguiente mediante el asistente o el controlador de SPL.</li>
+<li>Si hay abierto un diálogo de opciones de alarma (introducción, salida o
+micrófono), NVDA ya no parecerá hacer nada ni reproducirá tonos de error
+si se intenta abrir una segunda instancia de cualquier diálogo de alarma.</li>
+<li>Al intentar alternar entre el perfil activo y un perfil instantáneo
+mediante el asistente de SPL (f12), NVDA presentará un mensaje si se
+pretende hacer con el diálogo de opciones del complemento abierto.</li>
+<li>En los codificadores, NVDA ya no olvidará aplicar el ajuste del tono que
+indica que no hay conexión al reiniciarlo.</li>
+</ul>
+
 
 <h2>Versión 20.01</h2>
 
