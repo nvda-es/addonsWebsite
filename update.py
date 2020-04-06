@@ -7,6 +7,9 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/timeZoner.es.html",
+"https://addons.nvda-project.org/addons/tonysEnhancements.es.html",
+"https://addons.nvda-project.org/addons/phoneticPunctuation.es.html",
 "https://addons.nvda-project.org/addons/windowsMagnifier.es.html",
 "https://addons.nvda-project.org/addons/percentageChecker.es.html",
 "https://addons.nvda-project.org/addons/reportPasswords.es.html",

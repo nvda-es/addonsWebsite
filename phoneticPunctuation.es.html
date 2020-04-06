@@ -1,0 +1,70 @@
+
+<h1>Puntuaci&#xF3;n fon&#xE9;tica</h1>
+<ul>
+<li>Autores: Tony Malykh</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=phoneticpunc">versión estable</a></li>
+<li>Compatibilidad con NVDA: 2019.3</li>
+</ul>
+
+
+<p>Puntuación fonética es un complemento de NVDA que permite convertir signos
+de puntuación en iconos de audio. En general, también puede convertir
+cualquier expresión regular en iconos sonoros.</p>
+
+<h2>Demostración</h2>
+
+<p>Puedes escuchar una salida de voz de muestra con Puntuación Fonética aquí
+(audio de 10 segundos):
+https://soundcloud.com/user-977282820/nvda-phonetic-punctuation-demo</p>
+
+<h2>Modo de uso</h2>
+
+<ol>
+<li>Asegúrate de que el nivel de símbolos está configurado con el valor
+apropiado. Si no estás seguro, pulsa NVDA+p varias veces hasta que
+selecciones "Nivel de puntuación toda".</li>
+<li>Asegúrate de que Puntuación fonética está habilitado. Pulsa NVDA+alt+p
+para activarlo.</li>
+<li>Las reglas de puntuación fonética se pueden configurar mediante un cuadro
+de diálogo disponible en el menú Preferencias de NVDA.</li>
+<li>Puntuación fonética viene con un conjunto predefinido de reglas de
+audio. Sin embargo, sólo hay unas pocas activadas por defecto. Puedes
+activar otras reglas, así como crear reglas nuevas, desde el diálogo de
+configuración.</li>
+<li>Las reglas de audio se guardan en un fichero llamado
+<code>phoneticPunctuationRules.json</code> en la carpeta de configuración de usuario
+de NVDA.</li>
+</ol>
+
+
+<h2>Sintetizadores de voz soportados</h2>
+
+<p>Puntuación fonética depende del nuevo marco de trabajo de habla de NVDA, y a
+día de hoy (octubre de 2019), no todos los sintetizadores de voz disponen
+del soporte adecuado para las nuevas órdenes. Esto significa que Puntuación
+Fonética podría no funcionar bien con algunos sintetizadores de voz.</p>
+
+<p>Sintetizadores que se sabe que funcionan bien con Puntuación Fonética:</p>
+
+<ul>
+<li>Microsoft Speech API</li>
+<li>eSpeak</li>
+<li>Voces Windows OneCore</li>
+</ul>
+
+
+<p>Sintetizadores que se sabe que presentan problemas con Puntuación Fonética:</p>
+
+<ul>
+<li>IBMTTS: consulta <a href="https://github.com/davidacm/NVDA-IBMTTS-Driver/issues/22">esta
+incidencia</a>.</li>
+<li>RHVoice: la orden de ruptura no se soporta.</li>
+</ul>
+
+
+<h2>Aviso de copyright</h2>
+
+<p>Los iconos de audio incorporados fueron diseñados por T.V. Raman y forman
+parte de Emacspeak. Para más información, visita:
+https://github.com/tvraman/emacspeak/ .</p>
+

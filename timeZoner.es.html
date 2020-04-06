@@ -1,0 +1,120 @@
+
+<h1>Time Zoner</h1>
+<ul>
+<li>Autor: Munawar Bijani</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=tz">versión estable</a></li>
+<li>Compatibilidad con NVDA: 2019.2.1 y versiones posteriores</li>
+</ul>
+
+
+<p>Un complemento de NVDA que anuncia la hora en las zonas horarias
+seleccionadas.</p>
+
+<h2>Introducción</h2>
+
+<p>Desde hace ya mucho tiempo, Windows tiene la capacidad de mostrar varios
+relojes con distintas zonas horarias. Los usuarios pueden personalizar los
+relojes, y estos se hacen visibles al instante.</p>
+
+<p>Por desgracia, los usuarios de lectores de pantalla como
+<a href="https://www.nvaccess.org/">NVDA</a> o <a href="http://www.freedomscientific.com">Jaws</a>
+no pueden obtener esta información de una manera simple. Estos lectores de
+pantalla no soportan relojes adicionales, por lo que los usuarios ciegos de
+ordenadores tienen que recurrir a soluciones de terceros, algunas de pago.</p>
+
+<p>Mucho del trabajo que yo hago implica trabajar con zonas horarias, y
+eventualmente me cansé de convertir las horas en mi cabeza, especialmente
+con zonas horarias que no se encuentran alineadas a la hora (tales como
+India, que es +05:30 UTC).</p>
+
+<p>Por estas razones, he creado este complemento para NVDA. El complemento
+permite escuchar la hora de las zonas horarias seleccionadas mediante el uso
+del anillo de zona horaria.</p>
+
+<h2>Modo de uso</h2>
+
+<p>El complemento soporta tanto la versión antigua de NVDA como la que está
+basada en Python 3.</p>
+
+<p>Una vez el complemento esté instalado, pulsa NVDA+n para mostrar el menú de
+contexto de NVDA. Baja hasta "Preferencias" y sube hasta "Time Zoner".</p>
+
+<p>Pulsa intro en "Configurar anillo de zona horaria".</p>
+
+<p>Se mostrará un diálogo para configurar las zonas horarias para las que
+quieres que se anuncie fecha y hora.</p>
+
+<p>Selecciona elementos en la lista de zonas horarias para añadirlos a tu
+anillo de zona horaria. Elimina la selección (o pulsa el botón Eliminar)
+para quitarlos del anillo.</p>
+
+<p>También se pueden pulsar los botones Subir y Bajar para reordenar las zonas
+horarias del anillo.</p>
+
+<p>Usa el cuadro "Filtrar" para buscar zonas horarias concretas.</p>
+
+<p>Marca la casilla "Anunciar zonas horarias abreviadas" para escuchar los
+nombres abreviados de zonas horarias, tales como IST o GMT. Desmarca la
+casilla para escuchar los nombres completos de las zonas horarias, como
+Asia/Kolkata o Europa/Londres.</p>
+
+<p>Cuando termines de configurar las zonas horarias, pulsa el botón Guardar.</p>
+
+<p>A partir de aquí, se puede pulsar NVDA+alt+t para anunciar las fechas y
+horas de tu anillo de zona horaria.</p>
+
+<p>Cuando instales el complemento por primera vez, NVDA establecerá tu zona
+horaria por defecto si es posible.</p>
+
+<h2>Registro de cambios</h2>
+
+<h3>Versión 1.03, publicada el 21/03/2020</h3>
+
+<ul>
+<li>El complemento ya no falla si no se puede configurar la zona horaria por
+defecto.</li>
+<li>Se ha corregido un problema con enlaces relativos en la documentación.</li>
+</ul>
+
+
+<h3>Versión 1.02, publicada el 18/03/2020</h3>
+
+<ul>
+<li>Al instalar una nueva versión del complemento, ya no se pierde la
+configuración de la versión anterior.</li>
+<li>Otros cambios para cumplir con el estándar de complementos de NVDA.</li>
+</ul>
+
+
+<h3>Versión 1.01, publicada el 12/03/2020</h3>
+
+<ul>
+<li>La hora y la fecha se anuncian según los ajustes locales del usuario, lo
+que significa que se prioriza el formato de 24 horas si está configurado.</li>
+<li>NVDA anunciará la zona horaria completa o abreviada dependiendo de la
+opción que haya elegido el usuario en el diálogo de anillo de zona
+horaria. Por ejemplo, dirá Europa/Londres, o GMT o BST. Esta opción se
+controla marcando o desmarcando la casilla de verificación "Anunciar zonas
+horarias abreviadas".</li>
+<li>El complemento incluye comentarios para traductores (@ruifontes).</li>
+<li>El complemento ahora incluye comentarios en la cabecera (@ruifontes).</li>
+<li>La tecla escape cierra el diálogo del anillo de zona horaria (@ruifontes).</li>
+<li>El elemento de menú para abrir el diálogo de anillo de zona horaria ahora
+tiene el nombre apropiado (@ruifontes).</li>
+<li>NVDA configura por defecto la zona horaria local al instalar este
+complemento, si se encuentra disponible.</li>
+<li>Soporte para varias zonas horarias mediante el uso de un anillo de zona
+horaria.</li>
+<li>Ahora, este complemento usa la combinación NVDA+alt+t para evitar
+conflictos con el complemento Clock.</li>
+<li>El diálogo de selección de zonas horarias ahora tiene un cuadro para
+filtrar. NVDA anunciará el número de resultados según el usuario empiece a
+escribir en el campo de filtrado.</li>
+<li>Soporte para Python 2</li>
+<li>La fecha y hora se anuncian en un hilo separado para evitar que el hilo de
+NVDA se cuelgue si la información tarda mucho tiempo en recuperarse.</li>
+<li>El diálogo de selección de zona horaria ahora tiene un botón para cancelar
+y ya no evita que NVDA se apague.</li>
+</ul>
+
+

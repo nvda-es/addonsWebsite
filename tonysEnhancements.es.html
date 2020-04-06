@@ -1,0 +1,97 @@
+
+<h1>Tony&#x27;s enhancements (Mejoras de Tony)</h1>
+<ul>
+<li>Autores: Tony Malykh</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=tony">versión estable</a></li>
+<li>Compatibilidad con NVDA: 2019.3</li>
+</ul>
+
+
+<p>Este complemento aporta una serie de pequeñas mejoras para el lector de
+pantalla NVDA, cada una por separado demasiado insignificante para merecer
+su propio complemento.</p>
+
+<p>Este complemento sólo es compatible con NVDA 2019.3 y versiones posteriores.</p>
+
+<h2>Órdenes mejoradas de navegación por tablas</h2>
+
+<ul>
+<li>Control+alt+inicio / fin - Saltar a la primera o última columna de la
+tabla.</li>
+<li>Control+alt+retroceso o avance de página - Saltar a la primera o la última
+fila de la tabla.</li>
+<li>NVDA+control+dígitos del 1 al 0 - Saltar a la primera, segunda,
+tercera... décima columna de la tabla.</li>
+<li>NVDA+alt+dígitos del 1 al 0 - Saltar a la primera, segunda,
+tercera... décima fila de la tabla.</li>
+<li>NVDA+shift+flecha abajo - Leer la columna actual de la tabla empezando
+desde la celda actual hacia abajo.</li>
+</ul>
+
+
+<h2>Atajos de teclado dinámicos</h2>
+
+<p>Se pueden asignar ciertos atajos de teclado para que sean dinámicos. Después
+de pulsar un atajo, NVDA revisará la ventana con el foco en búsqueda de
+actualizaciones y si la línea se actualiza, NVDA la verbalizará
+automáticamente. Por ejemplo, ciertos atajos en editores de texto deberían
+marcarse como dinámicos, tales como saltar a marcador, saltar a otra línea y
+atajos de teclado de depuración, tales como avanzar a la siguiente
+instrucción o saltarla.</p>
+
+<p>El formato de la tabla de atajos de teclado dinámicos es simple. Cada línea
+contiene una regla que sigue el siguiente formato:</p>
+
+<pre><code>
+nombreAplicación atajo
+</code></pre>
+
+<p>donde <code>nombreAplicación</code> es el nombre de la aplicación donde se marca el
+atajo como dinámico (o <code>*</code> para marcarlo como dinámico en todas las
+aplicaciones), y <code>atajo</code> es un atajo en el formato de NVDA, por ejemplo
+<code>control+alt+shift+pagedown</code>.</p>
+
+<h2>Salida de la consola en tiempo real</h2>
+
+<p>Esta opción viene desactivada por defecto y debe activarse desde la
+configuración.</p>
+
+<p>Esta opción hace que NVDA verbalice las líneas inmediatamente tan pronto
+como aparecen en la salida de la consola, en lugar de poner en cola los
+nuevos mensajes de voz.</p>
+
+<p>También se encuentra disponible una opción para pitar cuando haya
+actualizaciones de la línea de órdenes - puede dar una idea más aproximada
+de cuándo se imprimen nuevas líneas por la consola.</p>
+
+<h2>Pitar cuando NVDA esté ocupado</h2>
+
+<p>Marca esta opción para que NVDA proporcione retroalimentación de audio
+cuando esté ocupado. El hecho de que NVDA esté ocupado no significa que haya
+un problema necesariamente, pero sirve como señal al usuario de que las
+órdenes que se envíen a NVDA no se procesarán inmediatamente.</p>
+
+<h2>Volumen de NVDA</h2>
+
+<ul>
+<li>NVDA+control+retroceso y avance de página - Ajustar volumen de NVDA.</li>
+</ul>
+
+
+<p>Esta opción controla el volumen de la voz de NVDA, los sonidos y los pitidos
+que emite. La ventaja de esta opción en comparación con ajustar el volumen
+de un sintetizador de voz, es que afecta proporcionalmente al volumen de
+todos los sonidos.</p>
+
+<h2>Bloquear el atajo del doble insert</h2>
+
+<p>En NVDA, al pulsar la tecla Insert dos veces seguidas se conmuta el modo de
+inserción en las aplicaciones. Sin embargo, a veces sucede por accidente y
+dispara el modo de inserción. Dado que esta es una tecla especial, no se
+puede desactivar en las opciones. Este complemento proporciona una manera de
+bloquear este atajo de teclado. Cuando se bloquea el Insert doble, todavía
+se puede conmutar el modo de inserción pulsando NVDA+f2 y luego insert.</p>
+
+<p>Esta opción viene desactivada por defecto y debe activarse desde la
+configuración.</p>
+
