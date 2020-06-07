@@ -41,8 +41,6 @@ control+NVDA+r una vez o control+NVDA+r tres veces, respectivamente. Esto
 también se aplica a los ajustes del codificador - se pueden guardar y
 restablecer (pero no recargar) los ajustes del codificador si se usan los
 codificadores.</li>
-<li>La función de perfiles basados en tiempo ha quedado obsoleta y se
-eliminará en una versión futura.</li>
 </ul>
 
 
@@ -200,32 +198,30 @@ de lista de reproducción). También puedes configurar NVDA para emular
 
 <ul>
 <li>A: Automatización.</li>
-<li>C (Shift+C en distribuciones JAWS y Window-Eyes): Título para la pista
-actualmente en reproducción.</li>
-<li>C (distribuciones JAWS y Window-Eyes): conmuta el explorador de cart
-(visualizador de lista de reproducción sólo).</li>
+<li>C (Shift+C en la distribución de JAWS): Título para la pista actualmente
+en reproducción.</li>
+<li>C (distribución de JAWS): conmuta el explorador de cart (visualizador de
+lista de reproducción sólo).</li>
 <li>D (R en distribución JAWS): duración restante para la lista de
 reproducción (si se da un mensaje de error, se mueve al visualizador de
 lista de reproducción y entonces emite esta orden).</li>
-<li>E(G en distribución Window-Eyes): estado de metadatos del streaming.</li>
+<li>E: estado de metadatos del streaming.</li>
 <li>Shift+1 hasta Shift+4, Shift+0: estado para los metadatos individuales de
 la URL del streaming (0 es para el codificador DSP).</li>
-<li>E (distribución Window-Eyes): tiempo transcurrido para la pista
-actualmente en reproducción.</li>
 <li>F: busca pista (visualizador de lista de reproducción sólo).</li>
 <li>H: Duración de la música para el actual espacio de tiempo.</li>
 <li>Shift+H: duración restante de la pista o del slot horario.</li>
-<li>I (L en distribuciones JAWS y Window-eyes): cuenta de oyentes.</li>
+<li>I (L en la distribución de JAWS): recuento de oyentes.</li>
 <li>K: se mueve a la pista marcada (sólo visualizador de lista de
 reproducción).</li>
 <li>Control+K: pone la pista actual como la pista marcada (sólo visualizador
 de lista de reproducción).</li>
-<li>L (Shift+L en las distribuciones JAWS y Window-Eyes): línea auxiliar.</li>
+<li>L (Shift+L en la distribución de JAWS): línea auxiliar.</li>
 <li>M: Micrófono.</li>
 <li>N: Título para la siguiente pista programada.</li>
 <li>P: Estado de reproducción (reproduciendo o detenido).</li>
 <li>Shift+P: Tono de la pista actual.</li>
-<li>R (Shift+E en disbribuciones JAWS y Window_eyes): Grabar en archivo
+<li>R (Shift+E en la disbribución de JAWS): Grabar en archivo
 habilitado/deshabilitado.</li>
 <li>Shift+R: Monitor de escaneado de biblioteca en progreso.</li>
 <li>S: Comienzo de pistas (programado).</li>
@@ -379,6 +375,31 @@ Windows 8 o posterior y tienes NVDA 2012.3 o posterior instalado, puedes
 realizar algunas órdenes de Studio desde la pantalla táctil. Primero utiliza
 un toque con tres dedos para cambiar a modo SPL, entonces utiliza las
 órdenes táctiles listadas arriba para llevar a cabo tareas.</p>
+
+<h2>Versión 20.06</h2>
+
+<ul>
+<li>Se han resuelto muchos problemas de estilo del código y fallos potenciales
+con Flake8.</li>
+<li>Corregidas muchas instancias de mensajes de la función de soporte del
+codificador que se verbalizaban en inglés a pesar de que estaban
+traducidas a otros idiomas.</li>
+<li>Se ha eliminado la función de perfiles de emisión basados en tiempo.</li>
+<li>Se ha eliminado la disposición de órdenes de Window Eyes para el asistente
+de SPL. Los usuarios de la disposición de órdenes de Window Eyes se
+migrarán automáticamente a la disposición de NVDA.</li>
+<li>Ya que la función de atenuación de audio de NVDA no afecta a la emisión en
+Studio salvo en configuraciones de hardware específicas, se ha eliminado
+el diálogo de recordatorio de atenuación de audio.</li>
+<li>Cuando se encuentren errores en los ajustes del codificador, ya no será
+necesario cambiar a la ventana de Studio para permitir que NVDA
+restablezca los ajustes por defecto. Ahora debes pasar a cualquier
+codificador desde la ventana de codificadores para hacer que NVDA
+restablezca los ajustes del codificador.</li>
+<li>El título del diálogo de configuración de codificador en los codificadores
+SAM ahora muestra el formato del codificador en lugar de su posición.</li>
+</ul>
+
 
 <h2>Versión 20.05</h2>
 

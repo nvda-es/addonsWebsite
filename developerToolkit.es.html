@@ -30,6 +30,7 @@ navegación con una sola letra.</p>
 <li><strong>Flecha arriba</strong> - Moverse al elemento padre.</li>
 <li><strong>Flecha abajo</strong> - Moverse al primer elemento hijo.</li>
 <li><strong>Ctrl+inicio</strong> - Moverse al elemento padre de más alto nivel.</li>
+<li><strong>Inicio</strong> - Se mueve al padre relativo si hay uno asignado.</li>
 <li><strong>A</strong> - En el contenido web, verbaliza los atributos HTML. Pulsa dos veces
 rápidamente para copiarlos al portapapeles.</li>
 <li><strong>B</strong> - Verbalizar la posición del borde inferior del objeto. Pulsa dos
@@ -77,6 +78,11 @@ copiarla al portapapeles.</li>
 <h2>Notas</h2>
 
 <ul>
+<li>Al usar inicio o cualquier versión modificada de esta tecla, la tecla
+Inicio del teclado numérico falla porque NVDA envía la pulsación del 7
+numérico en lugar de la pulsación del Inicio numérico. Otros complementos
+que intentan reasignar el 7 del teclado numérico a la tecla Inicio
+fallarán con este complemento.</li>
 <li><p>Al usar la función de padre relativo, DTK configurará el escritorio como
 padre relativo si se dan las siguientes condiciones.</p>
 
@@ -101,6 +107,14 @@ una limitación de la biblioteca de interfaz de usuario de NVDA.</li>
 
 
 <h2>Historial de versiones</h2>
+
+<h3>20.04</h3>
+
+<ul>
+<li>Se ha añadido un gesto (Inicio) que da la capacidad de moverse al padre
+relativo definido.</li>
+</ul>
+
 
 <h3>20.03</h3>
 
