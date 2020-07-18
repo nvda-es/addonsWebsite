@@ -3,7 +3,7 @@
 <ul>
 <li>Autor: Joseph Lee</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=ets">versión estable</a></li>
-<li>Compatibilidad con NVDA: de 2019.3 a 2020.1</li>
+<li>Compatibilidad con NVDA: de 2020.1 a 2020.2</li>
 </ul>
 
 
@@ -11,7 +11,7 @@
 proporciona un conjunto de gestos para una mejor navegación del modo
 exploración.</p>
 
-<p>Nota: este complemento requiere de NVDA 2019.3 o posterior ejecutándose en
+<p>Nota: este complemento requiere de NVDA 2020.1 o posterior ejecutándose en
 un ordenador con pantalla táctil con Windows 8.1 o 10.</p>
 
 <h2>Órdenes</h2>
@@ -20,10 +20,9 @@ un ordenador con pantalla táctil con Windows 8.1 o 10.</p>
 
 <ul>
 <li>Doble toque con 4 dedos: conmuta el modo de ayuda de entrada.</li>
-<li>Tocar y mantener: lleva a cabo clic derecho en el objeto bajo tu dedo
-(ahora forma parte de NVDA 2020.1 y posterior).</li>
 <li>Deslizamiento a la derecha con cuatro dedos: conmuta el teclado táctil
 (normalmente lo activa).</li>
+<li>Control+alt+NVDA+t: conmuta la interacción táctil.</li>
 </ul>
 
 
@@ -65,16 +64,53 @@ teclado.</p>
 Ratón, escucharás pitidos para indicar las coordenadas actuales de la
 pantalla al invocar los gestos de exploración de la pantalla táctil .</p>
 
-<h2>Dejar pasar orden táctil</h2>
+<p>Nota: el pitido de anuncio de coordenadas no se escuchará mientras se use el
+teclado táctil. Esta función se eliminará en el futuro.</p>
 
-<p>Está disponible una orden no asignada para permitirte utilizar gestos de la
-pantalla táctil como si NVDA no estuviese en ejecución. Para poder utilizar
-esto, necesitas asignar una orden (a través del diálogo Gestos de Entrada)
-en la categoría Enhanced Touch Gestures para permitirte hacer esto en hasta
-10 segundos o conmutarla manualmente. Entonces vé al menú
-NVDA/Preferencias/Interacción Táctil, luego configura pausar la orden de
-valor táctil de NVDA entre 3 y 10 segundos (el predeterminado es 5
-segundos).</p>
+<h2>Dejar pasar orden táctil o conmutar la interacción táctil</h2>
+
+<p>Está disponible una orden no asignada para permitirte conmutar la
+interacción táctil o utilizar temporalmente gestos de la pantalla táctil
+como si NVDA no estuviese en ejecución. Para poder utilizar esto, necesitas
+asignar una orden (a través del diálogo Gestos de Entrada) en la categoría
+Enhanced Touch Gestures para permitirte hacer esto en hasta 10 segundos o
+conmutarla manualmente. Entonces vé al menú NVDA/Preferencias/Interacción
+Táctil, luego configura pausar la orden de valor táctil de NVDA entre 3 y 10
+segundos (el predeterminado es 5 segundos).</p>
+
+<p>Nota: la capacidad para hacer que NVDA desactive la interacción táctil
+durante un máximo de diez segundos (dejar pasar órdenes táctiles) está
+obsoleta. En el futuro, esta orden conmutará la interacción táctil en su
+lugar.</p>
+
+<h2>Versión 20.07</h2>
+
+<ul>
+<li>Se ha añadido una orden de teclado para conmutar la interacción táctil o
+activar / desactivar dejar pasar los toques (Control+alt+NVDA+t).</li>
+<li>Ya que NVDA 2020.1 y posterior incluye una orden táctil para hacer clic
+con el botón derecho del ratón (pulsar y mantener con un dedo), se ha
+eliminado dicha orden de este complemento. Como resultado, se requiere
+NVDA 2020.1 o posterior.</li>
+<li>La capacidad para hacer que NVDA desactive la interacción táctil durante
+un máximo de diez segundos (dejar pasar órdenes táctiles) está
+obsoleta. En el futuro, esta orden conmutará la interacción táctil en su
+lugar.</li>
+<li>En las versiones de desarrollo de NVDA, debido a los cambios en las
+funciones de interacción táctil, se deshabilitarán los paneles de opciones
+de Enhanced Touch Gestures y la función de dejar pasar las órdenes
+táctiles. La orden para activar la función de dejar pasar órdenes táctiles
+conmutará la interacción táctil en su lugar.</li>
+<li>La función de pitido de anuncio de coordenadas está obsoleto y se
+eliminará en una versión futura del complemento.</li>
+<li>No se escuchará el pitido de anuncio de coordenadas mientras se use el
+teclado táctil.</li>
+<li>NVDA ya no parecerá hacer nada o reproducir tonos de error al explorar los
+métodos modernos de entrada, como el panel de emojis, mediante el tacto.</li>
+<li>NVDA presentará un mensaje de error si no se puede activar el teclado
+táctil (desplazamiento de cuatro dedos a la derecha).</li>
+</ul>
+
 
 <h2>Versión 20.06</h2>
 
