@@ -5,7 +5,7 @@
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl">Versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl-dev">versión de desarrollo</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl-lts20">versión de soporte extendido</a> - Para usuarios de Studio 5.20</li>
-<li>Compatibilidad con NVDA: de 2019.3 a 2020.2</li>
+<li>Compatibilidad con NVDA: de 2019.3 a 2020.3</li>
 </ul>
 
 
@@ -375,6 +375,33 @@ Windows 8 o posterior y tienes NVDA 2012.3 o posterior instalado, puedes
 realizar algunas órdenes de Studio desde la pantalla táctil. Primero utiliza
 un toque con tres dedos para cambiar a modo SPL, entonces utiliza las
 órdenes táctiles listadas arriba para llevar a cabo tareas.</p>
+
+<h2>Versión 20.10/20.09.2-LTS</h2>
+
+<ul>
+<li>A causa de algunos cambios en el formato del archivo de configuración de
+los codificadores, instalar una versión más antigua del complemento
+después de instalar esta puede dar como resultado un comportamiento
+impredecible.</li>
+<li>Ya no es necesario reiniciar NVDA con el modo registro de depuración para
+leer mensajes de depuración en el visualizador del registro. Se pueden ver
+los mensajes de depuración si el nivel de registro se ajusta en
+"Depuración" desde el panel de opciones generales de NVDA.</li>
+<li>En el visualizador de listas de reproducción de Studio, NVDA no incluirá
+las cabeceras de columna si esta opción está desactivada en la
+configuración del complemento y no se han definido opciones de inclusión u
+orden personalizado de columnas.</li>
+<li>20.10: el ajuste de inclusión de cabeceras de columna desde las opciones
+del complemento ha quedado obsoleto y se eliminará en una futura
+versión. En el futuro, la propia opción de cabeceras de columna de NVDA
+controlará el anuncio de cabeceras de columna en el conjunto de SPL y los
+codificadores.</li>
+<li>Cuando se minimice SPL Studio a la bandeja del sistema (área de
+notificaciones), NVDA lo anunciará al intentar pasar a Studio desde otros
+programas, ya sea mediante una orden dedicada o como resultado de un
+codificador conectándose.</li>
+</ul>
+
 
 <h2>Versión 20.09-LTS</h2>
 
