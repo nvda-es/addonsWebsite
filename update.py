@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 addresses=[
+"https://addons.nvda-project.org/addons/numpadNavMode.es.html",
 "https://addons.nvda-project.org/addons/zoomEnhancements.es.html",
 "https://addons.nvda-project.org/addons/timeZoner.es.html",
 "https://addons.nvda-project.org/addons/tonysEnhancements.es.html",
