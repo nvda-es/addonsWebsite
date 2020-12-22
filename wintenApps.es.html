@@ -4,7 +4,7 @@
 <li>Autores: Joseph Lee, Derek Riemer y otros usuarios de Windows 10</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10-dev">versión de desarrollo</a></li>
-<li>Compatibilidad con NVDA: de 2020.2 a 2020.4</li>
+<li>Compatibilidad con NVDA: de 2020.3 a 2020.4</li>
 </ul>
 
 
@@ -69,37 +69,29 @@ de posición del objeto" en el panel Presentación de Objetos.</li>
 (actualización de noviembre de 2019) y posteriores, NVDA ya no anunciará
 tanto los resultados de búsqueda dos veces al revisarlos, lo que al mismo
 tiempo hace la salida braille más consistente al revisar elementos.</li>
-<li>Se reconocen los siguientes eventos UIA: Controller for, drag start, drag
-cancel, drag complete, drag target enter, drag target leave, drag target
-dropped, element selected, item status, live region change, notification,
-system alert, text change, tooltip opened, window opened. Con NVDA
-configurado para ejecutarse con el registro de depuración habilitado,
-estos eventos se seguirán, y se oirá un tono de depuración para el evento
-UIA notification si las notificaciones vienen de un lugar distinto a la
-aplicación actual. Algunos eventos proporcionarán información adicional,
-como la cantidad de elementos en el evento Controller for, el estado del
-elemento en el evento State change, y el texto del elemento en el vento
-Item status.</li>
+<li>Además de los manejadores UIA proporcionados por NVDA, se reconocen los
+siguientes eventos UIA: drag start, drag cancel, drag complete, drag
+target enter, drag target leave, drag target dropped. Con NVDA configurado
+para ejecutarse con el registro de depuración habilitado, estos eventos se
+seguirán, y se oirá un tono de depuración para el evento UIA notification
+si las notificaciones vienen de un lugar distinto a la aplicación
+actual. Algunos eventos proporcionarán información adicional, como la
+cantidad de elementos en el evento Controller for, el estado del elemento
+en el evento State change, y el texto del elemento en el evento Item
+status.</li>
 <li>Es posible seguir sólo eventos específicos y/o eventos que vienen de
 aplicaciones específicas.</li>
-<li>NVDA ya no parecerá hacer nada o reproducir tonos de error si no se puede
-registrar el Id de UIA Automation de un elemento al hacer seguimiento de
-eventos.</li>
 <li>Al abrir, cerrar o cambiar entre escritorios virtuales, NVDA anunciará el
 nombre del escritorio actual (escritorio 2, por ejemplo).</li>
-<li>NVDA ya no anunciará Menú Inicio tamaño de texto al cambiar la resolución
-de pantalla o la orientación.</li>
+<li>NVDA ya no anunciará el tamaño del texto del Menú Inicio al cambiar la
+resolución de pantalla o la orientación.</li>
 <li>Al reordenar los elementos del menú Inicio o acciones rápidas del centro
 de actividades con alt+shift+flechas, NVDA anunciará información de los
 elementos arrastrados o su nueva posición.</li>
-<li>En las últimas versiones de Word 365, NVDA ya no anunciará "Eliminar
-palabra anterior" al pulsar control+retroceso.</li>
 <li>Algunos anuncios, como los de cambio de brillo o volumen en el explorador
 de archivos y las notificaciones de actualización de aplicaciones de la
 tienda Microsoft pueden suprimirse desactivando Anunciar notificaciones
 desde las opciones de presentación de objetos de NVDA.</li>
-<li>Se anuncia el diálogo Abrir con en la versión 2004 (actualización de mayo
-de 2020) y posteriores cuando este se abre.</li>
 </ul>
 
 
@@ -109,12 +101,8 @@ de 2020) y posteriores cuando este se abre.</li>
 <li>Cuando se pulse INTRO o Escape, NVDA anunciará los resultados del cálculo.</li>
 <li>Para cálculos tales como conversión de unidades y conversión de moneda,
 NVDA anunciará los resultados tan pronto como los cálculos se introduzcan.</li>
-<li>NVDA ya no anunciará "Encabezado nivel" en los resultados de la
-calculadora.</li>
 <li>NVDA avisará si se alcanza la cantidad máxima de dígitos al introducir
 expresiones.</li>
-<li>Se ha añadido soporte para el modo Siempre Encendido de las versiones
-10.1908 y posteriores de la calculadora.</li>
 </ul>
 
 
@@ -201,8 +189,6 @@ y posteriores).</li>
 <li>Cuando se seleccione un grupo de emojis (incluyendo kaomoji y el grupo de
 símbolos en la versión 1903 o posteriores), NVDA ya no moverá el navegador
 de objetos a ciertos emojis.</li>
-<li>NVDA anunciará el emoji seleccionado si el panel de emojis se abre más de
-una vez en la compilación 20226.</li>
 </ul>
 
 
@@ -222,10 +208,6 @@ automáticamente, incluyendo el widget de sensor de almacenamiento /
 limpieza de disco y los errores del propio Windows Update.</li>
 <li>Los valores de la barra de progreso y otra información ya no se anuncian
 dos veces.</li>
-<li>En algunos cuadros combinados y botones de opción, NVDA ya no fallará al
-reconocer etiquetas y/o al anunciar cambios de valores.</li>
-<li>NVDA ya no parecerá hacer nada o reproducir tonos de error si se usan
-órdenes de navegación por objetos en algunas circunstancias.</li>
 <li>El diálogo de recordatorio de Windows Update se reconoce correctamente
 como un diálogo.</li>
 <li>Corregida disparidad en etiquetas de controles advertida en ciertas
