@@ -1,10 +1,4 @@
-#-*- coding: utf-8-*-
 import requests
-import codecs
-from codecs import open
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 addresses=[
 "https://addons.nvda-project.org/addons/quickDictionary.es.html",
@@ -107,8 +101,8 @@ warnings={}
 
 for a in addresses:
 	r=requests.get(a)
-	f=open(a.split("/")[-1], "w", encoding="utf-8")
-	f.write(r.content.split('<div id="content">')[-1].split("</div>")[0])
+	f=open(a.split("/")[-1], "wb")
+	f.write(r.content.split(b'<div id="content">')[-1].split(b"</div>")[0])
 	f.close()
 for b in warnings:
-	print(u"Advertencia en %s: %s. Téngase en cuenta en la edición."%(b, warnings[b]))
+	print("Advertencia en %s: %s. Téngase en cuenta en la edición."%(b, warnings[b]))
