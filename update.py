@@ -19,7 +19,6 @@ addresses=[
 "https://addons.nvda-project.org/addons/onlineOCR.es.html",
 "https://addons.nvda-project.org/addons/charInfo.es.html",
 "https://addons.nvda-project.org/addons/wordCount.es.html",
-"https://addons.nvda-project.org/addons/ImageDescriber.es.html",
 "https://addons.nvda-project.org/addons/browsernav.es.html",
 "https://addons.nvda-project.org/addons/trainingKeyboardCommands.es.html",
 "https://addons.nvda-project.org/addons/outlookExtended.es.html",
