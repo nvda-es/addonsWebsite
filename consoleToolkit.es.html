@@ -1,0 +1,168 @@
+
+<h1>Console Toolkit</h1>
+<ul>
+<li>Autor: Tony Malykh</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=consoletoolkit">versión estable</a></li>
+<li>Compatibilidad con NVDA: 2019.3 y posterior</li>
+</ul>
+
+
+<p>Console Toolkit es un complemento de NVDA que proporciona mejoras de
+accesibilidad en la consola de Windows, también conocida como Símbolo del
+sistema. También funciona bien en Windows PowerShell. Algunas de sus
+características pueden funcionar en terminales alternativas, como Cygwin,
+PuTTY y Windows Terminal. Sin embargo, el complemento sólo se ha probado
+cuidadosamente en la consola predeterminada de Windows. Los usuarios de SSH
+podrían encontrar especialmente útil este complemento.</p>
+
+<p>Algunas de las características antes formaban parte del complemento <a href="https://github.com/mltony/nvda-tonys&#39;enhancements/">Mejoras
+de Tony</a>.</p>
+
+<h2>Descargas</h2>
+
+<p><a href="https://github.com/mltony/nvda-console-toolkit/releases/latest/download/consoleToolkit.nvda-addon">Console
+toolkit</a></p>
+
+<h2>Verbalización de la consola en tiempo real</h2>
+
+<p>Esta opción hace que NVDA verbalice las nuevas líneas inmediatamente en
+cuanto aparecen en la salida de la consola, en vez de poner en cola los
+mensajes de voz. Por ejemplo, si NVDA está ocupado verbalizando una línea
+que apareció en pantalla hace un minuto y aparece una nueva línea, esta
+opción cancelará la verbalización de la línea anterior y comenzará a
+verbalizar la nueva, proporcionando más retroalimentación en tiempo real de
+lo que está sucediendo en la ventana de la consola.</p>
+
+<h2>Pitar cuando la consola se actualice</h2>
+
+<p>Emite un pitido grave cada vez que se actualiza el texto de la consola.</p>
+
+<h2>Reforzar control+v en las consolas</h2>
+
+<p>Esta opción permite que el atajo control+v funcione en sesiones <code>SSH</code>.</p>
+
+<h2>Experimental: edición del símbolo del sistema</h2>
+
+<p>Nota: esta función es experimental. Por favor, lee atentamente esta sección
+y asegúrate de entender cómo funciona antes de informar de problemas.</p>
+
+<p>Pulsa <code>NVDA+e</code> para identificar la orden actual de la ventana de la consola
+y editarla en una ventana "Editar orden" accesible. Después de editar puedes
+pulsar <code>escape</code> para actualizar la línea de órdenes actual, o <code>intro</code> para
+actualizarla y ejecutarla de inmediato. Alternativamente, puedes pulsar
+<code>alt+f4</code> para cerrar la ventana de editar orden sin actualizar la línea de
+órdenes.</p>
+
+<p>Esta función se ha probado en el símbolo del sistema de Windows, <code>cmd.exe</code>,
+así como en la shell Bash sobre conexiones SSH, WSL y Cygwin. También podría
+funcionar en shells de Unix alternativas, aunque no se ha probado.</p>
+
+<p>A continuación se explica cómo extrae el complemento la orden actual.</p>
+
+<ol>
+<li>Pulsa la tecla <code>Fin</code> y envía un carácter de control, un extraño carácter
+Unicode que probablemente no se use en ningún sitio.</li>
+<li>Después pulsa la tecla <code>Inicio</code> y envía otro carácter de control.</li>
+<li>Después espera a que los caracteres de control aparezcan en pantalla,
+algo que puede tardar un poco en conexiones SSH lentas.</li>
+<li>La orden es lo que se encuentra entre los dos caracteres.</li>
+<li>Cuando se habilita la opción "Utilizar UI Automation para acceder a la
+Consola de Windows cuando esté disponible" en las preferencias de NVDA,
+se envía un carácter de control adicional al principio de la cadena. Esto
+es necesario para interpretar correctamente órdenes de varias líneas: la
+implementación de UIA suprime los espacios en blanco al final de cada
+línea, por lo que para deducir si hay un espacio entre dos líneas, hay
+que rotarlas un carácter. Ten en cuenta, sin embargo, que puede que no se
+preserven todos los espacios entre palabras, este mecanismo sólo preserva
+la presencia de espacios.</li>
+<li>Antes de editar, el complemento se asegura de eliminar los caracteres de
+control situando el cursor al principio y al final y simulando
+pulsaciones de las teclas <code>suprimir</code> y <code>retroceso</code>.</li>
+<li>Presenta la orden en la ventana "Editar orden" para que el usuario la
+visualice o la edite.</li>
+<li><p>Después de que el usuario pulse intro, se borra la línea actual de la
+consola. Esto se logra mediante uno de estos cuatro métodos, la elección
+del método es configurable. Los métodos soportados son:</p>
+
+<ul>
+<li><code>Control+c</code>: funciona en <code>cmd.exe</code> y <code>Bash</code>, pero deja la orden
+anterior visible; no funciona en Emacs y a veces es poco fiable en
+conexiones SSH lentas</li>
+<li><code>Escape</code>: sólo funciona en <code>cmd.exe</code>"),</li>
+<li><code>Control+a</code> y <code>control+k</code>: funciona en <code>Bash</code> y <code>Emacs</code>, pero no
+funciona en <code>cmd.exe</code></li>
+<li><code>Retroceso</code> (recomendado): funciona en todos los entornos, pero es
+lento y puede causar corrupción si la longitud de la línea ha cambiado</li>
+</ul>
+</li>
+<li><p>Finalmente, el complemento simula pulsaciones de teclas para teclear la
+orden actualizada y, opcionalmente, simula una pulsación de la tecla
+<code>intro</code>.</p></li>
+</ol>
+
+
+<p>Resolución de problemas:</p>
+
+<ul>
+<li>Comprueba que las teclas 'Inicio', 'Fin', 'Retroceso' y 'Suprimir'
+funcionan como se espera en tu consola.</li>
+<li>Comprueba que tu consola soporta caracteres Unicode. Algunas conexiones
+SSH no soportan Unicode.</li>
+<li>Comprueba que el método de eliminación seleccionado funciona en tu
+consola.</li>
+</ul>
+
+
+<h2>Experimental: captura de la salida de la orden</h2>
+
+<p>Nota: esta función es experimental. Por favor, lee atentamente esta sección
+y asegúrate de entender cómo funciona antes de informar de problemas.</p>
+
+<p>Mientras estés en la línea de órdenes o en la ventana "Editar orden", pulsa
+<code>control+intro</code> para capturar la salida de la orden. Este complemento es
+capaz de capturar una enorme salida que ocupe varias pantallas, aunque si
+dicha salida se extiende a lo largo de más de 10 pantallas, el proceso de
+captura durará un tiempo considerable. El complemento reproducirá un sonido
+de campanada, que durará mientras se capture la salida de la orden en
+ejecución o hasta que el tiempo de espera se agote. Alternativamente, pulsa
+<code>NVDA+e</code> para interrumpir la captura.</p>
+
+<p>Si la función "Utilizar UI Automation para acceder a la Consola de Windows
+cuando esté disponible" está habilitada en las opciones de NVDA, puedes
+cambiar a otras ventanas mientras la captura está en curso. Sin embargo, si
+esta opción está desactivada, significa que NVDA está usando un código de
+consola anticuado que sólo funciona cuando la consola tiene el foco, por lo
+que cambiar a otra ventana hará que se pause la captura.</p>
+
+<p>La captura de órdenes funciona redirigiendo la salida de la orden al
+programa <code>less</code>. El sufijo por defecto que se anexa a las órdenes es:
+<code>
+|less -c 2&gt;&amp;1
+</code>
+Cámbialo sólo si sabes lo que estás haciendo. Este complemento sabe cómo
+interactuar con la salida de la orden <code>less</code> para recuperar el resultado
+página a página.</p>
+
+<p>En Windows, es necesario instalar la herramienta <code>less.exe</code> por
+separado. Puedes instalarla mediante Cygwin, o descargar un binario para
+Windows en cualquier otro sitio.</p>
+
+<p>Si usas <code>tmux</code> o <code>screen</code> en Linux, asegúrate de que no se muestra la línea
+de estado en la parte inferior. En <code>tmux</code>, ejecuta
+<code>
+tmux set status off
+</code>
+para deshacerte de la línea de estado, o modifica tu archivo <code>tmux.conf</code>.</p>
+
+<p>Resolución de problemas:</p>
+
+<ul>
+<li>Después de un intento de captura fallido, pulsa <code>flecha arriba</code> en la
+consola para comprobar qué orden se ha ejecutado en realidad.</li>
+<li>Vuelve a usar el sufijo de captura predeterminado, mencionado
+anteriormente.</li>
+<li>Prueba los pasos de resolución de problemas de la sección "Edición del
+símbolo del sistema".</li>
+</ul>
+
+

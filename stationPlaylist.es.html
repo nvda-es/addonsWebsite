@@ -4,7 +4,6 @@
 <li>Autores: Geoff Shang, Joseph Lee y otros colaboradores</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl">Versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl-dev">versión de desarrollo</a></li>
-<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=spl-lts20">versión de soporte extendido</a> - Para usuarios de Studio 5.20</li>
 <li>Compatibilidad con NVDA: de 2020.3 a 2020.4</li>
 </ul>
 
@@ -102,9 +101,6 @@ reproducción de Studio): anuncia los comentarios de pista si los hay.</li>
 complemento para Studio.</li>
 <li>Alt+NVDA+p desde la ventana de Studio: abre el diálogo de perfiles de
 emisión de Studio.</li>
-<li>Alt+NVDA+- (guión) desde la ventana de Studio: envía retroalimentación al
-desarrollador del complemento utilizando el cliente de correo
-predeterminado.</li>
 <li>Alt+NVDA+F1: abre el diálogo de bienvenida.</li>
 </ul>
 
@@ -375,6 +371,62 @@ Windows 8 o posterior y tienes NVDA 2012.3 o posterior instalado, puedes
 realizar algunas órdenes de Studio desde la pantalla táctil. Primero utiliza
 un toque con tres dedos para cambiar a modo SPL, entonces utiliza las
 órdenes táctiles listadas arriba para llevar a cabo tareas.</p>
+
+<h2>Versión 21.04/20.09.7-LTS</h2>
+
+<ul>
+<li>21.04: se requiere NVDA 2020.4 o posterior.</li>
+<li>En los codificadores, NVDA ya no falla al anunciar la información de fecha
+y hora cuando se realiza la orden de hora / fecha (NVDA+f12). Esto afecta
+a NVDA 2021.1 o posterior.</li>
+</ul>
+
+
+<h2>Versión 21.03/20.09.6-LTS</h2>
+
+<ul>
+<li>El requisito de versión mínima de Windows ahora va unido a las versiones
+de NVDA.</li>
+<li>Se ha eliminado la orden de comentarios por correo electrónico
+(alt+NVDA+guión). Por favor, envía comentarios a los desarrolladores de
+complementos utilizando la información de contacto proporcionada en el
+administrador de complementos.</li>
+<li>21.03: partes del código fuente del complemento ahora incluyen anotaciones
+de tipo.</li>
+<li>21.03: se ha hecho el código del complemento más robusto con la ayuda de
+Mypy (un comprobador de tipos estáticos de Python). En particular, se han
+corregido varios fallos de larga duración como el que impedía que NVDA
+pudiera restablecer las opciones del complemento a sus valores por defecto
+bajo algunas circunstancias y el que intentaba guardar las opciones del
+codificador cuando no estaban cargadas. Algunas correcciones de fallos
+destacables se han llevado también a la versión 20.09.6-LTS.</li>
+<li>Se han corregido numerosos fallos en el diálogo de bienvenida del
+complemento (alt+NVDA+f1 desde la ventana de Studio), incluyendo que se
+mostraran varios diálogos de bienvenida o que NVDA se pusiera a reproducir
+tonos de error o no reaccionara si se cerraba Studio y el diálogo de
+bienvenida permanecía abierto.</li>
+<li>Se han corregido numerosos fallos en el diálogo de comentarios de pista
+(alt+NVDA+c tres veces desde una pista en Studio), incluyendo un tono de
+error que se oía al intentar guardar comentarios y el hecho de que el
+diálogo de comentarios de pista apareciera varias veces si se pulsaba
+alt+NVDA+c muchas veces. Si el diálogo de comentarios de pista continúa
+mostrándose después de cerrar Studio, los comentarios no se guardarán.</li>
+<li>Diversas órdenes de columna, como el explorador de columnas
+(control+NVDA+fila numérica) en las pistas de Studio y los anuncios de
+estado del codificador ya no devuelven resultados erróneos al ejecutarse
+después de reiniciar NVDA con el foco en pistas o codificadores. Esto
+afecta a NVDA 2020.4 o posterior.</li>
+<li>Se han corregido varios fallos con las instantáneas de listas de
+reproducción (Asistente de SPL, f8), incluyendo la incapacidad de obtener
+datos de las instantáneas y anunciar las pistas incorrectas como las más
+largas o las más cortas.</li>
+<li>NVDA ya no anunciará "0 elementos en la biblioteca" cuando se salga de
+Studio en mitad de un análisis de biblioteca.</li>
+<li>NVDA ya no fallará al guardar los cambios en las opciones del codificador
+después de que se encuentren errores al cargar estas opciones y
+seguidamente se restablezcan a valores por defecto.</li>
+</ul>
+
 
 <h2>Versión 21.01/20.09.5-LTS</h2>
 
