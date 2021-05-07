@@ -1,6 +1,7 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/wordNav.es.html",
 "https://addons.nvda-project.org/addons/winWizard.es.html",
 "https://addons.nvda-project.org/addons/consoleToolkit.es.html",
 "https://addons.nvda-project.org/addons/quickDictionary.es.html",

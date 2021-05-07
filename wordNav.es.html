@@ -1,0 +1,77 @@
+
+<h1>WordNav</h1>
+<ul>
+<li>Autor: Tony Malykh</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=wordnav">versión estable</a></li>
+<li>Compatibilidad con NVDA: 2019.3 y posterior</li>
+</ul>
+
+
+<p>El complemento WordNav para NVDA mejora la navegación por palabras integrada
+y añade órdenes extra de navegación con diferentes definiciones de lo que es
+una palabra.</p>
+
+<p>La mayoría de editores de texto soportan las órdenes control+flechas
+izquierda y derecha para navegar por palabras. Sin embargo, la definición de
+palabra cambia de un programa a otro. Esto es especialmente cierto en los
+editores de texto modernos basados en web, tales como Monaco. NVDA debería
+saber la definición de palabra en un programa dado para verbalizar las
+palabras correctamente. Si NVDA no conoce la definición exacta, las palabras
+se saltan o se pronuncian varias veces. Por si fuera poco, algunos editores
+basados en web sitúan el cursor al final de la palabra en lugar del
+principio, dificultando la edición a personas con discapacidad visual. Para
+combatir este problema, he creado órdenes de navegación por palabra
+mejoradas, que toman la definición de palabra de Notepad++ y no se apoyan en
+la definición de palabra de otros programas, y que en su lugar descomponen
+las líneas en palabras dentro del propio NVDA. El gesto control+flecha
+izquierda o flecha derecha ni siquiera se envía al programa, garantizando
+por tanto la consistencia del habla.</p>
+
+<p>Antes, el complemento <a href="https://github.com/mltony/nvda-tonys-enhancements/">Mejoras de
+Tony</a> incluía un
+prototipo de WordNav entre sus funciones. Desinstala o actualiza el
+complemento Mejoras de Tony a la <a href="https://github.com/mltony/nvda-tonys-enhancements/releases/latest/download/tonysEnhancements.nvda-addon">versión estable más
+reciente</a>
+para evitar conflictos.</p>
+
+<p>Actualmente, WordNav soporta cuatro definiciones de palabra, asignadas a
+diferentes gestos:</p>
+
+<ul>
+<li><code>Control izquierdo+flechas</code>: definición de Notepad++, que trata los
+caracteres alfanuméricos como palabras, y también trata como palabras las
+marcas de puntuación adyacentes. Esta debería ser la definición de palabra
+más conveniente para la mayoría de usuarios.</li>
+<li><code>Control derecho+flechas</code>: definición de palabra Fine, que divide los
+<code>identificadoresCamelCase</code> y los
+<code>identificadores_separados_por_subrayados</code> en partes independientes,
+permitiendo que el cursor se desplace por identificadores largos.</li>
+<li><code>Control izquierdo+Windows+flechas</code>: definición de palabra Bulky, que
+trata casi todos los símbolos de puntuación adyacentes al texto como parte
+de una única palabra, por lo que trataría rutas como
+<code>C:\directorio\subdirectorio\archivo.txt</code> como una única palabra.</li>
+<li><code>Control derecho+Windows+flechas</code>: definición multipalabra, que agrupa
+varias palabras juntas. El número de palabras es configurable.</li>
+</ul>
+
+
+<p>Se pueden personalizar todos estos gestos en el panel de opciones de
+WordNav.</p>
+
+<h2>Notas</h2>
+
+<ul>
+<li>Por el momento, WordNav no modifica los gestos <code>control+shift+flechas
+izquierda y derecha</code> para seleccionar palabras, ya que la implementación
+de estas órdenes es considerablemente más complicada.</li>
+<li>Si quieres utilizar la función de escritorios virtuales de Windows 10,
+recuerda desactivar los atajos de teclado control+windows+flechas desde el
+panel de opciones de WordNav, o bien en el diálogo Gestos de entrada de
+NVDA.</li>
+<li>WordNav no tiene un funcionamiento fiable en VS Code. A causa de sus
+optimizaciones internas, VS Code presenta sólo unas pocas líneas del
+contenido del archivo a la vez que cambian dinámicamente, lo que
+interfiere a veces en el algoritmo de WordNav.</li>
+</ul>
+
+
