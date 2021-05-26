@@ -1,0 +1,94 @@
+
+<h1>Soporte proxy para NVDA</h1>
+<ul>
+<li>Autor: José Manuel Delicado</li>
+<li>Compatibilidad con NVDA: de 2019.3 a 2020.4</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=nvdaproxy">versión estable</a></li>
+</ul>
+
+
+<p>Este complemento permite que el lector de pantalla NVDA pueda conectarse a
+Internet a través de uno o varios servidores proxy. Para ello, aplica
+diversos parches a la biblioteca estándar de Python o modifica ciertas
+variables de entorno, dependiendo de la configuración elegida. Podrás
+actualizar NVDA y sus complementos automáticamente desde tu entorno
+corporativo, e incluso realizar sesiones remotas, siempre que el servidor
+proxy de tu organización lo permita.</p>
+
+<h2>Características</h2>
+
+<ul>
+<li>Soporte para diversos tipos de servidor proxy: http, socks4 y socks5.</li>
+<li>Capacidad de redirigir todo el tráfico a través del servidor proxy o sólo
+tráfico específico (http, https, ftp).</li>
+<li>Capacidad de redirigir todo el tráfico a través de un servidor proxy, y
+después redirigir tráfico específico a través de otros servidores (proxies
+anidados).</li>
+<li>Sensible a cambios de perfil y restablecimiento de configuración: si
+normalmente trabajas con una copia portátil de NVDA, puedes crear diversos
+perfiles para distintos entornos (casa, trabajo, oficina 1, oficina 2) y
+activarlos manualmente.</li>
+</ul>
+
+
+<h2>Modo de uso</h2>
+
+<p>El complemento añade una nueva categoría a las opciones de NVDA, llamada
+"Proxy". En esta categoría encontraremos cuatro grupos de opciones. El
+primero nos permite configurar un proxy general para todo el tráfico. Los
+otros tres permiten configurar servidores proxy sólo para protocolos
+específicos. Todos los grupos tienen los siguientes campos:</p>
+
+<ul>
+<li>Servidor: nombre de host o dirección ip del servidor proxy. Déjalo vacío
+para deshabilitar ese proxy en particular.</li>
+<li>Puerto: puerto del servidor.</li>
+<li>Usuario: opcional. Nombre de usuario para autenticarse en el servidor.</li>
+<li>Contraseña: opcional. Contraseña para autenticarse en el servidor. Ten en
+cuenta que la contraseña no es necesaria en servidores socks4.</li>
+</ul>
+
+
+<p>Además de los campos anteriores, en el primer grupo de opciones podemos
+encontrar los siguientes:</p>
+
+<ul>
+<li>Tipo de proxy SOCKS: podemos elegir entre socks4, socks5 y http.</li>
+<li>Usar proxy para solicitudes DNS si es posible: si esta casilla está
+marcada, los nombres de host o dominio se enviarán directamente al
+servidor proxy y se resolverán allí. Si está desmarcada, los nombres se
+resolverán localmente y el servidor sólo recibirá la dirección ip de
+destino. Ten en cuenta que no todos los servidores socks4 soportan esta
+opción.</li>
+</ul>
+
+
+<p>Normalmente, la mayoría de usuarios sólo tendrán que configurar el primer
+grupo de opciones. Si no conoces los detalles de tu servidor proxy, consulta
+con el administrador de red de tu organización.</p>
+
+<h2>Limitaciones</h2>
+
+<ul>
+<li>Soporte IPV6 muy limitado.</li>
+<li>El tráfico UDP no se soporta en todos los tipos de servidores proxy.</li>
+<li>Las bibliotecas DLL externas no respetarán las opciones configuradas en
+este complemento.</li>
+<li>En servidores proxy http, sólo se soporta autenticación básica. La
+autenticación digest no está soportada.</li>
+<li>Para poder redirigir todo el tráfico (incluyendo conexiones https) a
+través de un proxy http, el servidor debe soportar el método http CONNECT.</li>
+<li>No se puede configurar un modo de "conexión directa". Si deshabilitas un
+proxy específico, se usará en su lugar el proxy por defecto del sistema.</li>
+</ul>
+
+
+<h2>Registro de cambios</h2>
+
+<h3>Versión 1.0</h3>
+
+<ul>
+<li>Versión inicial.</li>
+</ul>
+
+
