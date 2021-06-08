@@ -1,6 +1,8 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/unmute.es.html",
+"https://addons.nvda-project.org/addons/checkGestures.es.html",
 "https://addons.nvda-project.org/addons/nvdaproxy.es.html",
 "https://addons.nvda-project.org/addons/updateChannelSelector.es.html",
 "https://addons.nvda-project.org/addons/wordNav.es.html",
