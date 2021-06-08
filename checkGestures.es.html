@@ -1,0 +1,115 @@
+
+<h1>Check Input Gestures</h1>
+<ul>
+<li>Autor: Oleksandr Gryshchenko</li>
+<li>Versión: 1.0</li>
+<li>Compatibilidad con NVDA: 2019.3 y posterior</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=cig">versión estable</a></li>
+</ul>
+
+
+<p>Este complemento encuentra y resuelve conflictos con los gestos de entrada
+en NVDA y los complementos. El término general «gestos de entrada» incluye
+órdenes de teclado, órdenes introducidas desde una pantalla Braille y gestos
+realizados en pantallas táctiles.</p>
+
+<p>Cada complemento instalado puede hacer cambios en la configuración de NVDA
+añadiendo o reasignando gestos de entrada existentes. Si los mismos gestos
+de entrada se encuentran vinculados a varias funciones, será imposible
+llamar a algunos de ellos.</p>
+
+<h2>Búsqueda de gestos duplicados</h2>
+
+<p>Para detectar gestos duplicados, abre el menú NVDA, navega al submenú
+«Herramientas», luego "Check Input Gestures" y activa el elemento de menú
+"Search for duplicate gestures…".</p>
+
+<p>Tras esto, todos los gestos de entrada de NVDA se comprobarán en el
+siguiente orden:</p>
+
+<ol>
+<li>órdenes globales;</li>
+<li>extensiones globales.</li>
+</ol>
+
+
+<p>Si se detectan los mismos gestos de entrada asignados a diferentes
+funciones, se mostrarán en una lista dentro de un cuadro de diálogo
+independiente.</p>
+
+<p>Tras pulsar la tecla intro en el elemento de lista seleccionado, se elegirá
+la función correspondiente de NVDA y se abrirá en el diálogo estándar
+"Gestos de entrada...", donde puedes eliminar o reasignar el gesto asociado.</p>
+
+<p>Nota: como ya sabrás, las funciones que no disponen de descripción textual
+no aparecen en el diálogo "Gestos de entrada...". Por lo tanto, al activar
+tales elementos, se mostrará el aviso correspondiente.</p>
+
+<h2>Gestos sin descripción</h2>
+
+<p>Para ver la lista de gestos asociados a funciones sin descripción textual,
+si se encuentran en tu configuración de NVDA, debes ir al menú NVDA, navegar
+al submenú "Herramientas", "Check Input Gestures", "Gestures without
+description...".</p>
+
+<p>Dichas funciones no aparecen en el diálogo estándar "Gestos de entrada..."
+de NVDA, por lo que aún no es posible eliminar o reasignar sus gestos
+asociados.</p>
+
+<h2>Ayuda</h2>
+
+<p>Una forma de visualizar esta página de ayuda es ir al menú NVDA, navegar al
+submenú "Herramientas", luego "Check Input Gestures" y activar "Help".</p>
+
+<p>Nota: todas las funciones del complemento se presentan en el diálogo "Gestos
+de entrada" de NVDA, desde donde puedes asignar tus propios atajos de
+teclado a cada una de ellas.</p>
+
+<h2>Colaboraciones</h2>
+
+<p>Estamos muy agradecidos a todos los que se han esforzado por desarrollar,
+traducir y mantener este complemento:</p>
+
+<ul>
+<li>Wafiqtaher – Traducción al árabe;</li>
+<li>Angelo Miguel Abrantes – traducción al portugés;</li>
+<li>Cagri Dogan - Traducción al turco.</li>
+</ul>
+
+
+<h2>Registro de cambios</h2>
+
+<h3>VERSIÓN 1.0</h3>
+
+<ul>
+<li>implementada la búsqueda de gestos duplicados;</li>
+<li>implementada la búsqueda de gestos asociados a funciones que no disponen
+de descripción textual.</li>
+</ul>
+
+
+<h2>Alteración del código fuente del complemento</h2>
+
+<p>Puedes clonar este repositorio para hacer alteraciones al complemento de
+NVDA Check Input Gestures.</p>
+
+<h3>Dependencias de terceros</h3>
+
+<p>Se pueden instalar con Pip:</p>
+
+<ul>
+<li>markdown</li>
+<li>scons</li>
+<li>python-gettext</li>
+</ul>
+
+
+<h3>Empaquetar el complemento para su distribución</h3>
+
+<ol>
+<li>Abre una línea de órdenes, y cambia a la raíz de este repositorio</li>
+<li>Ejecuta la orden <strong>scons</strong>. El complemento creado, si no hubo errores, se
+sitúa en la carpeta actual.</li>
+</ol>
+
+

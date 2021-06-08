@@ -2,47 +2,277 @@
 <h1>BrailleExtender</h1>
 <ul>
 <li>Autor: André-Abush Clause y colaboradores</li>
-<li>Compatibilidad con NVDA: de 2012.4 a 2019.1</li>
+<li>Compatibilidad con NVDA: 2019.3 y posteriores</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=brlext">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=brlext-dev">versión de desarrollo</a></li>
 </ul>
 
 
-<p>BrailleExtender es un complemento de NVDA que proporciona varias
-características a nivel de braille. Actualmente se han implementado las
-siguientes características:</p>
+<p>BrailleExtender es un complemento de <a href="https://nvaccess.org">NVDA</a> que
+proporciona varias características a nivel de braille. Actualmente se han
+implementado las siguientes características:</p>
 
 <ul>
-<li>Recargar dos pantallas braille favoritas con atajos de teclado.</li>
-<li>Cambiar automáticamente al modo revisión en las aplicaciones.</li>
-<li>Desplazamiento automático.</li>
-<li>Alternar entre varias tablas Braille de entrada/salida.</li>
-<li>Definir reglas personalizadas para marcar texto en campos de opción
-especiales con los puntos braille 7 y 8.</li>
-<li>Utilizar dos tablas braille de salida simultáneamente.</li>
-<li>Mostrar signos de tabulador como espacios.</li>
-<li>Revertir los botones desplazar atrás y desplazar adelante.</li>
-<li>Verbalizar la línea actual durante el desplazamiento de texto, en modo
-revisión.</li>
+<li>recargar dos pantallas braille favoritas con atajos de teclado.</li>
+<li>seguimiento automático del cursor de revisión en controles de terminal
+como PUTTY, PowerShell, Bash, cmd.</li>
+<li>desplazamiento automático.</li>
+<li>alternar entre varias tablas Braille de entrada/salida.</li>
+<li>marcado del texto con atributos especiales con el punto 7, el 8 o ambos.</li>
+<li>utilizar dos tablas braille de salida simultáneamente.</li>
+<li>mostrar signos de tabulador como espacios.</li>
+<li>revertir los botones desplazar atrás y desplazar adelante.</li>
+<li>verbalizar la línea actual durante el desplazamiento del texto en modo
+revisión, modo foco o ambos.</li>
+<li>traducción sencilla de texto a Braille Unicode y viceversa. Por ejemplo: z
+&lt;--&gt; ⠵.</li>
+<li>conversión de descripción de la celda a Braille Unicode y viceversa. Por
+ejemplo: 123 &lt;--&gt; ⠇.</li>
+<li>bloqueo del teclado Braille.</li>
+<li>ejecución de una aplicación o URL con un gesto.</li>
+<li>diccionarios Braille.</li>
+<li>escritura con una sola mano desde el teclado Braille.</li>
+<li>presentación de caracteres no definidos en las tablas Braille (incluyendo
+emojis) utilizando representaciones alternativas.</li>
+<li>introducción de cualquier carácter desde el teclado Braille (incluyendo
+emojis).</li>
+<li>saltar líneas en blanco durante el desplazamiento del texto.</li>
+<li>¡y mucho más!</li>
 </ul>
 
 
-<p>Para algunas pantallas braille, extiende las órdenes de pantalla braille
-para proporcionar:</p>
+<p>En algunas pantallas braille, extiende las órdenes de pantalla braille para
+proporcionar:</p>
 
 <ul>
-<li>Acceso a navegación rápida, teclas de función y teclas multimedia.</li>
-<li>Emulación de teclas modificadoras, y por lo tanto casi cualquier atajo de
-teclado.</li>
-<li>Ofrecer varias configuraciones de teclado relacionadas con la posibilidad
-de introducir los puntos 7 y 8, intro y retroceso.</li>
-<li>Ejecución rápida de aplicaciones.</li>
-<li>Acciones y navegación rápida a través de un rotor.</li>
+<li>mapas de gestos completos incluyendo teclas de función, teclas multimedia,
+navegación rápida, etc.;</li>
+<li>emulación de teclas modificadoras, y por lo tanto casi cualquier atajo de
+teclado;</li>
+<li>varias configuraciones de teclado relacionadas con la posibilidad de
+introducir los puntos 7 y 8, intro y retroceso;</li>
+<li>acciones y navegación rápida a través de un rotor.</li>
 </ul>
 
 
 <p>Una vez el complemento esté instalado, lee la documentación y ve a las
-opciones utilizando el menú BrailleExtender (localizado en la raíz del menú
-NVDA). La documentación se genera principalmente de manera automática porque
-depende de la pantalla braille en uso.</p>
+opciones utilizando el menú BrailleExtender (localizado en el menú NVDA).</p>
+
+<h2>Exploremos algunas funciones comunes</h2>
+
+<h3>Representación de caracteres no definidos</h3>
+
+<p>La extensión permite personalizar cómo se debería representar un carácter no
+definido en una tabla Braille. Para ello, ve a las opciones de
+—representación de caracteres no definidos—. Puedes elegir entre las
+siguientes representaciones:</p>
+
+<ul>
+<li>Usar el comportamiento de la tabla Braille (sin descripción posible)</li>
+<li>Puntos 1-8 (⣿)</li>
+<li>Puntos 1-6 (⠿)</li>
+<li>Celda vacía (⠀)</li>
+<li>Otro patrón de puntos (por ejemplo, 6-123456)</li>
+<li>Signo de interrogación (dependiendo de la tabla de salida)</li>
+<li>Otro signo o patrón (por ejemplo, ??)</li>
+<li>Hexadecimal</li>
+<li>Hexadecimal, HUC8</li>
+<li>Hexadecimal, HUC6</li>
+<li>Decimal</li>
+<li>Octal</li>
+<li>Binario</li>
+</ul>
+
+
+<p>También se puede combinar esta opción con el ajuste "Describir el carácter
+si es posible".</p>
+
+<p>Notas:</p>
+
+<ul>
+<li>Para distinguir el conjunto de caracteres no definidos mientras se
+maximiza el espacio, la mejor combinación es el uso de la representación
+HUC8 sin marcar la opción "Mostrar el nombre de la puntuación o símbolo si
+está disponible".</li>
+<li>Visita <a href="https://danielmayr.at/huc/">https://danielmayr.at/huc/</a> para aprender más sobre la
+representación HUC</li>
+<li>Ten en cuenta que las definiciones en tablas y aquellas en tus
+diccionarios de tabla tienen prioridad sobre las descripciones de
+caracteres, que a su vez también tienen prioridad sobre la representación
+elegida de caracteres no definidos.</li>
+</ul>
+
+
+<h3>Obtención de la información del carácter actual</h3>
+
+<p>Esta función permite obtener información diversa sobre el carácter bajo el
+cursor usando la tabla actual de entrada Braille, tal como: las
+representaciones HUC8 y HUC6; los valores hexadecimal, decimal, hoctal o
+binario; una descripción del carácter si es posible; la representación en
+Braille Unicode y los puntos del patrón Braille.</p>
+
+<p>Al pulsar una vez el gesto definido asociado a esta función, se muestra esta
+información en un mensaje parpadeante, y una pulsación doble muestra la
+misma información en un mensaje explorable de NVDA.</p>
+
+<p>En las pantallas soportadas el gesto definido es ⡉+espacio. No se definen
+gestos del sistema de manera predeterminada.</p>
+
+<p>Por ejemplo, en el carácter '&amp;', obtendremos la siguiente información:</p>
+
+<blockquote><p>&amp;: 0x26, 38, 0o46, 0b100110<br />
+and (AMPERSAND [Po])<br />
+⢿ (1234568)<br />
+⣥⣺⡧, ⠿⠺⠏⠏</p></blockquote>
+
+<h3>Entrada Braille avanzada</h3>
+
+<p>Esta función permite introducir cualquier carácter a partir de su
+representación HUC8 o su valor hexadecimal/decimal/hoctal/binario. Más aún,
+permite desarrollar abreviaturas. Para usar esta función, accede al modo de
+entrada avanzada e introduce el patrón deseado. Gestos predeterminados:
+NVDA+windows+i o ⡊+espacio (en las pantallas soportadas). Pulsa el mismo
+gesto para salir de este modo. De forma alternativa, una opción permite
+salir de este modo tras introducir un único patrón. Si quieres introducir un
+carácter a partir de su representación HUC8, simplemente introduce el patrón
+HUC8. Ya que una secuencia HUC8 debe caber en 3 o 4 celdas, la
+interpretación se llevará a cabo cada vez que se introduzcan 3 o 4
+combinaciones de puntos. Si quieres introducir un carácter a partir de su
+valor hexadecimal, decimal, octal o binario, haz lo siguiente:</p>
+
+<ol>
+<li>Introduce  ⠼</li>
+<li><p>Especifica la base del siguiente modo:</p>
+
+<ul>
+<li>⠭ o ⠓: para un valor hexadecimal</li>
+<li>⠙: para un valor decimal</li>
+<li>⠕: para un valor octal</li>
+<li>⠃: para un valor binario</li>
+</ul>
+</li>
+<li><p>Introduce el valor del carácter según la base seleccionada previamente.</p></li>
+<li>Pulsa espacio para validar.</li>
+</ol>
+
+
+<p>Para las abreviaturas, primero debes añadirlas desde el cuadro de diálogo
+—Diccionario del modo avanzado de entrada—. Después, simplemente hay que
+introducir la abreviatura y pulsar espacio para expandirla. Por ejemplo, se
+pueden definir las siguientes abreviaturas: "⠎⠺" para "sandwich", "⠋⠛⠋⠗"
+para "🇫🇷".</p>
+
+<p>A continuación hay ejemplos de algunas secuencias que se pueden introducir
+para ciertos caracteres:</p>
+
+<table>
+<thead>
+<tr>
+<th> Carácter         </th>
+<th> HUC8 </th>
+<th> Hexadecimal      </th>
+<th> Decimal </th>
+<th> Octal   </th>
+<th> Binario             </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 👍 (pulgar hacia arriba)     </td>
+<td> ⣭⢤⡙  </td>
+<td> ⠭1f44d or ⠓1f44d </td>
+<td> ⠙128077 </td>
+<td> ⠕372115 </td>
+<td> ⠃11111010001001101 </td>
+</tr>
+<tr>
+<td> 😀 (cara sonriendo) </td>
+<td> ⣭⡤⣺  </td>
+<td> ⠭1f600 or ⠓1f600 </td>
+<td> ⠙128512 </td>
+<td> ⠕373000 </td>
+<td> ⠃11111011000000000 </td>
+</tr>
+<tr>
+<td> 🍑 (melocotón)         </td>
+<td> ⣭⠤⠕  </td>
+<td> ⠭1f351 or ⠓1f351 </td>
+<td> ⠙127825 </td>
+<td> ⠕371521 </td>
+<td> ⠃11111001101010001 </td>
+</tr>
+<tr>
+<td> 🌊 (ola de mar)    </td>
+<td> ⣭⠤⠺  </td>
+<td> ⠭1f30a or ⠓1f30a </td>
+<td> ⠙127754 </td>
+<td> ⠕371412 </td>
+<td> ⠃11111001100001010 </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Nota: actualmente no se soporta la entrada mediante HUC6.</p>
+
+<h3>Modo de una sola mano</h3>
+
+<p>Esta función permite componer una celda en varios pasos. Se puede activar
+desde las opciones generales de las preferencias de la extensión o al vuelo
+usando el gesto NVDA+windows+h por defecto (⡂+espacio en las pantallas que
+lo soporten). Hay disponibles tres métodos de entrada.</p>
+
+<h4>Método #1: rellenar la celda en dos pasos a ambos lados</h4>
+
+<p>Con este método, teclea los puntos del lado izquierdo, y luego los del lado
+derecho. Si un lado está vacío, teclea los puntos correspondientes al lado
+contrario dos veces, o teclea los puntos del lado no vacío en dos pasos.</p>
+
+<p>Por ejemplo:</p>
+
+<ul>
+<li>Para ⠛: pulsa los puntos 1-2 y después los puntos 4-5.</li>
+<li>Para ⠃: pulsa los puntos 1-2 y luego los puntos 1-2, o el punto 1 y luego
+el punto 2.</li>
+<li>Para ⠘: pulsa 4-5 y luego 4-5, o el punto 4 y luego el punto 5.</li>
+</ul>
+
+
+<h4>Método #2: rellenar una celda en dos pasos en un lado (espacio=lado vacío)</h4>
+
+<p>Usando este método, se puede componer una celda con una mano, sin importar
+el lado del teclado elegido. El primer paso permite introducir los puntos
+1-2-3-7 y el segundo 4-5-6-8. Si un lado está vacío, pulsa espacio. Se
+obtendrá una celda vacía pulsando espacio dos veces.</p>
+
+<p>Por ejemplo:</p>
+
+<ul>
+<li>Para ⠛: pulsa los puntos 1-2, y luego los puntos 1-2, o los puntos 4-5 y
+luego los puntos 4-5.</li>
+<li>Para ⠃: pulsa los puntos 1-2 y luego espacio, o 4-5 y luego espacio.</li>
+<li>Para ⠘: pulsa espacio y luego 1-2, o espacio y luego puntos 4-5.</li>
+</ul>
+
+
+<h4>Método #3: rellenar una celda punto a punto (cada punto es un interruptor, pulsa espacio para validar el carácter)</h4>
+
+<p>En este modo, cada punto es un interruptor. La tecla espacio se debe pulsar
+tan pronto como la celda introducida sea la deseada para introducir el
+carácter. Por tanto, cuantos más puntos haya en la celda, más formas hay de
+introducir el carácter.</p>
+
+<p>Por ejemplo, para ⠛, se puede componer la celda de las siguientes maneras:</p>
+
+<ul>
+<li>Puntos 1-2, luego puntos 4-5, después espacio.</li>
+<li>Puntos 1-2-3, luego punto 3 (para corregir), luego puntos 4-5, y
+finalmente espacio.</li>
+<li>Punto 1, luego puntos 2-4-5, y después espacio.</li>
+<li>Puntos 1-2-4, luego punto 5, luego espacio.</li>
+<li>Punto 2, después punto 1, luego punto 5, a continuación punto 4, y
+finalmente espacio.</li>
+<li>Etc.</li>
+</ul>
+
 
