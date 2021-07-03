@@ -1,5 +1,5 @@
 
-<h1>Windows 10 App Essentials</h1>
+<h1>Windows App Essentials</h1>
 <ul>
 <li>Autores: Joseph Lee, Derek Riemer y otros usuarios de Windows 10</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10">versión estable</a></li>
@@ -8,9 +8,14 @@
 </ul>
 
 
-<p>Este complemento es una colección de app modules para varias aplicaciones de
-Windows 10, así como Mejoras y correcciones para ciertos controles de
-windows 10.</p>
+<p>Nota: originalmente llamado Windows 10 App Essentials, se renombró a Windows
+App Essentials en 2021 para soportar Windows 10 y versiones futuras, como
+Windows 11. Algunas partes de este complemento aún harán referencia al
+nombre original del mismo.</p>
+
+<p>Este complemento es una colección de módulos de aplicación para varias
+aplicaciones de Windows, así como Mejoras y correcciones para ciertos
+controles de windows 10 o posterior.</p>
 
 <p>Se incluyen Los siguientes app modules o el apoyo para módulos para algunas
 aplicaciones (consulta cada sección para la aplicación para detalles sobre
@@ -37,15 +42,21 @@ entrada)</li>
 <p>Notas:</p>
 
 <ul>
-<li>Este complemento requiere Windows 10 Versión 2004 (compilación 19041) o
+<li>Este complemento requiere Windows 10 Versión 20H2 (compilación 19042) o
 posterior. Para unos mejores resultados, utiliza el complemento con la
 compilación estable más reciente de Windows 10 (21H1 / compilación 19043).</li>
+<li>Aunque la instalación es posible, este complemento no soporta Windows
+Enterprise LTSC (canal de servicio a largo plazo) ni las versiones de
+Windows Server.</li>
+<li>El soporte de Windows 11 es experimental, y algunas características no
+funcionarán (consulta las entradas relevantes para más detalles).</li>
 <li>Algunas de las características del complemento son o serán parte del
 lector de pantalla NVDA.</li>
-<li>Para las entradas que no se listen a continuación, puedes asumir que las
+<li>Para las entradas que no se enumeren a continuación, puedes asumir que las
 características son parte de NVDA, no se aplican porque el complemento no
-da soporte a versiones antiguas de Windows 10, o se han hecho cambios a
-las aplicaciones que permiten que ya no sea necesario aplicarlas.</li>
+da soporte a versiones de Windows no soportadas, como versiones antiguas
+de Windows 10, o se han hecho cambios a las aplicaciones que permiten que
+ya no sea necesario aplicarlas.</li>
 <li>Algunas aplicaciones soportan el modo de superposición compacta (siempre
 visible en la calculadora, por ejemplo), y este modo no funcionará
 adecuadamente con la versión portable de NVDA.</li>
@@ -61,10 +72,11 @@ complemento, consulta el documento <a href="https://github.com/josephsl/wintenap
 <li>NVDA puede anunciar cuenta de sugerencias cuando se realiza una búsqueda
 en la mayoría de casos. Esta opción se controla por "Anunciar información
 de posición del objeto" en el panel Presentación de Objetos.</li>
-<li>Al buscar en el menú Inicio o el explorador de archivos de la versión 1909
-(actualización de noviembre de 2019) y posteriores, NVDA ya no anunciará
-tanto los resultados de búsqueda dos veces al revisarlos, lo que al mismo
-tiempo hace la salida braille más consistente al revisar elementos.</li>
+<li>Al buscar en el menú Inicio o el explorador de archivos de Windows 10
+versión 1909 (actualización de noviembre de 2019) y posteriores, NVDA ya
+no anunciará tanto los resultados de búsqueda dos veces al revisarlos, lo
+que al mismo tiempo hace la salida braille más consistente al revisar
+elementos.</li>
 <li>Además de los manejadores de eventos UIA proporcionados por NVDA, se
 reconocen los siguientes eventos UIA: drag start, drag cancel, drag
 complete, drop target drag enter, drop target drag leave, drop target
@@ -77,9 +89,9 @@ Controller for, el estado del elemento en el evento State change, y el
 texto del elemento en el evento Item status.</li>
 <li>Es posible seguir sólo eventos específicos y/o eventos que vienen de
 aplicaciones específicas.</li>
-<li>Al abrir, cerrar, reordenar (compilación 21337 o posterior) o cambiar
-entre escritorios virtuales, NVDA anunciará el nombre del escritorio
-virtual activo (escritorio 2, por ejemplo).</li>
+<li>Al abrir, cerrar, reordenar (Windows 11) o cambiar entre escritorios
+virtuales, NVDA anunciará el nombre del escritorio virtual activo
+(escritorio 2, por ejemplo).</li>
 <li>NVDA ya no anunciará el tamaño del texto del Menú Inicio al cambiar la
 resolución de pantalla o la orientación.</li>
 <li>Al reordenar los elementos del menú Inicio o acciones rápidas del centro
@@ -111,15 +123,16 @@ otros campos.</li>
 <h2>Cortana</h2>
 
 <p>La mayoría de elementos se aplican al usar las conversaciones de Cortana
-(versión 2004 y posteriores).</p>
+(Windows 10 versión 2004 y posteriores).</p>
 
 <ul>
 <li>Las respuestas textuales de Cortana se verbalizan en la mayoría de
 situaciones.</li>
 <li>NVDA se silenciará cuando hables a Cortana a través de la voz.</li>
-<li>En la versión 1909 (actualización de noviembre de 2019) y posteriores, se
-soporta la interfaz de usuario de la experiencia de búsqueda moderna
-proporcionada por Windows Search en el explorador de Windows.</li>
+<li>En Windows 10 versión 1909 (actualización de noviembre de 2019) y
+posteriores, se soporta la interfaz de usuario de la experiencia de
+búsqueda moderna proporcionada por Windows Search en el explorador de
+Windows.</li>
 </ul>
 
 
@@ -158,7 +171,8 @@ según utilices las teclas de flechas para navegar por el mapa.</li>
 aplicaciones en la lista de aplicaciones etiquetadas se actualizan
 correctamente.</li>
 <li>Cuando se cargue contenido tal como aplicaciones y películas, NVDA
-anunciará el nombre del producto y el progreso de la descarga.</li>
+anunciará el nombre del producto y el progreso de la descarga (no funciona
+adecuadamente en la Tienda Microsoft actualizada en Windows 11).</li>
 </ul>
 
 
@@ -169,21 +183,21 @@ sugerencias de entrada por hardware, y los editores modernos de métodos de
 entrada para ciertos idiomas. Al visualizar emojis, para una mejor
 experiencia, activa la opción del consorcio Unicode desde las opciones de
 voz de NVDA y configura el nivel de símbolos en "alguno" o más alto. NVDA
-también soporta el panel actualizado de experiencia de entrada, disponible
-en la compilación 21296 y posteriores.</p>
+también soporta el panel actualizado de experiencia de entrada de Windows
+11.</p>
 
 <ul>
 <li>Al abrir el historial del portapapeles, NVDA ya no dirá "portapapeles"
 cuando haya elementos en el portapapeles bajo algunas circunstancias.</li>
-<li>En algunos sistemas que ejecutan la versión 1903 (actualización de mayo de
-2019) y posteriores, NVDA ya no parecerá hacer nada cuando el panel de
-emojis se abra.</li>
+<li>En algunos sistemas que ejecutan Windows 10 versión 1903 (actualización de
+mayo de 2019) y posteriores, NVDA ya no parecerá hacer nada cuando el
+panel de emojis se abra.</li>
 <li>Cuando se seleccione un grupo de emojis (incluyendo kaomoji y el grupo de
-símbolos en la versión 1903 o posteriores), NVDA ya no moverá el navegador
-de objetos a ciertos emojis.</li>
+símbolos en Windows 10 versión 1903 o posteriores), NVDA ya no moverá el
+navegador de objetos a ciertos emojis.</li>
 <li>Se ha añadido soporte para el panel actualizado de experiencia de entrada
 (una combinación del panel de emojis y el historial del portapapeles) en
-la compilación 21296 y posteriores.</li>
+Windows 11.</li>
 </ul>
 
 
@@ -205,13 +219,12 @@ limpieza de disco y los errores del propio Windows Update.</li>
 dos veces.</li>
 <li>El diálogo de recordatorio de Windows Update se reconoce correctamente
 como un diálogo.</li>
-<li>Corregida disparidad en etiquetas de controles advertida en ciertas
+<li>Corregidas etiquetas de controles defectuosas advertidas en ciertas
 instalaciones de Windows.</li>
-<li>En revisiones más recientes de la versión 1803 y posterior, debido a los
-cambios en el procedimiento de Windows Update para actualizaciones de
-características, se ha añadido un enlace "Descargar e instalar
-ahora". NVDA anunciará ahora el título de la nueva actualización si está
-presente.</li>
+<li>NVDA anunciará el nombre del enlace de la actualización de calidad
+opcional si está presente, normalmente "Descargar e instalar ahora".</li>
+<li>En Windows 11, los elementos de migas de pan de la configuración se
+etiquetan correctamente.</li>
 </ul>
 
 

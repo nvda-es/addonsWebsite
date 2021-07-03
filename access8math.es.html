@@ -9,21 +9,27 @@
 <p>Este complemento de NVDA proporciona funciones para la lectura de contenido
 matemático. Aunque NVDA originalmente posee esta capacidad gracias a
 MathPlayer, todavía es necesario mejorar algunas funciones, especialmente
-cuando MathPlayer no proporciona un modo de navegación a causa del idioma.</p>
+cuando MathPlayer no proporciona traducciones específicas o no son
+completas, no proporciona un modo de navegación específico del idioma,
+exploración y más.</p>
 
-<p>El modo navegación es importante para leer grandes cantidades de contenido
-matemático. Ayuda a entender fácilmente la estructura de contenido
-matemático largo.</p>
+<p>El modo interactivo de navegación puede segmentar un contenido matemático en
+fragmentos parciales más pequeños para verbalizar, y seleccionar la lectura
+del fragmento y método mediante una serie de operaciones de teclado. Esta
+función ayuda a entender mejor la estructura y elementos del contenido
+matemático largo, así como la relación jerárquica del elemento.</p>
 
-<h2>funciones</h2>
-
-<p>Access8Math permite:</p>
+<h2>Función de lectura</h2>
 
 <ul>
 <li>Leer contenido matemático escrito en MathML en los navegadores web
-(Mozilla Firefox, Microsoft Internet Explorer y Google Chrome).</li>
-<li>Leer contenido matemático en Microsoft Word escrito en MathType. (solo con
+(Mozilla Firefox, Microsoft Internet Explorer y Google Chrome) o leer
+contenido matemático en Microsoft Word escrito con MathType. (sólo con
 MathPlayer instalado)</li>
+<li>Interacción: pulsa espacio o intro en el objeto matemático MathML para
+entrar en el modo de navegación interactiva. En este modo, puedes navegar
+por el sub-contenido del contenido matemático, desplazarte por él y hacer
+zoom sobre él</li>
 <li><p>Al pulsar "espacio" en el contenido matemático se abre la "ventana de
 interacción de Access8Math", que contiene los botones "Interactivo" y
 "Copiar".</p>
@@ -36,72 +42,198 @@ componentes.</li>
 <li>copiar: copia el código fuente del objeto MathML.</li>
 </ul>
 </li>
-<li><p>En el modo navegación, indica el significado de las partes en la parte
-superior de la capa.</p></li>
-<li><p>En el modo de órdenes de navegación：</p>
+<li><p>Revisión de texto: pulsa las teclas 1-9 del teclado numérico durante la
+navegación para leer el contenido matemático del texto serializado palabra
+por palabra y línea a línea</p></li>
+<li>Analizar el significado matemático general del contenido: analiza la
+estructura de MathML, y cuando se cumple una regla específica, se lee en
+voz alta en el significado matemático de la regla</li>
+<li>Analizar el significado matemático del elemento con contenido: al navegar
+y examinar, anunciará el significado del contenido bajo su contenido
+superior. Por ejemplo, hay dos elementos de marca, y al moverse entre
+ellos los tratará como denominador y numerador</li>
+</ul>
+
+
+<h2>orden de modo de navegación interactiva：</h2>
 
 <ul>
-<li>"Flecha abajo": aumenta el zoom en una subparte más pequeña del
-contenido matemático.</li>
+<li>"Flecha abajo": aumenta el zoom en una subparte más pequeña del contenido
+matemático.</li>
 <li>"Flecha arriba": saca el zoom hacia una subparte mayor del contenido
 matemático.</li>
 <li>"Flecha izquierda": se mueve al contenido matemático anterior.</li>
 <li>"Flecha derecha": se mueve al siguiente contenido matemático.</li>
-<li>"Inicio": se mueve al principio del contenido matemático completo.</li>
+<li>"Inicio": se mueve al principio. (contenido matemático completo)</li>
 <li>"CTRL+c": copia el código fuente del objeto MathML</li>
-<li>"Números del 1 al 9 del bloque numérico": lee el contenido matemático
-como texto serializado usando las órdenes de revisión de texto de
-NVDA.</li>
+<li>"Números del 1 al 9 del bloque numérico": lee el contenido matemático como
+texto serializado usando las órdenes de revisión de texto de NVDA.</li>
 <li>"ESC": sale del modo navegación.</li>
 </ul>
-</li>
-<li><p>"Control+Alt+M": cambia el proveedor entre Access8Math y MathPlayer (solo
-MathPlayer instalado).</p></li>
-<li><p>Menú:</p>
+
+
+<h2>Función de escritura</h2>
+
+<p>Escritura de contenido mixto (texto y matemáticas):</p>
+
+<h3>escribir contenido mixto</h3>
+
+<p>Usar delimitador (delimitador de inicio "(" y delimitador del final ")",
+bloque LaTeX) para determinar el área entre el contenido textual y el
+matemático, o lo que es lo mismo, los datos en el bloque LaTeX son contenido
+matemático (LaTeX), y los datos fuera del bloque LaTeX son texto.</p>
+
+<p>Pulsa alt+h en el cuadro de edición para convertirlo en un documento HTML
+mixto con contenido textual y matemático que pueda revisarse y
+exportarse. Los datos del bloque LaTeX se convertirán en MathML para
+presentarlos como texto normal.</p>
+
+<ul>
+<li>revisar: abre el documento HTML convertido con el programa predeterminado
+que abra la extensión .html.</li>
+<li>exportar: empaqueta el documento HTML en un archivo zip.</li>
+</ul>
+
+
+<p>Pulsa alt+m en el cuadro de edición para mostrar la ventana de órdenes de
+marcado, selecciona "LaTeX" y pulsa intro. Se añadirá un bloque LaTeX en la
+posición del cursor y este se moverá a su interior para poder introducir el
+contenido rápidamente.</p>
+
+<p>Pulsa alt+l en el cuadro de edición para mostrar la ventana de órdenes de
+LaTeX, selecciona el elemento con la orden LaTeX que quieres añadir y pulsa
+intro para agregar la sintaxis LaTeX correspondiente en la posición actual
+del cursor y desplazar el mismo al punto de entrada adecuado para introducir
+el contenido con rapidez.</p>
+
+<p>La ventana de órdenes de LaTeX</p>
+
+<ul>
+<li>Selecciona el elemento con la orden LaTeX y pulsa las teclas f1 a f12 para
+configurar el atajo</li>
+<li>Selecciona el elemento con la orden LaTeX y pulsa d para eliminar el atajo
+asociado</li>
+<li>Selecciona el elemento con la orden LaTeX y pulsa intro para añadir la
+sintaxis LaTeX correspondiente en la posición actual del cursor</li>
+</ul>
+
+
+<p>Movimiento de edición del cursor de navegación</p>
+
+<ul>
+<li>En el cuadro de edición, pulsa alt+flecha izquierda para moverte al punto
+inicial del bloque de datos anterior</li>
+<li>En el cuadro de edición, pulsa alt+flecha abajo para leer el contenido del
+bloque de datos actual sin moverte</li>
+<li>En el cuadro de edición, pulsa alt+flecha derecha para moverte al
+principio del siguiente bloque de datos</li>
+<li>En el cuadro de edición, pulsa alt+inicio para moverte al principio del
+bloque de datos actual</li>
+<li>En el cuadro de edición, pulsa alt+fin para moverte al final del bloque de
+datos actual</li>
+</ul>
+
+
+<p>Navegación para desplazarse y seleccionar con el cursor de edición</p>
+
+<ul>
+<li>En el área de edición, pulsa alt+shift+flecha izquierda para desplazarte
+al bloque de datos anterior y seleccionarlo</li>
+<li>En el área de edición, pulsa alt+shift+flecha abajo para desplazarte al
+bloque de datos actual y seleccionarlo</li>
+<li>En el área de edición, pulsa alt+shift+flecha derecha para desplazarte al
+bloque de datos siguiente y seleccionarlo</li>
+</ul>
+
+
+<p>Pulsa alt+s en el cuadro de edición para activar o desactivar el modo de
+atajos. Cuando el modo de atajos está activado, pulsa f1~f12 para insertar
+rápidamente sintaxis LaTeX. Pulsa shift+f1~f12 para leer las órdenes LaTeX
+vinculadas a cada atajo.</p>
+
+<p>En el cuadro de edición, con el cursor en el bloque LaTeX, pulsa alt+i para
+entrar en el modo de navegación interactiva</p>
+
+<p>Pulsa NVDA+shift+espacio en el cuadro de edición para activar o desactivar
+la edición del modo de navegación de una sola letra. Cuando se activa este
+modo, puedes mover el cursor con navegación de una sola letra</p>
+
+<p>Las siguientes teclas desplazan por sí mismas el cursor de edición al
+siguiente bloque disponible, mientras que al añadirles shift se mueven al
+bloque anterior:</p>
+
+<ul>
+<li>l: moverse al siguiente bloque LaTeX</li>
+<li>t: moverse al siguiente bloque de texto</li>
+</ul>
+
+
+<p>ejemplo de contenido mixto: la solución de la ecuación cuadrática en una
+variable (ax<sup>2</sup>+bx+c=0) es (\frac{-b\pm\sqrt{b<sup>2</sup>-4ac}}{2a}).</p>
+
+<h2>opciones</h2>
+
+<p>Todos los menús de Access8math están centralizados en Herramientas -&gt; Access8math.</p>
+
+<h3>opciones de la función de lectura</h3>
 
 <ul>
 <li><p>Diálogo de Opciones generales:</p>
 
 <ul>
 <li>Idioma: idioma de lectura de Access8Math</li>
-<li>Intervalo de tiempo del elemento: establece el tiempo de pausa
-entre elementos. Admite valores entre 1 y 100. Cuanto menor sea el
-valor menos durará la pausa, y cuanto mayor sea más durará.</li>
-<li>Analizar el significado matemático del contenido: analiza el
-contenido matemático semánticamente, siguiendo reglas específicas,
-leyendo el significado matemático de esas reglas.</li>
-<li>Leer el significado del patrón definido en el diccionario: cuando
-hay un patrón definido en el diccionario, utiliza el diccionario
-para leer el significado de una parte en el nivel superior.</li>
-<li>Leer el significado de patrón autogenerado: cuando el patrón no
-está bien definido o está incompleto en el diccionario, utiliza la
-función de generación automática para leer el significado de una
-parte en el nivel superior.</li>
+<li>Intervalo de tiempo del elemento: establece el tiempo de pausa entre
+elementos. Admite valores entre 1 y 100. Cuanto menor sea el valor
+menos durará la pausa, y cuanto mayor sea más durará.</li>
+<li>Mostrar ventana de interacción de Access8math al entrar al modo
+interactivo: indica si se muestra la "ventana de interacción de
+Access8math" al pulsar la barra espaciadora sobre un objeto
+matemático.</li>
+<li>Analizar el significado matemático del contenido: analiza el contenido
+matemático semánticamente, y cuando se cumpla una regla específica, se
+usará esa regla en la verbalización.</li>
+<li>Leer significado predefinido en el diccionario al navegar en modo
+interactivo: si el patrón está definido en el diccionario, se usa para
+leer el significado de una subparte a nivel de capa superior.</li>
+<li>Leer el significado autogenerado al navegar en modo interactivo:
+cuando el patrón no está bien definido o está incompleto en el
+diccionario, utiliza la función de generación automática para leer el
+significado de una parte en el nivel superior.</li>
+<li>Utilizar un pitido para avisar de que no hay movimiento: al navegar en
+modo interactivo, te avisará con un pitido. Si no se marca, lo hará
+verbalizando "sin movimiento".</li>
+<li>Usar NVDA+gesto para activar acción: indica si se debe añadir la tecla
+NVDA a los atajos al escribir contenido mixto en el cuadro de edición</li>
 </ul>
 </li>
 <li><p>Diálogo de configuración de reglas: elige si se activan reglas
 específicas.</p></li>
 </ul>
-</li>
-<li><p>El "diccionario Unicode" permite personalizar el método de lectura del
-texto de cada símbolo.</p></li>
-<li>La "regla matemática" permite personalizar el método de lectura para cada
+
+
+<h3>traducción</h3>
+
+<ul>
+<li>El "diccionario Unicode" permite personalizar el método de lectura del
+texto de cada símbolo.</li>
+<li>"Reglas matemáticas" permite personalizar el método de lectura para cada
 tipo de matemáticas.</li>
-<li>"Añadir nuevo idioma" permite añadir idiomas que no vienen incorporados en
-el sistema. El nuevo idioma se añadirá a "Opciones generales", y la
-personalización multiidioma se puede llevar a cabo leyendo la definición
-de "diccionario Unicode" y "regla matemática".</li>
+<li>"Añadir nuevo idioma" permite añadir un nuevo idioma no incorporado en el
+sistema. Tras hacerlo, habrá más familias de idiomas recién añadidas a
+opciones generales, que se pueden usar para definir el método de lectura
+mediante el "diccionario Unicode" y las "reglas matemáticas" para alcanzar
+la traducción</li>
 </ul>
 
 
-<h2>Reglas matemáticas</h2>
+<h4>Reglas matemáticas</h4>
 
-<p>Access8Math establece 43 reglas matemáticas según el tipo matemático y la
+<p>Access8Math establece 46 reglas matemáticas según el tipo matemático y la
 lógica para decidir el orden y método de lectura matemática. En función de
 lógica local de lectura matemática, el texto y orden de lectura matemática
 puede cambiarse. El método es como sigue:</p>
 
-<p>Editar: tras entrar en la "regla matemática", la ventana lista 43 reglas
+<p>Editar: tras entrar en la "regla matemática", la ventana lista 46 reglas
 matemáticas. Elige cualquiera de ellas y pulsa "Editar" para modificar la
 entrada.</p>
 
@@ -109,7 +241,7 @@ entrada.</p>
 "orden serializado" y el "rol del hijo".</p>
 
 <ul>
-<li>Orden serializado: las regla matemática se divide en varios bloques según
+<li>Orden serializado: la regla matemática se divide en varios bloques según
 el orden de lectura. En este área, el orden de lectura del nodo hijo y el
 texto de delimitación del inicio, la mitad y el final puede
 cambiarse. Tomando la regla fraccional mfrac como ejemplo, esta regla se
@@ -140,103 +272,97 @@ cargar reglas nuevas.</p>
 <p>Exportar: guarda el fichero de reglas matemáticas a la ruta especificada
 para que pueda compartirse o conservarse.</p>
 
-<h2>otros</h2>
+<h2>ejemplo</h2>
 
-<p>Las reglas únicas son versiones simplificadas de varias reglas. Cuando el
-contenido tiene un único elemento, para que se pueda leer y entender mejor y
-sin confusiones, puedes elegir que no se lea el script antes y después del
-contenido.</p>
-
-<p>Las definiciones y reglas de contenido matemático están en constante
-crecimiento.</p>
-
-<p>Ahora nos centramos en el lenguaje escrito con marcas de presentación
-MathML, ya que las herramientas gráficas de entrada MathML como Word, Math
-type y el MathML generado con Wiris son de este tipo.</p>
-
-<p>Todos los contenidos matemáticos en wikis están escritos en MathML.</p>
+<p>Los contenidos matemáticos en wikis están escritos en MathML.</p>
 
 <ul>
+<li>Ecuación cuadrática: https://en.wikipedia.org/wiki/Quadratic_equation</li>
 <li>Multiplicación de matrices (en inglés):
 https://en.wikipedia.org/wiki/Matrix_multiplication</li>
 <li>Función cúbica (en inglés): https://en.wikipedia.org/wiki/Cubic_function</li>
 </ul>
 
 
-<h2>Ejemplo</h2>
+<p>Ecuación de segundo grado</p>
 
-<h3>Ecuación de segundo grado</h3>
-
-<p>-b&#xB1;b2-4ac2a</p>
-
-<h3>Teorema binomial</h3>
-
-<p>
+<ul>
+<li>LaTeX: (ax<sup>2</sup>+bx+c=0)</li>
+<li>MathML: -b&#xB1;b2-4ac2a</li>
+</ul>
 
 
-
-(
-1
-+
-x
-
-)
-
-α
-
-
-=
-
-∑
-
-n
-=
-0
-
-
-∞
-
-
-C
-(
-α
-,
-n
-)
-
-x
-
-n
-
-
-
-∀
-x
-:
-
-|
-x
-|
-
-&lt;
-1
-,
-∀
-α
-∈
-
-C
-
-
-
-{\displaystyle (1+x)^{\alpha }=\sum _{n=0}^{\infty }C(\alpha ,n)x^{n}\quad \forall x:\left|x\right|&lt;1,\forall \alpha \in \mathbb {C} }
-
-</p>
-
-<p>Código fuente: https://github.com/tsengwoody/Access8Math</p>
+<p>github: https://github.com/tsengwoody/Access8Math</p>
 
 <p>No dudes en informar de cualquier fallo que encuentres o comentar lo que
 quieras, ¡gracias!</p>
+
+<h1>Actualización de Access8Math v3.0</h1>
+
+<ul>
+<li>Escribir contenido matemático en AsciiMath</li>
+<li>Escribir contenido matemático en LaTeX</li>
+<li>Escribir contenido mixto (texto y matemáticas)</li>
+<li>Usar atajos de teclado para mover el cursor a distintos tipos de bloques
+en el cuadro de edición</li>
+<li>Usar el menú de órdenes para seleccionar órdenes en el cuadro de edición</li>
+<li>Configurar atajos de teclado en el menú de órdenes de LaTeX</li>
+<li>Revisar y exportar contenido del cuadro de edición en HTML</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.6</h1>
+
+<ul>
+<li>Se entra automáticamente en el modo interactivo al mostrar la ventana de
+interacción de Access8Math.</li>
+<li>Puedes elegir cómo avisar de que no hay movimiento en el modo interactivo:
+pitar o verbalizar "sin movimiento" dos veces.</li>
+<li>El contenido del elemento actual se repetirá otra vez si no hay
+movimiento.</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.5</h1>
+
+<ul>
+<li>Añadida traducción al ruso de reglas e interfaz de usuario. Gracias al
+trabajo de traducción de Futyn-Maker.</li>
+<li>Corregido un fallo de traducción de símbolos compuestos.</li>
+<li>Se eliminan duplicados de letras minúsculas y se añaden letras mayúsculas
+en el unicode.dic inglés (0370~03FF).</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.4</h1>
+
+<ul>
+<li>Fallo corregido.</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.3</h1>
+
+<ul>
+<li>Compatibilidad con Python 3</li>
+<li>se refactoriza el módulo y se corrige el estilo del código</li>
+<li>Se añade una regla de vector de un símbolo</li>
+</ul>
+
+
+<h1>Actualización de Access8Math v2.2</h1>
+
+<ul>
+<li>se corrige un fallo de verbalización incorrecta cuando un único nodo tiene
+más caracteres.</li>
+<li>Se corrige un problema de compatibilidad en NVDA 2019.2, gracias a las
+solicitudes de cambio de CyrilleB79.</li>
+<li>Se corrige un fallo en el diccionario Unicode con símbolos duplicados.</li>
+<li>Se ha añadido la traducción al francés, gracias al trabajo de traducción
+de CyrilleB79.</li>
+<li>Se ajustan los atajos de teclado.</li>
+</ul>
+
 
 <h1>Actualización de Access8Math v2.1</h1>
 
@@ -246,7 +372,7 @@ Access8Math" se muestra automáticamente al entrar en modo interacción.</li>
 <li>En el modo interactivo, se puede mostrar manualmente la "ventana de
 interacción" pulsando ctrl+m cuando no se muestra por defecto.</li>
 <li>Corregido fallo de cambio entre varios idiomas.</li>
-<li>Se ha añadido la traducción al turco. Gracias al trabajo de traducción de
+<li>Se ha añadido la traducción al turco, gracias al trabajo de traducción de
 cagri (çağrı doğan).</li>
 <li>Actualización de los indicadores del fichero manifest.ini para dar
 compatibilidad con NVDA 2019.1.</li>
@@ -296,8 +422,8 @@ para seleccionar si se habilitan ciertas reglas.</li>
 <ul>
 <li>regla de vector: cuando hay un símbolo "⇀" encima de dos
 identificadores, el elemento se lee como "vector...".</li>
-<li>regla de: cuando hay un símbolo " ⌢ " sobre dos identificadores, el
-elemento se lee como "de...".</li>
+<li>regla del ceño fruncido: cuando hay un símbolo " ⌢ " sobre dos
+identificadores, el elemento se lee como "ceño fruncido".</li>
 </ul>
 </li>
 <li><p>Fallo corregido.</p></li>
@@ -325,7 +451,7 @@ identificadores, el elemento se lee como "segmento de línea...".</li>
 identificadores, el elemento se lee como "raya..."</li>
 </ul>
 </li>
-<li><p>Se ha añadido una ventana de interacción. Se puede pulsar "espacio" en el
+<li><p>Se ha añadido una ventana de interacción: se puede pulsar "espacio" en el
 contenido matemático para abrir la "ventana de interacción de
 Access8Math", que contiene los botones "Copiar" e "Interactuar".</p>
 

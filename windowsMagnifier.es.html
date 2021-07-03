@@ -2,28 +2,101 @@
 <h1>Lupa de Windows</h1>
 <ul>
 <li>Autor: Cyrille Bougot</li>
-<li>Compatibilidad con NVDA: de 2018.3 a 2019.3</li>
+<li>Compatibilidad con NVDA: de 2018.3 en adelante</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=winmag">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=winmag-dev">versión de desarrollo</a></li>
 </ul>
 
 
-<p>Este complemento mejora la compatibilidad entre la lupa de Windows y NVDA.</p>
+<p>Este complemento mejora el uso de la lupa de Windows con NVDA.</p>
 
 <h2>Características</h2>
 
 <ul>
-<li>Añade varios atajos de teclado para conmutar ciertas opciones de la lupa.</li>
-<li>Indica el resultado de algunas órdenes nativas de la lupa.</li>
-<li>Reduce los casos en los que las órdenes de navegación por tablas
+<li>Permite indicar el resultado de algunas órdenes de teclado nativas de la
+lupa.</li>
+<li>Permite reducir los casos en los que las órdenes de navegación por tablas
 interfieren con las órdenes de la lupa.</li>
+<li>Añade varios atajos de teclado para conmutar ciertas opciones de la lupa.</li>
+</ul>
+
+
+<h2>Opciones</h2>
+
+<p>El panel de opciones de la extensión de la lupa de Windows permite configurar cómo reacciona NVDA ante órdenes nativas de la lupa de Windows.
+Puedes querer tener más o menos órdenes indicadas en función de cuánto seas capaz de ver.
+Se puede abrir este panel eligiendo Preferencias -&gt; Opciones en el menú de NVDA y seleccionando la categoría Lupa de Windows en la ventana de opciones.
+El atajo de teclado NVDA+windows+O seguido de O también permite abrir este panel de opciones directamente.</p>
+
+<p>El panel contiene las siguientes opciones:</p>
+
+<ul>
+<li><p>Anunciar movimientos de la vista: controla qué se anuncia al mover la
+vista con las órdenes control+alt+flechas. Las tres opciones son:</p>
+
+<ul>
+<li>Desactivado: no se anuncia nada.</li>
+<li>Con voz: un mensaje de voz que indica la posición de la vista
+aumentada en la dimensión en la que se mueve la vista.</li>
+<li>Con tonos: se reproduce un sonido y su tono indica la posición de la
+vista aumentada en la dimensión en la que se mueve la vista.</li>
+</ul>
+
+
+<p>Esta opción sólo afecta al modo de pantalla completa.</p></li>
+<li><p>Anunciar activada o desactivada: si se marca, se anuncia el estado de la
+lupa al utilizar las órdenes Windows++ y Windows+escape para encenderla o
+apagarla.</p></li>
+<li>Anunciar zoom: si se marca, el nivel de zoom de la lupa se indica al usar
+las órdenes del zoom Windows++ y Windows+-.</li>
+<li>Anunciar inversión de color: si se marca, se anuncia el estado de la
+inversión de color al usar la orden de conmutación control+alt+i.</li>
+<li>Anunciar cambio de vista: si se marca, se anuncia el tipo de vista al usar
+una orden que cambia el tipo de vista (Control+Alt+M, Control+Alt+F,
+Control+Alt+D, Control+Alt+L)</li>
+<li>Anunciar redimensión de la lente o de la ventana acoplada: si se marca,
+aparecerá un mensaje al usar las órdenes de redimensión
+(alt+shift+flechas). En el modo ventana acoplada, se anuncian la altura o
+la anchura. En el modo lente, no se puede anunciar por el momento la nueva
+medida. Estas órdenes de redimensión parecen no estar disponibles en todas
+las versiones de Windows; si tu versión de Windows no las soporta,
+deberías dejar esta opción desmarcada.</li>
+<li><p>En documentos y vistas de lista, pasar a la lupa los atajos
+control+alt+flechas: hay tres posibles opciones:</p>
+
+<ul>
+<li>Nunca: la orden nunca se pasa a la lupa de Windows y la navegación
+normal por tablas funciona. Al usarse en documentos fuera de una
+tabla, las órdenes control+alt+flechas indican un mensaje de error "no
+estás en una tabla". Este es el comportamiento estándar de NVDA sin
+este complemento.</li>
+<li>Sólo si no es una tabla: en las tablas y en las listas, las órdenes
+control+alt+flechas realizan una navegación estándar por tablas. Al
+usarse en documentos fuera de una tabla, las órdenes
+control+alt+flechas realizan órdenes estándar de la lupa para mover la
+vista. Si quieres mover la vista de la lupa de Windows mientras estés
+en una lista o tabla, tendrás que pulsar NVDA+f2 antes de usar las
+órdenes control+alt+flechas. Esta opción es la más equilibrada si
+quieres usar control+alt+flechas tanto en el movimiento de la lupa
+como en la navegación por tablas.</li>
+<li>Siempre: las órdenes control+alt+flechas mueven la vista de la lupa en
+cualquier caso. Esta opción puede ser útil si no usas
+control+alt+flechas para navegar por tablas, por ejemplo porque has
+modificado los atajos de navegación por tablas en NVDA o porque
+utilizas exclusivamente el complemento <a href="https://addons.nvda-project.org/addons/easyTableNavigator.es.html">Easy Table Navigator</a> para
+navegar por tablas.</li>
+</ul>
+</li>
 </ul>
 
 
 <h2>Órdenes que añade este complemento</h2>
 
-<p>Todas las órdenes añadidas para controlar las opciones de la lupa se
-encuentran accesibles a través de la orden de capa de la lupa
-NVDA+windows+O:</p>
+<p>Además de las órdenes nativas de la lupa, este complemento proporciona
+órdenes adicionales que permiten controlar las opciones de la lupa sin abrir
+su página de configuración. Todas las órdenes para controlar las opciones de
+la lupa están accesibles a través de la orden de capa de la lupa
+NVDA+windows+o:</p>
 
 <ul>
 <li>NVDA+windows+o, c: activa o desactiva el seguimiento del cursor.</li>
@@ -35,19 +108,27 @@ NVDA+windows+O:</p>
 ratón (dentro de los bordes de la pantalla o centrado en la pantalla);
 esta función sólo está disponible en Windows 10, compilación 10743 o
 posterior.</li>
+<li>NVDA+windows+o seguido de x: cambia entre los distintos modos de
+seguimiento del cursor de texto (dentro de los bordes de la pantalla o
+centrado en la pantalla); esta función sólo está disponible en Windows 10,
+compilación 18894 o posterior.</li>
+<li>NVDA+windows+o seguido de v: mueve el cursor del ratón al centro de la
+vista ampliada (orden disponible sólo en la vista de pantalla completa).</li>
+<li>NVDA+windows+o seguido de o: abre las opciones del complemento Lupa de
+Windows.</li>
 <li>NVDA+windows+o, h: muestra ayuda sobre las órdenes de capa de la lupa.</li>
 </ul>
 
 
-<p>No hay un gesto por defecto para cada orden, pero se pueden añadir desde el
-diálogo Gestos de entrada si lo deseas. Del mismo modo, se puede editar o
-eliminar la orden de la capa de la lupa (NVDA+windows+o). Todavía no se
-pueden modificar las subórdenes de esta capa.</p>
+<p>No hay un gesto directo por defecto para cada orden, pero se pueden asignar
+desde el diálogo Gestos de entrada si lo deseas. Del mismo modo, se puede
+editar o eliminar la orden de la capa de la lupa (NVDA+windows+o). Todavía
+no se pueden modificar las subórdenes de esta capa.</p>
 
 <h2>Órdenes nativas de la lupa</h2>
 
-<p>Este complemento verbaliza el resultado de las siguientes órdenes nativas de
-la lupa:</p>
+<p>Este complemento puede verbalizar el resultado de las siguientes órdenes
+nativas de la lupa, en función de su configuración:</p>
 
 <ul>
 <li>Iniciar lupa: windows+más (alfanumérico o del teclado numérico).</li>
@@ -60,30 +141,16 @@ la lupa:</p>
 <li>Seleccionar la vista lente: control+alt+l</li>
 <li>Pasar cíclicamente por los tres tipos de vista: control+alt+m</li>
 <li>Redimensionar la lente con el teclado: shift+alt+flechas izquierda,
-derecha, arriba o abajo</li>
+derecha, arriba o abajo. Nota: aunque no parece estar documentado, parece
+que se ha retirado este atajo en versiones recientes de Windows, como
+Windows 2004.</li>
+<li>Mover la vista ampliada: control+alt+flechas (la indicación sólo afecta al
+modo de pantalla completa)</li>
 </ul>
 
 
-<p>Los siguientes atajos de teclado también son órdenes nativas de la lupa:
-control+alt+flecha izquierda, control+alt+flecha derecha, control+alt+flecha
-arriba y control+alt+flecha abajo. Se usan para mover la vista de la lupa a
-izquierda, derecha, arriba y abajo, respectivamente. Ya que NVDA también usa
-estas órdenes para desplazarse por tablas, el complemento las administra de
-la siguiente manera:</p>
-
-<ul>
-<li>Si el foco o el cursor en modo exploración no se encuentran en una tabla o
-vista de lista, se ejecuta la orden de la lupa.</li>
-<li>Si el foco o el cursor del modo exploración se encuentran en una tabla o
-vista de lista, se ejecuta la orden de navegación por tablas de NVDA.</li>
-<li>Si necesitas mover la vista de la lupa mientras te encuentras en una tabla
-o vista de lista, pulsa NVDA+f2 antes de pulsar control+alt+cualquiera de
-las flechas.</li>
-</ul>
-
-
-<p>Por último, aquí se encuentra una lista con más órdenes nativas de la lupa,
-para completar la información de esta página:</p>
+<p>Aquí se encuentra una lista con más órdenes nativas de la lupa, para más
+información:</p>
 
 <ul>
 <li>Control+alt+rueda del ratón: acerca o aleja la lupa usando la rueda del
@@ -107,13 +174,13 @@ atajos están activados por defecto y hacen conflicto con los atajos de la
 lupa de Windows para mover la vista. Deberás desactivarlos para poder
 usarlos con la lupa. Se pueden deshabilitar en el panel de control de
 Intel o desde el menú de Intel presente en la bandeja del sistema.</li>
-<li><p>Alt+shift+flechas son atajos de la lupa para redimensionar la vista
-ampliada (lente o acoplada). Cuando la lupa está activa (incluso en el
-modo a pantalla completa), la lupa captura estos atajos e impide que pasen
-a la aplicación, incluso pulsando NVDA+f2 antes. Para usar estos atajos en
-la aplicación actual, debes salir de la lupa (windows+escape) y reabrirla
-después (windows+más). Por ejemplo, en Microsoft Word, para reducir el
-nivel de un título:</p>
+<li><p>Dependiendo de tu versión de Windows, alt+shift+flechas son atajos de la
+lupa para redimensionar la vista ampliada (lente o acoplada). Cuando la
+lupa está activa (incluso en el modo a pantalla completa), la lupa captura
+estos atajos e impide que pasen a la aplicación, incluso pulsando NVDA+f2
+antes. Para usar estos atajos en la aplicación actual, debes salir de la
+lupa (windows+escape) y reabrirla después (windows+más). Por ejemplo, en
+Microsoft Word, para reducir el nivel de un título:</p>
 
 <ul>
 <li>Pulsa windows+escape para salir de la lupa.</li>
@@ -126,10 +193,9 @@ actual.</li>
 Windows, puedes consultar las siguientes páginas:</p>
 
 <ul>
-<li><a href="https://support.microsoft.com/en-us/help/11542/windows-use-magnifier-to-make-things-easier-to-see">Usar la lupa para hacer los elementos de la pantalla más fáciles de
-ver</a></li>
-<li><a href="https://support.microsoft.com/en-us/help/13810">Atajos de teclado de Windows para
-accesibilidad</a></li>
+<li><a href="https://support.microsoft.com/es-es/windows/utilizar-la-lupa-para-facilitar-la-visualizaci%C3%B3n-en-la-pantalla-414948ba-8b1c-d3bd-8615-0e5e32204198">Utilizar la lupa para facilitar la visualización en la
+pantalla</a></li>
+<li><a href="https://support.microsoft.com/es-es/help/13810">Accesos directos de teclado de Windows para accesibilidad</a></li>
 </ul>
 </li>
 </ul>
