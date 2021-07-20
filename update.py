@@ -15,7 +15,7 @@ addresses=[
 "https://addons.nvda-project.org/addons/timeZoner.es.html",
 "https://addons.nvda-project.org/addons/tonysEnhancements.es.html",
 "https://addons.nvda-project.org/addons/phoneticPunctuation.es.html",
-"https://addons.nvda-project.org/addons/windowsMagnifier.es.html",
+"https://addons.nvda-project.org/addons/winMag.es.html",
 "https://addons.nvda-project.org/addons/percentageChecker.es.html",
 "https://addons.nvda-project.org/addons/reportPasswords.es.html",
 "https://addons.nvda-project.org/addons/synthRingSettingsSelector.es.html",
@@ -99,7 +99,7 @@ addresses=[
 "https://addons.nvda-project.org/addons/ventrilo.es.html",
 "https://addons.nvda-project.org/addons/clock.es.html",
 "https://addons.nvda-project.org/addons/nvSpeechPlayer.es.html",
-"https://addons.nvda-project.org/addons/pcKeyboardBrailleInput.es.html",
+"https://addons.nvda-project.org/addons/pcKbBrl.es.html",
 "https://addons.nvda-project.org/addons/quickBooks2014.es.html",
 "https://addons.nvda-project.org/addons/teamViewer.es.html",
 "https://addons.nvda-project.org/addons/instantTranslate.es.html"
