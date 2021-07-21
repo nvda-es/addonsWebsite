@@ -1,0 +1,68 @@
+
+<h1>Rastreador de eventos</h1>
+<ul>
+<li>Autor: Joseph Lee</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=evttracker">versión estable</a></li>
+<li>Compatibilidad con NVDA: de 2021.1 en adelante</li>
+</ul>
+
+
+<p>Este complemento emite información sobre objetos en los que se han disparado
+eventos. Entre las propiedades registradas en el nivel de registro de
+depuración se incluyen el tipo de objeto, su nombre, rol, evento, módulo de
+aplicación, e información específica de la API de accesibilidad como el
+accName del objeto IAccessible y el Id de automatización en objetos UIA.</p>
+
+<p>Notas:</p>
+
+<ul>
+<li>Este complemento está pensado para desarrolladores y usuarios avanzados
+que necesitan rastrear eventos procedentes de aplicaciones y diversos
+controles.</li>
+<li>Para usar el complemento, NVDA debe tener el registro en modo depuración
+(configurado desde Opciones generales / Nivel de registro, o reiniciado
+con el registro de depuración habilitado).</li>
+<li>Podría ser posible que los complementos cargados antes que el reastreador
+de eventos no pasen el evento a otros complementos, incluido el rastreador
+de eventos. Si esto sucede, el rastreador de eventos no será capaz de
+registrar eventos.</li>
+<li>Los eventos se manejan desde las extensiones globales, módulos de
+aplicación, interceptores de árbol y objetos de NVDA, en ese orden.</li>
+</ul>
+
+
+<h2>Eventos y su información</h2>
+
+<p>Se rastrean y registran los siguientes eventos:</p>
+
+<ul>
+<li>Manipulación del foco: obtención de foco, pérdida de foco, foco
+introducido, primer plano</li>
+<li>Cambios: nombre, valor, estado, descripción, región viva</li>
+<li>Eventos UIA: elemento seleccionado, estado del elemento, controlador para,
+notificación, globo de ayuda abierto, ventana abierta, cambio de texto</li>
+</ul>
+
+
+<p>Se registra la siguiente información de cada evento:</p>
+
+<ul>
+<li>Nombre del evento</li>
+<li>Objeto</li>
+<li>Nombre del objeto</li>
+<li>Rol del objeto</li>
+<li>Estado o valor del objeto, dependiendo de los eventos</li>
+<li>Módulo de aplicación</li>
+<li>En objetos IAccessible: nombre acc, ID del hijo</li>
+<li>En objetos UIA: Id de automatización, nombre de clase, propiedades de
+notificación si se registra información de eventos de notificación</li>
+</ul>
+
+
+<h2>Versión 21.07</h2>
+
+<ul>
+<li>Versión inicial.</li>
+</ul>
+
+

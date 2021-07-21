@@ -1,6 +1,7 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/evtTracker.es.html",
 "https://addons.nvda-project.org/addons/directLink.es.html",
 "https://addons.nvda-project.org/addons/unmute.es.html",
 "https://addons.nvda-project.org/addons/checkGestures.es.html",
