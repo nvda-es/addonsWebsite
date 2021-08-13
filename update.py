@@ -1,6 +1,9 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/ignoreBlanksIndentationReporting.es.html",
+"https://addons.nvda-project.org/addons/searchWith.es.html",
+"https://addons.nvda-project.org/addons/sayProductNameAndVersion.es.html",
 "https://addons.nvda-project.org/addons/evtTracker.es.html",
 "https://addons.nvda-project.org/addons/directLink.es.html",
 "https://addons.nvda-project.org/addons/unmute.es.html",

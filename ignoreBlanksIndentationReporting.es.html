@@ -1,0 +1,68 @@
+
+<h1>Ignorar anuncio de sangr&#xED;a en blanco</h1>
+<ul>
+<li>Autor: Samuel Kacer</li>
+<li>Compatibilidad con NVDA: de 2021.1 en adelante</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=ibir">versión estable</a></li>
+</ul>
+
+
+<p>Este complemento de NVDA altera el anuncio de la sangría ignorando líneas en
+blanco cuando se decide anunciar cambios de sangría. Es mejor contrastarlo
+con el comportamiento normal mediante un ejemplo.</p>
+
+<p>Plantéate el siguiente ejemplo:</p>
+
+<pre><code>def foo():
+    x = 42
+
+    return x
+
+def bar():
+</code></pre>
+
+<p>El comportamiento actual de NVDA consiste en anunciar los cambios de sangría
+en cualquier línea donde la sangría haya cambiado, incluso si la línea está
+en blanco. Por tanto, el ejemplo se leería así:</p>
+
+<pre><code>def foo():
+tab x = 42
+sin sangría en blanco
+tab return x
+sin sangría en blanco
+def bar():
+</code></pre>
+
+<p>La desventaja de este comportamiento es que en la mayoría de lenguajes de
+programación, como Python, una línea en blanco no tiene importancia
+semánticamente y y se emplea para separar visualmente líneas de código sin
+cambios al significado del mismo. Por tanto, al anunciar el cambio de
+sangría al entrar en una línea en blanco y anunciarlo otra vez al aterrizar
+en la siguiente línea, se produce ruido que dificulta concentrarnos en
+entender el código.</p>
+
+<p>Este complemento pretende mejorar el comportamiento ignorando las líneas en
+blanco al procesar la sangría por voz, de tal modo que el ejemplo anterior
+se leería de la siguiente manera:</p>
+
+<pre><code>def foo():
+tab x = 42
+en blanco
+return x
+
+sin sangría def bar():
+</code></pre>
+
+<h2>Registro de cambios</h2>
+
+<h3>versión 0.1</h3>
+
+<ul>
+<li>Versión inicial</li>
+</ul>
+
+
+<h2>Código fuente</h2>
+
+<p><a href="https://github.com/SamKacer/IgnoreBlanksIndentation">Repositorio del código fuente</a></p>
+
