@@ -1,64 +1,101 @@
 
 <h1>Columns Review</h1>
 <ul>
-<li>Autor: Alberto Buffolino.</li>
+<li>Autor: Alberto Buffolino, Łukasz Golonka y otros colaboradores</li>
 <li>Descargar  <a href="https://addons.nvda-project.org/files/get.php?file=cr">Versión estable</a></li>
-<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=cr-dev">versión en desarrollo</a></li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=cr-dev">versión de desarrollo</a></li>
+<li>Compatibilidad con NVDA: de 2017.3 en adelante</li>
 </ul>
 
 
-<p>Columns Review es un complemento para leer y copiar elementos en una lista
-columna por columna. Soporta listas con un número potencialmente infinito de
-columnas, y puedes navegar por ellas usando los dígitos del teclado o del
-bloque numérico. Las cabeceras de columna pueden leerse pero no copiarse, o
-viceversa.</p>
+<p>Columns Review es un complemento para mejorar la experiencia con NVDA en
+listas.</p>
 
-<p>Además, proporciona una forma de interactuar con las cabeceras de columna, y
-puede anunciar "0 elementos" cuando una lista está vacía.</p>
+<p>Entre sus funciones se incluyen:</p>
 
-<p>Mira más abajo para más detalles sobre las listas soportadas.</p>
+<ul>
+<li>acciones personalizables en la cabecera o el contenido de la columna (las
+acciones disponibles son leer, copiar, deletrear y mostrar en modo
+exploración);</li>
+<li>capacidad de circular por las columnas en intervalos de diez en diez;</li>
+<li>gestión simplificada de las cabeceras (clics de ratón);</li>
+<li>lectura bajo demanda de la posición relativa actual del elemento (por
+ejemplo, elemento 7 de 10);</li>
+<li>gestos personalizables con o sin bloque numérico;</li>
+<li>anuncio de "0 elementos" cuando la lista está vacía (no funciona en
+carpetas en Windows 8 y 10, por desgracia);</li>
+<li>soporte para verbalizar todo;</li>
+<li>anuncio de los elementos seleccionados (cantidad y nombre de los
+elementos);</li>
+<li>búsqueda en listas (con selección múltiple de elementos, si se marca y
+está soportada).</li>
+</ul>
 
-<h2>Órdenes de teclado</h2>
 
-<p>Las teclas asociadas por defecto con números son NVDA y control, pero puedes
-personalizarlas desde los ajustes del complemento. Mira también los ajustes
-para el modo teclado / bloque numérico y disposición.</p>
+<h2>Gestos</h2>
+
+<p>Las teclas por defecto para columnas, cabeceras y posición son NVDA+control,
+pero puedes personalizarlas desde las opciones del complemento (¡no en el
+diálogo "Gestos de entrada"!).</p>
+
+<p>Ten en cuenta que tu teclado podría tener problemas procesando algunas
+combinaciones de teclado, por lo que deberías probar todos los gestos del
+complemento y ajustarlos para unos mejores resultados.</p>
+
+<p>Consulta también las preferencias del complemento para el modo bloque
+numérico, distribución de teclado (sin bloque numérico), y las cuatro
+acciones disponibles para las columnas.</p>
 
 <ul>
 <li>NVDA+control+dígitos del 1 al 0 (modo teclado) o del 1 al 9 (modo bloque
-numérico): pulsado una vez, lee la columna elegida, pulsado dos veces, la
-copia;</li>
-<li>NVDA+control+menos del teclado numérico (modo bloque numérico): lee o
-copia la 10ª, 20ª, etc. columna;</li>
-<li>NVDA+control+- (por defecto, distribución de inglés de Estados Unidos,
-modo teclado): en una lista con más de 10 columnas, te permite cambiar el
-intervalo y leer columnas de la 11 a la 20, de la 21 a la 30, y así
-sucesivamente; mira los ajustes para cambiar el último carácter en función
-de tu distribución;</li>
-<li>NVDA+control+más del teclado numérico (modo bloque numérico): exactamente
-como la orden anterior;</li>
-<li>NVDA+control+intro (eventualmente intro del teclado numérico en el modo
-bloque numérico): abre el gestor de cabeceras de columna;</li>
-<li>Flechas (en una lista vacía): repite el mensaje "0 elementos".</li>
+numérico): por defecto, lee la columna elegida si se pulsa una vez, la
+copia si se pulsa dos veces;</li>
+<li>NVDA+control+menos del teclado numérico (modo bloque numérico): como
+NVDA+control+0 en el modo teclado, lee o copia la 10ª, 20ª, etc. columna;</li>
+<li>NVDA+control+- (distribución de inglés de Estados Unidos, modo teclado):
+en una lista con más de 10 columnas, cambia el intervalo y procesa
+columnas de la 11 a la 20, de la 21 a la 30, y así sucesivamente (cambia
+el último carácter en función de tu distribución desde las opciones);</li>
+<li>NVDA+control+más del teclado numérico (modo bloque numérico): como la
+orden anterior;</li>
+<li>NVDA+control+intro (intro del teclado numérico en el modo bloque
+numérico): abre el gestor de cabeceras;</li>
+<li>NVDA+control+suprimir (suprimir del teclado numérico en el modo bloque
+numérico): lee la posición relativa del elemento actual (por ejemplo,
+elemento 7 de 10);</li>
+<li>Flechas y NVDA+tab (en una lista vacía): repite el mensaje "0 elementos";</li>
+<li>NVDA+flecha abajo (distribución de escritorio) o NVDA+a (distribución
+portátil): inicia Verbalizar todo (este gesto depende del original que hay
+bajo "Gestos de entrada/Cursor del sistema");</li>
+<li>NVDA+shift+flecha arriba (distribución de escritorio) o NVDA+shift+s
+(distribución portátil): anuncia la cantidad y los nombres de los
+elementos de lista actualmente seleccionados (al igual que la orden
+anterior en cuanto a personalización);</li>
+<li>NVDA+control+f: abre el diálogo de búsqueda (no personalizable);</li>
+<li>NVDA+f3: busca la siguiente coincidencia del texto introducido
+anteriormente (no personalizable);</li>
+<li>NVDA+shift+f3: busca la coincidencia anterior (no personalizable).</li>
 </ul>
 
 
-<h2>Para desarrolladores y usuarios avanzados</h2>
+<h2>Soporte</h2>
 
-<p>Los tipos de lista soportados por los gestos numéricos son:</p>
+<p>Este complemento proporciona soporte general para más listas comunes (mira
+debajo) y algunas aplicaciones concretas. El autor principal (Alberto
+Buffolino) no puede garantizar la compatibilidad o funcionalidad en aquellas
+aplicaciones que no usa, como Outlook o Windows Mail, pero estará encantado
+de colaborar con sus usuarios o aceptar una solicitud de cambio para ellos.</p>
+
+<p>Las listas soportadas son:</p>
 
 <ul>
 <li>SysListView32;</li>
 <li>DirectUIHWND (presente en sistemas de 64 bits);</li>
 <li>WindowsForms10.SysListView32.* (aplicaciones que usan .NET);</li>
+<li>la vista en árbol de varias columnas, como la que hay presente en
+RSSOwlnix;</li>
 <li>Tabla de Mozilla (normalmente, la lista de mensajes de Thunderbird, con
 soporte para agrupación por hilos).</li>
 </ul>
 
-
-<p>Todos los gestos numéricos se asocian a y sólo a las listas soportadas,
-cuando estas no están vacías.</p>
-
-<p>Ninguna vista de lista potencialmente soporta el anuncio de vacío (por
-tanto, ni DirectUIHWND ni la tabla de Mozilla).</p>
 
