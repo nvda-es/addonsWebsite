@@ -1,0 +1,315 @@
+
+<h1>Anotador r&#xE1;pido</h1>
+<ul>
+<li>Autores: Eilana Benish, Mohammad Suliman</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=quickNotetaker">versión estable</a></li>
+<li>Compatibilidad con NVDA: de 2019.3 a 2021.2</li>
+</ul>
+
+
+<p>El complemento Anotador rápido es una maravillosa herramienta que permite
+escribir en cualquier momento notas fácil y rápido y desde cualquier
+aplicación que el usuario esté utilizando. Si el usuario está visualizando
+un vídeo, por ejemplo, o participando en una reunión en Zoom, Teams o Google
+Meet, puede abrir fácilmente el anotador y tomar una nota. Para crear una
+nota rápida, se puede usar la combinación de teclado NVDA+alt+n. Aparecerá
+una ventana en la esquina superior izquierda de la pantalla para que se
+pueda escribir la nota en ella.</p>
+
+<p>Cada nota que se crea puede contener, opcionalmente, el título de la ventana
+activa y, por tanto, los contenidos de la nota pueden tener el contexto en
+el que fue creada teniendo por título el de la ventana activa en la que se
+encontraba el usuario. Se puede cambiar este comportamiento en las opciones
+del complemento, donde el usuario puede decidir si se captura el título de
+la ventana activa al crear una nueva nota.</p>
+
+<h2>El diálogo del anotador</h2>
+
+<ul>
+<li><p>El área de edición de notas: al abrir la interfaz del anotador, el foco
+se encontrará en esta zona de edición. También se permite escribir en
+Markdown (un lenguaje de marcado para producir con facilidad contenido
+HTML). Para más información sobre Markdown, visita la <a href="https://www.markdownguide.org/">página de guía de
+Markdown</a>.</p></li>
+<li><p>Previsualizar nota: muestra la nota en una ventana HTML.</p></li>
+<li><p>Copiar: copia la nota tal y como está al portapapeles.</p></li>
+<li><p>Copiar código HTML: copia el código HTML que representa la nota. Una
+función útil para quien escribe en Markdown.</p></li>
+<li><p>Una casilla de verificación que permite guardar la nota también como
+Microsoft Word, o actualizarla si existe.</p></li>
+<li><p>Un botón para guardar y cerrar.</p></li>
+<li><p>Un botón Descartar para descartar los cambios cuando se desee. Cuando
+existan cambios sin guardar, se mostrará un mensaje de aviso al usuario
+preguntando si desea salir y descartar los cambios.</p></li>
+</ul>
+
+
+<h2>La interfaz del gestor de notas</h2>
+
+<h3>Apertura y cierre de esta interfaz</h3>
+
+<ul>
+<li><p>NVDA+alt+v lanzará la interfaz del gestor de notas.</p></li>
+<li><p>La interfaz se cerrará al pulsar la tecla Escape o el botón Cerrar
+situado en la parte inferior de la ventana.</p></li>
+</ul>
+
+
+<h3>La lista de notas</h3>
+
+<p>Las notas se organizan en una lista tabulada que incluye:</p>
+
+<ol>
+<li><p>El título de la nota: si la nota no tiene el título de la ventana
+activa, se mostrará su primera línea como título de nota en esta lista.</p></li>
+<li><p>Fecha y hora de última modificación.</p></li>
+<li><p>Un texto de previsualización del contenido de la nota.</p></li>
+</ol>
+
+
+<h3>Opciones disponibles en la interfaz del gestor de notas</h3>
+
+<ul>
+<li><p>Ver nota: muestra la nota en una ventana HTML.</p></li>
+<li><p>Editar nota: abre la nota en la interfaz del anotador para que pueda
+editarse.</p></li>
+<li><p>Copiar nota: copia el contenido de la nota tal y como está al
+portapapeles.</p></li>
+<li><p>Crear documento de Microsoft Word: crea un documento de Microsoft Word
+que representa la nota, en caso de que dicho documento no exista.</p></li>
+<li><p>Abrir en Microsoft Word: abre el documento Microsoft Word adjunto a la
+nota, en caso de que lo tenga.</p></li>
+<li><p>Copiar código HTML: copia el código HTML representado por esta
+nota. Función útil para quienes escriben en Markdown.</p></li>
+<li><p>Eliminar nota: muestra un aviso antes de realizar la eliminación de la
+nota.</p></li>
+<li><p>Nueva nota: se puede llegar a la interfaz del anotador desde aquí para
+crear una nota nueva.</p></li>
+<li><p>Abrir opciones: también es posible abrir las opciones del complemento
+desde aquí.</p></li>
+<li><p>Cerrar: cierra la ventana.</p></li>
+</ul>
+
+
+<h2>Opciones del complemento</h2>
+
+<p>Las opciones del complemento forman parte de la interfaz de opciones de
+NVDA. Para llegar hasta ellas,el usuario debe abrir el menú pulsando el
+atajo NVDA+n, elegir Preferencias &gt; Opciones, y después flecha abajo
+hasta llegar a la categoría Anotador rápido.</p>
+
+<p>Utilizando la interfaz de las opciones, el usuario puede:</p>
+
+<ul>
+<li><p>Carpeta predeterminada de documentos: elegir el directorio por defecto
+donde se guardarán los documentos del anotador rápido. El usuario puede
+pulsar el botón "Examinar" para cambiar la ruta de esta carpeta.</p></li>
+<li><p>Preguntarme siempre dónde guardar el documento Microsoft Word
+correspondiente a la nota: una casilla de verificación (desmarcada por
+defecto) que muestra el diálogo para elegir la ubicación donde se
+guardará el documento en cada operación de guardado o actualización del
+documento Microsoft Word de la nota, si existe uno.</p></li>
+<li><p>Abrir el documento Microsoft Word correspondiente a la nota después de
+guardar o actualizar: una casilla de verificación (desmarcada por
+defecto) que permite al usuario elegir si se abrirá el documento
+Microsoft Word después de una operación de guardado o actualización, en
+caso de que la nota disponga de dicho documento.</p></li>
+<li><p>Capturar el título de la ventana activa al crear una nueva nota: una
+casilla de verificación (marcada por defecto) que permite que la nota
+contenga el título de la ventana activa que el usuario estaba utilizando
+cuando creó la nota. Este título también será el título del documento
+Microsoft Word de la nota, en caso de que haya uno.</p></li>
+<li><p>Recordar tamaño y posición de la ventana del anotador: una casilla de
+verificación (desmarcada por defecto) para pedir al complemento que
+recuerde el tamaño y la posición del diálogo del anotador al crear o
+editar una nota. La próxima vez que el usuario abra el diálogo, la
+posición y el tamaño serán los mismos que la última vez que se usó. La
+posición por defecto de este diálogo es la esquina superior izquierda de
+la pantalla.</p></li>
+<li><p>Alinear texto automáticamente cuando se editen notas (importante en
+idiomas de derecha a izquierda): una casilla de verificación (marcada
+por defecto) para controlar si el texto se alinea automáticamente al
+crear o editar notas en función del idioma en uso. Esto es
+mayoritariamente importante para idiomas con escritura de derecha a
+izquierda. Por ejemplo, si el idioma usado es árabe o hebreo, el texto
+se alineará a la derecha cuando esta opción esté activada, y el texto en
+inglés o francés se alineará a la izquierda.</p></li>
+</ul>
+
+
+<h2>Atajos de teclado</h2>
+
+<ul>
+<li><p>NVDA+alt+n: abre la interfaz del anotador.</p></li>
+<li><p>NVDA+alt+v: abre la interfaz del gestor de notas.</p></li>
+</ul>
+
+
+<h3>Atajos de teclado de las distintas interfaces</h3>
+
+<table>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Interfaz</th>
+<th>Orden</th>
+<th>Atajo de teclado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anotador</td>
+<td>Llevar el foco al área de edición de notas</td>
+<td>Alt + n</td>
+</tr>
+<tr class="even">
+<td>Anotador</td>
+<td>Alinear texto a la derecha</td>
+<td>Control + r</td>
+</tr>
+<tr class="odd">
+<td>Anotador</td>
+<td>Alinear texto a la izquierda</td>
+<td>Control + l</td>
+</tr>
+<tr class="even">
+<td>Anotador</td>
+<td>Previsualizar la nota en una ventana HTML</td>
+<td>Alt + r</td>
+</tr>
+<tr class="odd">
+<td>Anotador</td>
+<td>Copiar</td>
+<td>Alt + p</td>
+</tr>
+<tr class="even">
+<td>Anotador</td>
+<td>Copiar código HTML</td>
+<td>Alt + h</td>
+</tr>
+<tr class="odd">
+<td>Anotador</td>
+<td>Guardar nota como documento de Microsoft Word</td>
+<td>Alt + w</td>
+</tr>
+<tr class="even">
+<td>Anotador</td>
+<td>Actualizar el documento Microsoft Word correspondiente a la nota</td>
+<td>Alt + w</td>
+</tr>
+<tr class="odd">
+<td>Anotador</td>
+<td>Guardar y cerrar</td>
+<td>Alt + s</td>
+</tr>
+<tr class="even">
+<td>Anotador</td>
+<td>Descartar</td>
+<td>Alt + d</td>
+</tr>
+<tr class="odd">
+<td>Anotador</td>
+<td>Abrir gestor de notas</td>
+<td>Alt + m</td>
+</tr>
+<tr class="even">
+<td>Gestor de notas</td>
+<td>Ver nota</td>
+<td>Alt + v</td>
+</tr>
+<tr class="odd">
+<td>Gestor de notas</td>
+<td>Editar nota</td>
+<td>Alt + e</td>
+</tr>
+<tr class="even">
+<td>Gestor de notas</td>
+<td>Copiar nota</td>
+<td>Alt + p</td>
+</tr>
+<tr class="odd">
+<td>Gestor de notas</td>
+<td>Abrir en Microsoft Word (si existe un documento)</td>
+<td>Alt + o</td>
+</tr>
+<tr class="even">
+<td>Gestor de notas</td>
+<td>Crear un documento Word para una nota guardada</td>
+<td>Alt + w</td>
+</tr>
+<tr class="odd">
+<td>Gestor de notas</td>
+<td>Copiar código HTML</td>
+<td>Alt + h</td>
+</tr>
+<tr class="even">
+<td>Gestor de notas</td>
+<td>Eliminar nota</td>
+<td>Alt + d</td>
+</tr>
+<tr class="odd">
+<td>Gestor de notas</td>
+<td>Nueva nota</td>
+<td>Alt + n</td>
+</tr>
+<tr class="even">
+<td>Gestor de notas</td>
+<td>Abrir opciones</td>
+<td>Alt + s</td>
+</tr>
+<tr class="odd">
+<td>Gestor de notas</td>
+<td>Cerrar la interfaz</td>
+<td>Alt + c</td>
+</tr>
+<tr class="even">
+<td>Interfaz de opciones</td>
+<td>Preguntarme cada vez dónde guardar el documento Microsoft Word correspondiente a la nota</td>
+<td>Alt + w</td>
+</tr>
+<tr class="odd">
+<td>Interfaz de opciones</td>
+<td>Abrir el documento Microsoft Word correspondiente a la nota después de guardar o actualizar</td>
+<td>Alt + o</td>
+</tr>
+<tr class="even">
+<td>Interfaz de opciones</td>
+<td>Capturar el título de la ventana activa al crear una nueva nota</td>
+<td>Alt + c</td>
+</tr>
+<tr class="odd">
+<td>Interfaz de opciones</td>
+<td>Recordar tamaño y posición de la ventana del anotador</td>
+<td>Alt + r</td>
+</tr>
+<tr class="even">
+<td>Interfaz de opciones</td>
+<td>Alinear el texto automáticamente al editar notas (importante para idiomas de derecha a izquierda)</td>
+<td>Alt + t</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Reconocimientos</h2>
+
+<ul>
+<li><p>El complemento viene con Pandoc incorporado, una fantástica herramienta
+que permite convertir documentos entre distintos formatos. Sin esta
+herramienta, el complemento no podría ofrecer las funciones que
+ofrece. Para más información sobre Pandoc, <a href="https://pandoc.org/">visita la página de
+Pandoc</a>.</p></li>
+<li><p>El complemento también se apoya en un paquete Python de Markdown llamado
+markdown2. Para más información sobre este paquete, <a href="https://github.com/trentm/python-markdown2">visita su página en
+GitHub</a>.</p></li>
+<li><p>¡Un efusivo agradecimiento a NV Access, los autores de complementos y
+colaboradores! Algunas partes de este complemento se han inspirado en
+vuestro magnífico trabajo y esfuerzo, seguid con este brillante
+ecosistema y cooperación.</p></li>
+</ul>
+
+
