@@ -1,6 +1,7 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/soundSplitter.es.html",
 "https://addons.nvda-project.org/addons/quickNotetaker.es.html",
 "https://addons.nvda-project.org/addons/ignoreBlanksIndentationReporting.es.html",
 "https://addons.nvda-project.org/addons/searchWith.es.html",
