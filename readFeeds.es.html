@@ -13,25 +13,14 @@ RSS o Atom utilizando NVDA.  Los feeds no se actualizarán automáticamente.
 En adelante cuando mencionemos feeds, nos referiremos a los feeds RSS y
 ATOM.</p>
 
-<h2>Instalación o actualización</h2>
-
-<p>Si has utilizado una versión anterior de este complemento, y hay una carpeta
-personalFeeds o RSS en la carpeta personal de configuración de NVDA, al
-instalar la versión 6.0 o posterior, un cuadro de diálogo te preguntará si
-deseas actualizar o instalar.  Selecciona Actualizar para preservar tus
-feeds guardados y continuar utilizándolos en la nueva versión instalada
-dereadFeeds.</p>
-
 <h2>Órdenes</h2>
 
-<h3>Menú Read Feeds</h3>
+<h3>El diálogo de Read Feeds</h3>
 
-<p>Puedes acceder al submenú Read Feeds desde el menú NVDA, submenú
-herramientas, donde están disponibles las siguientes opciones:</p>
+<p>Puedes acceder al diálogo de Read Feeds desde el menú NVDA, submenú
+Herramientas, elemento Read Feeds.</p>
 
-<h4>Feeds</h4>
-
-<p>Abre un diálogo con los siguientes controles:</p>
+<p>Contiene los siguientes controles:</p>
 
 <ul>
 <li>Filtrar por: un cuadro de edición para buscar feeds guardados con
@@ -61,43 +50,26 @@ seleccionado.</li>
 una confirmación.</li>
 <li>Configurar predeterminado: configura el feed seleccionado como el
 predeterminado, así que su artículo puede accederse con gestos de NVDA.</li>
-<li>Abrir carpeta que contiene una copia de seguridad de las fuentes: Abre una
-carpeta que podría contener una copia de seguridad de las fuentes. Esto
-puede ser útil para explorar y eliminar fuentes que no deberían importarse
-cuando el complemento se actualice.</li>
+<li>Importar feeds desde archivo OPML: abre un diálogo para añadir nuevos
+feeds desde un archivo OPML.</li>
+<li>Guardar feeds en archivo OPML: abre un diálogo para guardar los feeds
+disponibles en el diálogo de feeds en un archivo OPML.</li>
 <li>Preferencias: abre el diálogo de opciones de Read Feeds, también
 disponible en el menú NVDA, Preferencias, Opciones, categoría Read Feeds.</li>
 <li>Cerrar: cierra el diálogo Feeds.</li>
 </ul>
 
 
-<h5>Notas</h5>
+<h3>Notas</h3>
 
 <ul>
-<li>Si se crea un feed llamado tempFeed, por favor renómbralo, ya que este
-fichero podría reemplazarse cuando sea necesario crear un feed cuyo nombre
-ya exista.</li>
-<li>El feed configurado como el predeterminado puede eliminarse. el feed
-addressFile se utilizará como el predeterminado cuando la configuración se
-reinicie, así no puede eliminarse.</li>
 <li>El cuadro de edición Filtrar por se puede situar tras el botón Abrir
 artículo desde el menú NVDA, Preferencias, Opciones, categoría Read Feeds,
 o pulsando el botón Preferencias en el diálogo de feeds.</li>
+<li>Este panel tiene una opción para mostrar la fecha de los artículos en el
+diálogo de lista de artículos.</li>
 </ul>
 
-
-<h4>Copiar carpeta feeds</h4>
-
-<p>Abre un diálogo para elegir una carpeta donde puedes guardar el directorio
-personalFeeds de tus feeds. Por omisión la carpeta seleccionada es el
-directorio de configuración de NVDA, el cual creará el directorio
-personalFeeds.</p>
-
-<h4>Restaurar feeds</h4>
-
-<p>Abre un diálogo para seleccionar una carpeta que reemplaza tus feeds en la
-carpeta personalFeeds. Asegúrate de cargar una carpeta conteniendo URLs de
-feeds.</p>
 
 <h3>Órdenes de teclado</h3>
 
@@ -120,9 +92,30 @@ dos veces copiará el título y el enlace relacionado al portapapeles.</li>
 <li>Cuando no se pueda conectar/refrescar un feed, o la URL no se corresponda
 con un feed válido.</li>
 <li>NVDA mostrará un mensaje de error si no fue posible respaldar o restaurar
-la carpeta personalFeeds o si no se puede crear un nuevo feed.</li>
+la carpeta personalFeeds o si no se puede NVDA mostrará un mensaje de
+error si no se puede crear un nuevo feed.</li>
 <li>El título del diálogo de lista de artículos muestra el nombre del feed
 seleccionado y el número de elementos disponibles.</li>
+</ul>
+
+
+<h2>Cambios para 13.0</h2>
+
+<ul>
+<li>El complemento no se puede usar en pantallas seguras.</li>
+<li>Los feeds se gestionan desde archivos OPML.</li>
+<li>A causa de los cambios en el sistema de gestión de feeds, hay cambios en
+el archivo de configuración donde se configura el feed predeterminado. Usa
+el diálogo de feeds si quieres volver a configurarlo.</li>
+<li>Tus antiguos ficheros de texto usados en versiones anteriores se
+importarán automáticamente en formato OPML cuando se inicie el
+complemento.</li>
+<li>La función de copiar y restaurar feeds se ha reemplazado con la capacidad
+de importar y guardar en archivos OPML.</li>
+<li>Los feeds mal formados pueden procesarse antes de añadirlos para que sean
+compatibles con el complemento.</li>
+<li>En el panel de opciones de Read Feeds, una nueva opción permite mostrar la
+fecha de los artículos en el diálogo de lista de artículos.</li>
 </ul>
 
 
