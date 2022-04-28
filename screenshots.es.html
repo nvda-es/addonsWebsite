@@ -1,0 +1,110 @@
+
+<h1>Screenshots wizard</h1>
+<ul>
+<li>Autor: Javi Domínguez.</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=scrsw">versión estable</a>, compatible con NVDA 2021.2 y posterior.</li>
+</ul>
+
+
+<p>Este complemento proporciona un asistente para tomar capturas de toda la
+pantalla o areas específicas como objetos, ventanas, etc. Se activa con la
+tecla <em>imprimir pantalla</em> que en los teclados estándar suele ser la primera
+del grupo de tres a la derecha de F12. Si se prefiere usar ottra se puede
+configurar en las preferencias de NVDA, gestos de entrada.</p>
+
+<p>Cuando se invoca el asistente se crea un rectángulo virtual alrededor del
+objeto con el foco y se activa una capa de órdenes de teclado con los
+siguientes</p>
+
+<h2>comandos</h2>
+
+<ul>
+<li>F1 muestra un mensaje de ayuda con los comandos básicos; pulsado dos veces
+rápidamente abre este documento.</li>
+</ul>
+
+
+<h3>Información del rectángulo</h3>
+
+<p>Las teclas del 1 al 7 proporcionan la siguiente información:</p>
+
+<ul>
+<li>1: Coordenadas de las esquinas superior izquierda e inferior derecha.</li>
+<li>2: Dimensiones del rectángulo, ancho por alto.</li>
+<li>3: El objeto de referencia.</li>
+<li>4: Proporción del área del rectángulo ocupada por el objeto de referencia.</li>
+<li>5: Indica si parte del objeto de referencia queda fuera del rectángulo.</li>
+<li>6: Indica si el rectángulo sobrepasa los límites de la ventana activa en
+primer plano.</li>
+<li>7: Proporción de la pantalla  ocupada por el rectángulo.</li>
+</ul>
+
+
+<p>La tecla espacio lee toda esta información seguida.</p>
+
+<h3>Selección de objetos</h3>
+
+<p>El objeto de referencia es el objeto de la pantalla que en cada momento
+quede delimitado por el rectángulo. En principio este objeto será el que
+tenga el foco del sistema pero puede seleccionarse otro con las siguienhtes
+teclas:</p>
+
+<ul>
+<li>Flecha arriba: encuadra el contenedor del objeto actual.</li>
+<li>F: Encuadra el objeto con el foco.</li>
+<li>N: Encuadra el objeto en el navegador de objetos.</li>
+<li>W: Encuadra la ventana activa en primer plano.</li>
+<li>M: encuadra el objeto bajo el puntero del ratón.</li>
+<li>S: Encuadra la pantalla completa.</li>
+</ul>
+
+
+<p>Con flecha abajo se deshacen los cambios.</p>
+
+<h3>Tamaño del  rectángulo</h3>
+
+<p>El tamaño del rectángulo se puede modificar usando las siguientes teclas:</p>
+
+<ul>
+<li>Con mayúsculas+flechas se mueve la esquina superior izquierda:</li>
+<li>mayúsculas + flecha arriba  o abajo desplaza el borde superior,</li>
+<li>mayúsculas + flecha izquierda o derecha desplaza el borde izquierdo.</li>
+<li>Con conrol+flechas se mueve la esquina inferior derecha:</li>
+<li>control + flecha arriba o abajo desplaza el borde inferior,</li>
+<li>control + flecha derecha o izquierda desplaza el borde derecho.</li>
+<li>control + mayúsculas + flecha arriba expande el rectángulo, moviendo los
+cuatro bordes hacia afuera.</li>
+<li>control + mayúsculas + flecha abajo contrae el rectángulo, moviendo los
+cuatro bordes hacia adentro.</li>
+</ul>
+
+
+<p>La cantidad de píxeles para estos movimientos se puede modificar con las
+teclas avance y retroceso de página. También en las preferencias.</p>
+
+<p>Al modificar el tamaño del rectángulo el objeto de referencia puede
+cambiar. Se intentará seleccionar siempre el objeto que esté centrado, en
+primer plano y que ocupe un área mayor dentro del rectángulo. Los cambios de
+objeto se anunciarán cuando se produzcan.</p>
+
+<h3>Capturar la imagen</h3>
+
+<p>Con la tecla enter se captura la imagen del área de la pantalla delimitada
+por el rectángulo, se guarda en un archivo y se sale del asistente.</p>
+
+<p>Con la tecla escape se cancela y sale del asistente.</p>
+
+<h2>Configuración</h2>
+
+<p>En las preferencias de NVDA, opciones, se pueden configurar los siguienhtes
+ajustes:</p>
+
+<ul>
+<li>La carpeta donde se guardarán los archivos. Por defecto la carpeta de
+documentos del usuario.</li>
+<li>El formato del archivo de imagen.</li>
+<li>La acción después de guardar (nada, abrir la carpeta o abrir el archivo).</li>
+<li>La cantidad de píxeles de cada movimiento.</li>
+</ul>
+
+
