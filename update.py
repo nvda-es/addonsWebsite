@@ -1,6 +1,7 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/screenshots.es.html",
 "https://addons.nvda-project.org/addons/applicationDictionary.es.html",
 "https://addons.nvda-project.org/addons/soundSplitter.es.html",
 "https://addons.nvda-project.org/addons/quickNotetaker.es.html",
@@ -11,8 +12,8 @@ addresses=[
 "https://addons.nvda-project.org/addons/directLink.es.html",
 "https://addons.nvda-project.org/addons/unmute.es.html",
 "https://addons.nvda-project.org/addons/checkGestures.es.html",
-"https://addons.nvda-project.org/addons/nvdaproxy.es.html",
-"https://addons.nvda-project.org/addons/updateChannelSelector.es.html",
+"https://addons.nvda-project.org/addons/proxy.es.html",
+"https://addons.nvda-project.org/addons/updateChannel.es.html",
 "https://addons.nvda-project.org/addons/wordNav.es.html",
 "https://addons.nvda-project.org/addons/winWizard.es.html",
 "https://addons.nvda-project.org/addons/consoleToolkit.es.html",
