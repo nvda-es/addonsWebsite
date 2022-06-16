@@ -10,14 +10,20 @@
 matemático. Aunque NVDA originalmente posee esta capacidad gracias a
 MathPlayer, todavía es necesario mejorar algunas funciones, especialmente
 cuando MathPlayer no proporciona traducciones específicas o no son
-completas, no proporciona un modo de navegación específico del idioma,
-exploración y más.</p>
+completas, no proporciona un modo de navegación específico del idioma y más.</p>
 
-<p>El modo interactivo de navegación puede segmentar un contenido matemático en
+<p>el modo interactivo de navegación puede segmentar un contenido matemático en
 fragmentos parciales más pequeños para verbalizar, y seleccionar la lectura
 del fragmento y método mediante una serie de operaciones de teclado. Esta
 función ayuda a entender mejor la estructura y elementos del contenido
 matemático largo, así como la relación jerárquica del elemento.</p>
+
+<p>Este complemento de NVDA proporciona la capacidad de escribir contenido
+matemático. Mediante el menú de comandos, se puede completar la tarea sin
+memorizar el lenguaje LaTeX / AsciiMath. Después de completar el contenido,
+se puede convertir el documento a HTML visualmente legible gracias a la
+función de visualización y exportación. El documento HTML facilita debates
+interactivos con otras personas.</p>
 
 <h2>Función de lectura</h2>
 
@@ -55,7 +61,7 @@ ellos los tratará como denominador y numerador</li>
 </ul>
 
 
-<h2>orden de modo de navegación interactiva：</h2>
+<h3>orden de modo de navegación interactiva：</h3>
 
 <ul>
 <li>"Flecha abajo": aumenta el zoom en una subparte más pequeña del contenido
@@ -74,144 +80,247 @@ texto serializado usando las órdenes de revisión de texto de NVDA.</li>
 
 <h2>Función de escritura</h2>
 
-<p>Escritura de contenido mixto (texto y matemáticas):</p>
+<p>Escritura de contenido exhaustivo (contenido textual y contenido
+matemático):</p>
 
-<h3>escribir contenido mixto</h3>
+<h3>escribir contenido exhaustivo (el atajo de teclado está disponible en el área de edición, se recomienda usarlo en el bloc de notas)</h3>
 
-<p>Usar delimitador (delimitador de inicio "(" y delimitador del final ")",
-bloque LaTeX) para determinar el área entre el contenido textual y el
-matemático, o lo que es lo mismo, los datos en el bloque LaTeX son contenido
-matemático (LaTeX), y los datos fuera del bloque LaTeX son texto.</p>
-
-<p>Pulsa alt+h en el cuadro de edición para convertirlo en un documento HTML
-mixto con contenido textual y matemático que pueda revisarse y
-exportarse. Los datos del bloque LaTeX se convertirán en MathML para
-presentarlos como texto normal.</p>
+<p>Usar marcadores de separación AsciiMath o LaTeX para determinar el área
+entre el contenido textual y el matemático, o lo que es lo mismo, los datos
+en el bloque marcado son contenido matemático LaTeX o AsciiMath, y los datos
+fuera del área marcada son texto.</p>
 
 <ul>
-<li>revisar: abre el documento HTML convertido con el programa predeterminado
-que abra la extensión .html.</li>
-<li>exportar: empaqueta el documento HTML en un archivo zip.</li>
+<li>Marca de delimitador LaTeX: (se pueden elegir paréntesis o número
+monetario en los ajustes de lectura)</li>
+<li>Delimitador de inicio: "(" o "$"</li>
+<li>Delimitador de fin: ")" o "$"</li>
+<li>Delimitador en AsciiMath:</li>
+<li>Delimitador de inicio: "`"</li>
+<li>Delimitador de fin: "`"</li>
 </ul>
 
 
-<p>Pulsa alt+m en el cuadro de edición para mostrar la ventana de órdenes de
-marcado, selecciona "LaTeX" y pulsa intro. Se añadirá un bloque LaTeX en la
-posición del cursor y este se moverá a su interior para poder introducir el
+<h3>Gesto de comando (conmutador: NVDA+alt+c)</h3>
+
+<p>alt+m: se despliega la ventana de marcar comando, selecciona LaTeX /
+AsciiMath y pulsa intro para añadir marcas LaTeX / AsciiMath antes y después
+del texto seleccionado actualmente (el cursor actual si no hay texto
+seleccionado) y mover el cursor automáticamente a su interior. Introduce el
 contenido rápidamente.</p>
 
-<p>Pulsa alt+l en el cuadro de edición para mostrar la ventana de órdenes de
-LaTeX, selecciona el elemento con la orden LaTeX que quieres añadir y pulsa
-intro para agregar la sintaxis LaTeX correspondiente en la posición actual
-del cursor y desplazar el mismo al punto de entrada adecuado para introducir
-el contenido con rapidez.</p>
+<p>alt+l: mostrar la ventana de órdenes de LaTeX. Selecciona el elemento con la
+orden LaTeX que quieres añadir y pulsa intro para agregar la sintaxis LaTeX
+correspondiente en la posición actual del cursor y desplazar el mismo al
+punto de entrada adecuado para introducir el contenido con rapidez.</p>
 
 <p>La ventana de órdenes de LaTeX</p>
 
 <ul>
-<li>Selecciona el elemento con la orden LaTeX y pulsa las teclas f1 a f12 para
-configurar el atajo</li>
-<li>Selecciona el elemento con la orden LaTeX y pulsa d para eliminar el atajo
-asociado</li>
-<li>Selecciona el elemento con la orden LaTeX y pulsa intro para añadir la
-sintaxis LaTeX correspondiente en la posición actual del cursor</li>
+<li>Muévete a cualquier elemento de comando LaTeX y pulsa letras en inglés
+(a-z) o f1-f12 para establecer atajos</li>
+<li>Muévete a cualquier elemento de comando LaTeX y pulsa suprimir o retroceso
+para eliminar el atajo que se había configurado</li>
+<li>Muévete a cualquier elemento de comando LaTeX y pulsa intro para añadir la
+sintaxis LaTeX en la posición del cursor</li>
 </ul>
 
 
-<p>Movimiento de edición del cursor de navegación</p>
+<p>alt+i: cuando el cursor se detiene en el bloque matemático, puedes
+interactuar con él y navegar por su interior</p>
+
+<p>alt+h: se pueden ver y exportar documentos HTML con los datos matemáticos y
+textuales convertidos. El contenido de los bloques matemáticos se convierte
+a MathML, y se presenta junto al texto para facilitar la lectura visual.</p>
 
 <ul>
-<li>En el cuadro de edición, pulsa alt+flecha izquierda para moverte al punto
-inicial del bloque de datos anterior</li>
-<li>En el cuadro de edición, pulsa alt+flecha abajo para leer el contenido del
-bloque de datos actual sin moverte</li>
-<li>En el cuadro de edición, pulsa alt+flecha derecha para moverte al
-principio del siguiente bloque de datos</li>
-<li>En el cuadro de edición, pulsa alt+inicio para moverte al principio del
-bloque de datos actual</li>
-<li>En el cuadro de edición, pulsa alt+fin para moverte al final del bloque de
-datos actual</li>
+<li>Ver: abre el documento HTML convertido con el programa predeterminado del
+sistema que abra la extensión .html.</li>
+<li>Exportar: empaqueta el documento HTML y el fichero de texto original en un
+archivo comprimido.</li>
 </ul>
 
 
-<p>Navegación para desplazarse y seleccionar con el cursor de edición</p>
+<p>alt+t: se pueden convertir los datos del bloque sobre el que se encuentra el
+cursor entre AsciiMath y LaTeX (el cursor debe estar sobre el bloque LaTeX o
+AsciiMath)</p>
+
+<p>En las opciones de escritura, puedes elegir si se habilitan los gestos de
+comando al inicio. Pulsa NVDA+alt+c en el área de edición para activar o
+desactivar los gestos de comando, que se pueden cambiar en los gestos de
+entrada.</p>
+
+<h3>Gestos de navegación de escritura de bloques (conmutador: NVDA+alt+n)</h3>
 
 <ul>
-<li>En el área de edición, pulsa alt+shift+flecha izquierda para desplazarte
-al bloque de datos anterior y seleccionarlo</li>
-<li>En el área de edición, pulsa alt+shift+flecha abajo para desplazarte al
-bloque de datos actual y seleccionarlo</li>
-<li>En el área de edición, pulsa alt+shift+flecha derecha para desplazarte al
-bloque de datos siguiente y seleccionarlo</li>
+<li>alt+flecha izquierda: moverse al principio del bloque de datos anterior</li>
+<li>alt+flecha abajo: leer el contenido del bloque de datos actual sin moverse</li>
+<li>alt+flecha derecha: moverse al principio del siguiente bloque de datos</li>
+<li>alt+inicio: moverse al principio del bloque de datos actual</li>
+<li>alt+fin: moverse al final del bloque de datos actual</li>
+<li>alt+shift+flecha izquierda: moverse al bloque de datos anterior y
+seleccionarlo</li>
+<li>alt+shift+flecha abajo: seleccionar el contenido del bloque de datos
+actual sin moverse</li>
+<li>alt+shift+flecha derecha: moverse al siguiente bloque de datos y
+seleccionarlo</li>
 </ul>
 
 
-<p>Pulsa alt+s en el cuadro de edición para activar o desactivar el modo de
-atajos. Cuando el modo de atajos está activado, pulsa f1~f12 para insertar
-rápidamente sintaxis LaTeX. Pulsa shift+f1~f12 para leer las órdenes LaTeX
-vinculadas a cada atajo.</p>
+<p>En las opciones de escritura, puedes elegir si se habilitan los gestos de
+navegación por bloques al inicio. Pulsa NVDA+alt+n en el área de edición
+para activar o desactivar los gestos de navegación por bloques, que se
+pueden cambiar en los gestos de entrada.</p>
 
-<p>En el cuadro de edición, con el cursor en el bloque LaTeX, pulsa alt+i para
-entrar en el modo de navegación interactiva</p>
+<h3>Gestos de atajo (conmutador: NVDA+alt+s)</h3>
 
-<p>Pulsa NVDA+shift+espacio en el cuadro de edición para activar o desactivar
-la edición del modo de navegación de una sola letra. Cuando se activa este
-modo, puedes mover el cursor con navegación de una sola letra</p>
+<p>Cuando el cursor esté en el bloque LaTeX, pulsa letras o teclas de f1 a f12
+para insertar rápidamente la asociación LaTeX. Pulsa shift+letra o shift+f1
+a f12 para leer el LaTeX asociado actualmente a ese atajo. (es necesario
+configurar primero la tecla de atajo en el menú de comandos)</p>
+
+<p>En las opciones de escritura, puedes elegir activar los gestos de navegación
+rápida al inicio. Pulsa NVDA+alt+s en el área de edición para activar o
+desactivar los gestos de navegación rápida, que se pueden cambiar en los
+gestos de entrada.</p>
+
+<h3>Gestos de letras griegas (conmutador: NVDA+alt+g)</h3>
+
+<p>Cuando el cursor esté en el bloque LaTeX, pulsa la letra para insertar
+rápidamente la letra griega correspondiente en LaTeX.</p>
+
+<p>Tabla de correspondencia</p>
+
+<p>| Letra en español | Letra griega | LaTeX | | --- | --- | --- | | a | α |
+\alpha | | b | β | \beta | | c | θ | \theta | | d | δ | \delta | | e | ε |
+\epsilon | | f | φ | \phi | | g | γ | \gamma | | h | η | \eta | | i | ι |
+\iota | | k | κ | \kappa | | l | λ | \lambda | | m | μ | \mu | | n | ν | \nu
+| | o | ο | \omicron | | p | π | \pi | | r | ρ | \rho | | s | σ | \sigma | |
+t | τ | \tau | | u | υ | \upsilon | | v | φ | \psi | | w | ω | \omega | | x
+| χ | \chi | | y | ξ | \xi | | z | ζ | \zeta |</p>
+
+<h3>Modo de navegación por exploración (conmutador: NVDA+espacio)</h3>
+
+<p>Cuando el modo de navegación está activado, el bloque matemático leído por
+el cursor móvil indicará el contenido en texto matemático en lugar de los
+datos gramáticos originales</p>
+
+<p>Puedes usar las siguientes teclas para mover el cursor de edición y la
+navegación interactiva</p>
+
+<ul>
+<li>Flecha izquierda: moverse al punto de inicio del bloque de datos anterior
+y leerlo</li>
+<li>Flecha derecha: moverse al punto de inicio del siguiente bloque de datos y
+leerlo</li>
+<li>Flecha arriba: se mueve a la línea anterior y lee el contenido de todos
+los bloques de datos de esa línea</li>
+<li>Flecha abajo: se mueve a la línea siguiente y lee el contenido de todos
+los bloques de datos de esa línea</li>
+<li>retroceso de página: se mueve diez líneas hacia arriba y lee el contenido
+de todos los bloques de datos de esa línea</li>
+<li>avance página: se mueve diez líneas hacia abajo y lee el contenido de
+todos los bloques de datos de esa línea</li>
+<li>inicio: se mueve al primer bloque de la línea donde se encuentra el cursor</li>
+<li>fin: se mueve al último bloque de la línea donde se encuentra el cursor</li>
+</ul>
+
+
+<p>Utiliza las teclas del cursor junto con la tecla shift para seleccionar
+texto</p>
+
+<p>espacio o intro: cuando el cursor se detiene en un bloque matemático, puede
+interactuar con el contenido matemático del bloque de datos y navegar por él</p>
 
 <p>Las siguientes teclas desplazan por sí mismas el cursor de edición al
 siguiente bloque disponible, mientras que al añadirles shift se mueven al
 bloque anterior:</p>
 
 <ul>
-<li>l: moverse al siguiente bloque LaTeX</li>
-<li>t: moverse al siguiente bloque de texto</li>
+<li>l: moverse al siguiente bloque de datos LaTeX y leerlo</li>
+<li>a: moverse al siguiente bloque de datos AsciiMath y leerlo</li>
+<li>m: moverse al siguiente bloque de datos MathML y leerlo</li>
+<li>t: moverse al siguiente bloque de texto y leerlo</li>
+<li>tab: se mueve al siguiente bloque interactivo (bloque matemático) y lo lee</li>
 </ul>
 
 
-<p>ejemplo de contenido mixto: la solución de la ecuación cuadrática en una
-variable (ax<sup>2</sup>+bx+c=0) es (\frac{-b\pm\sqrt{b<sup>2</sup>-4ac}}{2a}).</p>
+<p>Se pueden usar los siguientes gestos para editar contenidos</p>
+
+<ul>
+<li>ctrl+x: corta el bloque en el que se encuentra el cursor</li>
+<li>ctrl+c: copia el bloque en el que se encuentra el cursor</li>
+<li>ctrl+v: pega el contenido después del bloque en el que se encuentra el
+cursor</li>
+<li>suprimir o retroceso: elimina el bloque sobre el que se encuentra el
+cursor</li>
+</ul>
+
+
+<h3>ejemplo de contenido:</h3>
+
+<ul>
+<li>LaTeX(con separador de paréntesis): La solución de la ecuación cuadrática
+en una variable (ax<sup>2</sup>+bx+c=0) es (\frac{-b\pm\sqrt{b<sup>2</sup>-4ac}}{2a}) .</li>
+<li>LaTeX(con el separador de dólar): La solución de una ecuación cuadrática
+en una variable $ax<sup>2</sup>+bx+c=0$ es $\frac{-b\pm\sqrt{b<sup>2</sup>-4ac}}{2a}$ .</li>
+<li>AsciiMath: La solución de la ecuación cuadrática en una variable
+<code>ax^2+bx+c=0</code> es <code>x=(-b+- \sqrt(b^2-4ac))/(2a)</code> .</li>
+<li>MathML: La solución de la ecuación cuadrática en una variable ax2+bx+c=0
+es −b±b2−4ac2a
+.</li>
+</ul>
+
 
 <h2>opciones</h2>
 
-<p>Todos los menús de Access8math están centralizados en Herramientas -&gt; Access8math.</p>
+<p>Todos los menús de Access8math están centralizados en Herramientas -&gt; Access8math -&gt; Opciones</p>
 
-<h3>opciones de la función de lectura</h3>
-
-<ul>
-<li><p>Diálogo de Opciones generales:</p>
+<h3>Opciones de lectura</h3>
 
 <ul>
 <li>Idioma: idioma de lectura de Access8Math</li>
-<li>Intervalo de tiempo del elemento: establece el tiempo de pausa entre
-elementos. Admite valores entre 1 y 100. Cuanto menor sea el valor
-menos durará la pausa, y cuanto mayor sea más durará.</li>
-<li>Mostrar ventana de interacción de Access8math al entrar al modo
-interactivo: indica si se muestra la "ventana de interacción de
-Access8math" al pulsar la barra espaciadora sobre un objeto
-matemático.</li>
+<li>Origen de voz:</li>
+<li>Origen de Braille:</li>
+<li>Origen de interacción:</li>
 <li>Analizar el significado matemático del contenido: analiza el contenido
 matemático semánticamente, y cuando se cumpla una regla específica, se
 usará esa regla en la verbalización.</li>
+<li>mostrar ventana de interacción de Access8math al entrar al modo
+interactivo: indica si se muestra la "ventana de interacción de
+Access8math" al activar el evento de modo de navegación de interacción en
+un objeto matemático</li>
 <li>Leer significado predefinido en el diccionario al navegar en modo
 interactivo: si el patrón está definido en el diccionario, se usa para
 leer el significado de una subparte a nivel de capa superior.</li>
-<li>Leer el significado autogenerado al navegar en modo interactivo:
-cuando el patrón no está bien definido o está incompleto en el
-diccionario, utiliza la función de generación automática para leer el
-significado de una parte en el nivel superior.</li>
-<li>Utilizar un pitido para avisar de que no hay movimiento: al navegar en
-modo interactivo, te avisará con un pitido. Si no se marca, lo hará
-verbalizando "sin movimiento".</li>
-<li>Usar NVDA+gesto para activar acción: indica si se debe añadir la tecla
-NVDA a los atajos al escribir contenido mixto en el cuadro de edición</li>
-</ul>
-</li>
-<li><p>Diálogo de configuración de reglas: elige si se activan reglas
-específicas.</p></li>
+<li>Leer el significado autogenerado al navegar en modo interactivo: cuando el
+patrón no está bien definido o está incompleto en el diccionario, utiliza
+la función de generación automática para leer el significado de una parte
+en el nivel superior.</li>
+<li>usar pitido para indicar que no hay movimiento en el modo de navegación
+por interacción</li>
+<li>Intervalo de tiempo del elemento: establece el tiempo de pausa entre
+elementos. Admite valores entre 1 y 100. Cuanto menor sea el valor menos
+durará la pausa, y cuanto mayor sea más durará.</li>
 </ul>
 
 
-<h3>traducción</h3>
+<h3>Opciones de escritura</h3>
+
+<ul>
+<li>Activar gestos de comando al arrancar</li>
+<li>Activar gestos de navegación por bloques al arrancar</li>
+<li>Activar gestos de atajo al arrancar</li>
+<li>Usar indicación de audio cuando se alterne el modo de navegación</li>
+<li>Mostrar documento HTML:</li>
+<li>Mostrar HTML matemático:</li>
+<li>Delimitador LaTeX:</li>
+</ul>
+
+
+<h3>Configuración de reglas: elige si se activan reglas específicas</h3>
+
+<h2>traducción</h2>
 
 <ul>
 <li>El "diccionario Unicode" permite personalizar el método de lectura del
@@ -296,6 +405,97 @@ https://en.wikipedia.org/wiki/Matrix_multiplication</li>
 
 <p>No dudes en informar de cualquier fallo que encuentres o comentar lo que
 quieras, ¡gracias!</p>
+
+<h2>Actualización de Access8Math v3.3</h2>
+
+<ul>
+<li>Se añade un editor incorporado que utiliza el área de edición tradicional
+porque Windows 11 ha cambiado a un área de edición basada en UIA</li>
+<li>función en el editor incorporado para crear nuevo / abrir / guardar</li>
+<li>El ajuste inicial de idioma de Access8math se basa en el idioma
+configurado en NVDA</li>
+<li>Se mejoran la voz y el braille en los menús virtuales</li>
+<li>Compatibilidad con NVDA 2022.1</li>
+<li>Corregido un problema por el que el menú marcado no se abría si el
+documento estaba vacío</li>
+<li>Corregida la función de traducción entre LaTeX y AsciiMath</li>
+<li>Corregido un problema de renderizado del documento HTML cuando se elige la
+opción de texto en los ajustes sobre cómo mostrar el documento HTML</li>
+</ul>
+
+
+<h2>Actualización de Access8Math v3.2</h2>
+
+<ul>
+<li>Nueva función "<code>" para separar bloques de datos. Los bloques encerrados
+entre "</code>" son datos AsciiMath</li>
+<li>Nuevos atajos de edición en el modo de navegación de exploración cortar
+(ctrl+x), copiar (ctrl+c), pegar (ctrl+v) y eliminar (suprimir/retroceso)</li>
+<li>Nuevo atajo para moverse entre bloques de datos interactivos en el modo de
+navegación por exploración (tab) y entre bloques de datos AsciiMath (a)</li>
+<li>Se cambia el modo en el que se mueve el cursor en modo navegación por
+exploración. Ahora se usan las flechas arriba, abajo, izquierda y derecha,
+y se leen los contenidos del bloque de datos después del desplazamiento.</li>
+<li>Cuando el cursor se mueve en el modo de navegación por exploración, el
+bloque de datos matemáticos leerá el contenido textual serializado de las
+matemáticas en lugar del código fuente</li>
+<li>Cuando el cursor esté en el bloque de datos matemáticos en el modo de
+navegación por exploración, pulsa espacio o la tecla intro para
+interactuar con el bloque de contenido matemático.</li>
+<li>Nueva función que permite configurar las teclas en inglés como atajos</li>
+<li>Nueva función de gesto de atajo para el alfabeto griego</li>
+<li>La entrada de la tecla de atajo sólo se aplica en el área LaTeX</li>
+<li>se puede configurar la indicación mediante voz o sonidos cuando se alterne
+el modo de navegación por exploración</li>
+<li>El menú de comandos de LaTeX se puede abrir en el área de texto y se
+pueden insertar separadores LaTeX al insertar comandos LaTeX</li>
+<li>Nuevo menú de traducción, que puede convertir el formato de datos del
+bloque en el que se encuentra el cursor entre AsciiMath y LaTeX. Pertenece
+al grupo de gestos de comando. Cuando el cursor esté en el bloque
+AsciiMath o LaTeX, pulsa alt+t para abrir el menú de traducción (ctrl+t en
+el modo de navegación por exploración)</li>
+<li>Nuevo menú de lotes, que puede convertir el formato de los datos del
+documento entero entre AsciiMath y LaTeX, y puede convertir el separador
+LaTeX entre paréntesis y dólar. Pertenece al grupo de gestos de
+comando. Pulsa alt+b para abrir el menú de lotes</li>
+<li>Añadido tipo de bloque MathML, soporta alt+i, navegación de una sola letra
+con la "m", movimiento con el tabulador en el modo de navegación por
+exploración</li>
+<li>Nueva función de reglas matemáticas en braille personalizadas y
+diccionario Unicode, que funcionan igual que con la voz</li>
+<li>El HTML exportado se puede mostrar con Markdown</li>
+<li>En el HTML exportado, se añaden el nombre de archivo y el título de la
+página a partir del título de la ventana del bloc de notas.</li>
+</ul>
+
+
+<h2>Actualización de Access8Math v3.1</h2>
+
+<ul>
+<li>Las ventanas HTML ahora se presentan como menú virtual</li>
+<li>Corregido un problema por el que no se puede convertir la vista HTML
+cuando el texto incluye el carácter "`"</li>
+<li>Si la cantidad de palabras en el documento supera las 4096, el contenido
+no se convertirá a la vista HTML</li>
+<li>Añadidos comandos LaTeX de conjuntos matemáticos</li>
+<li>Se actualiza alt+m para insertar las marcas LaTeX "(" y ")" antes y
+después del texto seleccionado (si no hay texto seleccionado, se hace en
+la posición actual del cursor)</li>
+<li>En las opciones generales, se puede elegir si el contenido matemático
+exportado en HTML se presenta en una línea independiente (bloque o en
+línea)</li>
+<li>Al exportar HTML, el fichero de texto original se guarda en el archivo
+comprimido</li>
+<li>En las opciones generales, se puede elegir el uso de corchetes o símbolos
+monetarios como delimitador LaTeX</li>
+<li>En las opciones generales, se puede elegir el origen de la voz, el braille
+y la interacción (Access8math o MathPlayer)</li>
+<li>Gestos individuales para activar y desactivar los atajos, la navegación
+por bloques y la escritura</li>
+<li>se puede cambiar el origen de voz, braille o interacción con un gesto
+(Access8math o MathPlayer)</li>
+</ul>
+
 
 <h1>Actualización de Access8Math v3.0</h1>
 
