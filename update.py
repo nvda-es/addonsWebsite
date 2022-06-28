@@ -1,6 +1,7 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/Becky.es.html",
 "https://addons.nvda-project.org/addons/cursorLocator.es.html",
 "https://addons.nvda-project.org/addons/speechLogger.es.html",
 "https://addons.nvda-project.org/addons/screenshots.es.html",
