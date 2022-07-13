@@ -1,11 +1,149 @@
 
 <h1>Newfon</h1>
 <ul>
-<li>Autor: Sergey Shishmintzev</li>
-<li>Descargar <a href="https://www.nvaccess.org/files/nvda-addons/newfon.nvda-addon">Versión estable</a></li>
+<li>Autores: Sergey Shishmintsev, Alexy Sadovoi, Sergey A.K.A. Electrik, Kvark
+y otros desarrolladores</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=newfon">Versión estable</a></li>
+<li>Compatibilidad con NVDA: de 2019.2 a 2022.2</li>
 </ul>
 
 
-<p>Newfon es un sintetizador de Sergey Shishmintzev que soporta los idiomas
-ruso y ucraniano.</p>
+<h3>Acerca de</h3>
+
+<p>Newfon es un sintetizador de voz que soporta los idiomas ruso y ucraniano
+desde su primera versión. Más tarde se añadieron el croata, el serbio y el
+polaco.</p>
+
+<h3>Características generales:</h3>
+
+<ul>
+<li>Posibilidad de cambiar idiomas;</li>
+<li>Cambio de la frecuencia de muestreo;</li>
+<li>Interpolación de sonidos para simular el sonido de los antiguos lectores
+de libros y lectores de pantalla para DOS;</li>
+<li>Para que el sintetizador lea texto según se escribe, es posible
+deshabilitar el diccionario de acentos incorporado. Esta opción sólo
+funciona en ruso</li>
+<li>El sintetizador, además de la velocidad principal del 0 al 100%, soporta
+aceleración adicional de voz, que reduce el tiempo de lectura</li>
+<li>Para lograr una lectura más suave a velocidades altas, es posible ajustar
+las pausas entre frases.</li>
+</ul>
+
+
+<h3>Nota:</h3>
+
+<p>Se han liberado varias versiones de Newfon desde que se publicó en el sitio
+oficial de complementos de NVDA, pero por desgracia el desarrollador
+principal, Sergey Shishmintsev, falleció y esto retrasó la actualización del
+complemento en el sitio.</p>
+
+<p>En 2017, los desarrolladores actuales del sintetizador de voz Newfon
+tuvieron la oportunidad de obtener el código fuente de los desarrollos de
+Sergey. Sus familiares, gracias a quienes esto ocurrió, sólo pusieron una
+condición: si sus proyectos continúan, deben ser gratuitos. Los
+desarrolladores, por su parte, decidieron que la historia no debería olvidar
+a Sergey Shishmintsev, ya que fue un programador único con una enorme
+perseverancia, trabajo duro y conocimientos.</p>
+
+<h2>Registro de cambios</h2>
+
+<h3>Novedades en 2022.04.16</h3>
+
+<p>Compatible con NVDA 2022 (se soporta todavía la compatibilidad hacia atrás
+con NVDA 2019.2).</p>
+
+<h3>Novedades en 2021.06.06</h3>
+
+<p>Se ha modificado el valor de última versión probada para dar compatibilidad
+con versiones recientes de NVDA.</p>
+
+<h3>Novedades en 2021.03.19</h3>
+
+<p>Para dar compatibilidad con las futuras versiones de NVDA, se han cambiado
+los mecanismos internos de interacción del sintetizador con los
+controladores de NVDA.</p>
+
+<h3>Novedades en 2021.01.16</h3>
+
+<h4>Añadido:</h4>
+
+<p>speech.BreakCommand - Algunos complementos necesitan esta función para
+pausar la voz un rato.</p>
+
+<h4>Corregido:</h4>
+
+<p>En ucraniano, algunas letras no se leían correctamente.</p>
+
+<h3>Novedades en 2020.12.28</h3>
+
+<p>En esta versión, se ha hecho un procesado significativo de los scripts,
+reestructuración del complemento, nuevos idiomas (oportunidad de pruebas) y
+mucho más.</p>
+
+<h4>Añadido:</h4>
+
+<ul>
+<li>Nuevos idiomas: croata, polaco y serbio. Estos scripts se han tomado de
+orígenes abiertos o han sido proporcionados por evaluadores beta. El autor
+no puede hacerse responsable del funcionamiento de estos scripts, por lo
+que tendrás que usarlos sin garantías de ningún tipo;</li>
+<li>Se han añadido algunos caracteres antiguos al idioma ruso: "і": "и
+десятеричное", "ѣ": "ять", "ѳ": "фита", "ѵ": "ижица", "ў": "у краткое",
+"ґ": "гэ взрывное". Como consecuencia, ahora las palabras rusas antiguas
+deberían leerse adecuadamente;</li>
+<li>Interpolación de sonido. Ahora, puedes imitar el sonido de un newfon,
+igual que en los viejos lectores de pantalla de DOS y los lectores de
+libros. Para implementar esta función, se usa la biblioteca libsamplerate;</li>
+<li>Ahora se puede desactivar la lectura de fracciones decimales (sólo en ruso
+y ucraniano), lo que mejora la lectura de versiones de los programas.</li>
+</ul>
+
+
+<h4>Cambiado:</h4>
+
+<ul>
+<li>Se ha reescrito por completo el complemento. El código ya no está en un
+único archivo <strong>init</strong>.py, lo que facilita mantenerlo y añadir nuevos
+idiomas;</li>
+<li>Se han portado las colas de las dlls a Python, lo que mejora la
+estabilidad del complemento.</li>
+</ul>
+
+
+<h4>Corregido:</h4>
+
+<p>El problema del sonido mal sincronizado que apareción en versiones recientes
+de NVDA.</p>
+
+<h3>Novedades en 2020.09.12</h3>
+
+<h4>Cambiado:</h4>
+
+<p>A causa de un cambio en la forma de trabajo del subsistema de sonido en las
+nuevas versiones alfa de NVDA, la frecuencia de muestreo no se cambiaba
+correctamente.</p>
+
+<h3>Novedades en 2020.03.12</h3>
+
+<h4>Añadido:</h4>
+
+<ul>
+<li>A petición de los usuarios, se ha añadido una función opcional para la
+pronunciación en inglés. En vez del sonido е, se pronuncia el sonido э,
+como en los complementos antiguos;</li>
+<li>Ahora, la interfaz del complemento se ha traducido a ucraniano, y todos
+sus parámetros se mostrarán en el idioma correspondiente.</li>
+</ul>
+
+
+<h4>Cambiado</h4>
+
+<ul>
+<li>Gracias al programador Kvark, la arquitectura del complemento se ha
+adaptado a Python 3;</li>
+<li>Para los fans de las voces no estándar, se ha expandido la lista de
+frecuencias de muestreo.</li>
+</ul>
+
 
