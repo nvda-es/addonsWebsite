@@ -1,0 +1,334 @@
+
+<h1>Caja de herramientas de desarrollo y pruebas para NVDA</h1>
+<ul>
+<li>Autor: Cyrille Bougot</li>
+<li>Compatibilidad con NVDA: de 2019.2 en adelante</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=ndtt">versión estable</a></li>
+</ul>
+
+
+<p>Este complemento reúne diversas funciones para depuración y pruebas en NVDA.</p>
+
+<h2>Características</h2>
+
+<ul>
+<li>Un diálogo mejorado para reiniciar que permite indicar algunas opciones
+extra cuando se reinicia NVDA.</li>
+<li>Un script de conmutación y un backport de la función "Reproducir un sonido
+para los errores registrados" de NVDA.</li>
+<li>Un explorador de propiedades de los objetos.</li>
+<li>Un modo de descripción extendida para los scripts: cuando está activado,
+el modo ayuda de entrada anuncia información de los scripts que no tienen
+descripción.</li>
+<li>Órdenes para ayudar con la lectura y el análisis del registro.</li>
+<li>En el espacio de trabajo de la consola Python, una función para abrir el
+código fuente de un objeto.</li>
+<li>Una orden para registrar la pila de llamadas de la función speech.speak.</li>
+</ul>
+
+
+<h2>Diálogo reiniciar mejorado</h2>
+
+<p>La orden NVDA+shift+q abre un diálogo para indicar algunas opciones extra
+antes de reiniciar NVDA. Las opciones que pueden especificarse corresponden
+a las <a>opciones de línea de órdenes</a> que se pueden usar con <code>nvda.exe</code>,
+como <code>-c</code> para la ruta de configuración, <code>--disable-addons</code> para
+deshabilitar los complementos, etc.</p>
+
+<h2>Reproducir un sonido para los errores registrados</h2>
+
+<p>La <a>opción "Reproducir un sonido para los errores registrados"</a> se
+introdujo en NVDA 2021.3 y permite especificar si NVDA reproducirá un sonido
+de error en caso de que se registre un error.</p>
+
+<p>Este complemento proporciona una orden adicional (NVDA+control+alt+e) para
+conmutar este ajuste. Puedes elegir:</p>
+
+<ul>
+<li>"Sólo en versiones de prueba de NVDA" (por defecto) para que NVDA
+reproduzca sonidos de error sólo si la versión actual de NVDA es una
+versión de prueba (alfa, beta o ejecutada desde el código fuente).</li>
+<li>"Sí" para habilitar los sonidos de error sea cual sea tu versión de NVDA.</li>
+</ul>
+
+
+<p>En versiones de NVDA anteriores a la 2021.3, este complemento proporciona el
+backport de esta característica y la posibilidad de controlarla con la orden
+de teclado. La casilla de verificación del panel de opciones avanzadas, sin
+embargo, no se incluye.</p>
+
+<h2>Explorador de propiedades de los objetos</h2>
+
+<p>Esta función permite anunciar algunas propiedades del objeto actual en el
+navegador de objetos sin abrir el visualizador del registro.</p>
+
+<p>Para enumerar las propiedades de un objeto, mueve el navegador de objetos
+hacia él y usa las siguientes órdenes:</p>
+
+<ul>
+<li>Selecciona la propiedad anterior y la anuncia para el navegador de
+objetos.</li>
+<li>Selecciona la siguiente propiedad y la anuncia para el navegador de
+objetos.</li>
+<li>Anuncia la propiedad seleccionada actualmente para el navegador de
+objetos; al pulsar dos veces rápidamente, muestra esta información en un
+mensaje explorable.</li>
+</ul>
+
+
+<p>Estas tres órdenes vienen sin asignar por defecto; tendrás que asignarlas
+desde el diálogo Gestos de entrada para poder usarlas.</p>
+
+<p>La lista de propiedades soportadas es la siguiente: nombre, rol, estado,
+valor, nombre de clase de la ventana, id de control de la ventana, manejador
+de la ventana, ubicación, clase Python, orden de resolución de métodos de la
+clase Python.</p>
+
+<p>Esta función es una mejora de un ejemplo de la <a>guía de desarrollo de
+NVDA</a>.</p>
+
+<h2>Modo de descripción extendida de scripts</h2>
+
+<p>Cuando el modo de descripción extendida de scripts está activado, el modo de
+ayuda de entrada (NVDA+1) se modifica de la siguiente manera. Si un script
+no tiene descripción, se anuncian su nombre y su clase. Si un script tiene
+descripción, esta se anuncia como siempre. El gesto para activar o
+desactivar esta función es NVDA+control+alt+d.</p>
+
+<p>Ejecutar un gesto asociado a un script sin descripción en el modo ayuda de
+entrada también crea una entrada para este script en el diálogo de
+administración de gestos. Esta entrada se ubica en una categoría dedicada
+llamada "Scripts sin descripción (¡Modifica bajo tu responsabilidad!)". Esto
+permite añadir, eliminar o cambiar fácilmente los gestos nativos de NVDA
+para estos scripts. Ten en cuenta, sin embargo, que el script puede no tener
+una descripción intencionadamente para que el usuario no pueda
+modificarlo. El script puede estar pensado para coincidir con un atajo de
+una aplicación concreta. Por ejemplo, el script script_toggleItalic en
+NVDAObjects.window.winword.WordDocument está asignado a control+k, y no
+debería modificarse, ya que el gesto se pasa a la aplicación para ejecutar
+realmente ese atajo de teclado.</p>
+
+<h3>Ejemplo de uso</h3>
+
+<p>Control+shift+k también conmuta la cursiva en Word, incluso si NVDA no lo
+anuncia de forma nativa. Para que el resultado de pulsar control+shift+k se
+anuncie como control+k, deberías seguir los siguientes pasos:</p>
+
+<ul>
+<li>Abre un documento de Word.</li>
+<li>Activa el modo de descripción extendida de scripts con NVDA+control+alt+d.</li>
+<li>Entra en el modo ayuda de entrada con NVDA+1.</li>
+<li>Pulsa control+K para anunciar el script de cursiva y añadirlo al diálogo
+de gestos.</li>
+<li>Sal del modo ayuda de entrada con NVDA+1.</li>
+<li>Abre el diálogo Gestos de entrada.</li>
+<li>En la categoría "Scripts sin descripción (¡Modifícalos bajo tu
+responsabilidad!)", selecciona la orden "toggleItalic en
+NVDAObjects.window.winword.WordDocument".</li>
+<li>Añade el atajo control+shift+k y valida.</li>
+<li>Si quieres, sal del modo de descripción extendida de scripts con
+NVDA+control+alt+d.</li>
+</ul>
+
+
+<p>Fallo conocido: Un script añadido para una clase concreta es visible incluso
+si el administrador de gestos se abre en otro contexto.</p>
+
+<h2>Órdenes de lectura y análisis del registro</h2>
+
+<p>El modo lector del registro proporciona órdenes facilitar la lectura y el
+análisis del registro. En la ventana del visualizador del registro, el
+lector del registro está habilitado por defecto, por lo que los comandos de
+lectura del registro están disponibles de inmediato. En otras áreas de
+lectura de texto, tales como un editor (por ejemplo, Notepad++) o una página
+web (por ejemplo, una incidencia de GitHub), es necesario pulsar
+NVDA+control+alt+l para activar el modo de lectura del registro y usar sus
+órdenes. Cuando acabes con las tareas de análisis y lectura del registro,
+puedes desactivar de nuevo el modo lector del registro con
+NVDA+control+alt+l.</p>
+
+<p>Las órdenes disponibles en el modo de lectura del registro se describen a
+continuación.</p>
+
+<h3>Órdenes de navegación rápida</h3>
+
+<p>Existen órdenes de navegación de una sola letra, similares a las usadas en
+modo exploración, que permiten moverse por distintos tipos de mensajes en el
+registro:</p>
+
+<ul>
+<li>m: cualquier mensaje</li>
+<li>e: ERROR</li>
+<li>i: IO</li>
+<li>d: DEBUG</li>
+<li>f: INFO</li>
+<li>g: DEBUGWARNING</li>
+<li>w: WARNING</li>
+</ul>
+
+
+<p>Pulsando la letra te moverás a la siguiente coincidencia de ese mensaje. Al
+combinar la letra con la tecla shift, te desplazarás a la coincidencia
+anterior.</p>
+
+<h3>Abrir un archivo en tu editor</h3>
+
+<p>Al mirar una traza, puedes querer abrir uno de los archivos de código para
+entender la causa y el contexto del problema. Pulsa C para abrir el archivo
+de código fuente correspondiente a la línea actual de la traza.</p>
+
+<p>Para que esta característica funcione, necesitas configurar el comando de tu
+editor favorito. Si no estás ejecutando NVDA desde el código fuente, la
+ubicación del código también debería estar configurada. Para más información
+sobre la configuración, consulta el párrafo de configuración de la caja de
+herramientas de desarrollo y pruebas de NVDA.</p>
+
+<h2>Extensión de la consola Python</h2>
+
+<p>En la consola, puedes llamar a la siguiente función para ver el código
+fuente que define la variable <code>myVar</code>:</p>
+
+<p><code>openCodeFile(myVar)</code></p>
+
+<p>Para que esta característica funcione, necesitas configurar el comando de tu
+editor favorito. Si no estás ejecutando NVDA desde el código fuente, la
+ubicación del código también debería estar configurada. Para más información
+sobre la configuración, consulta el párrafo de configuración de la caja de
+herramientas de desarrollo y pruebas de NVDA.</p>
+
+<p>Se puede llamar a la función <code>openCodeFile</code> en objetos definidos en el
+código de NVDA o en objetos definidos por los complementos. No se puede
+llamar en objetos cuyo código fuente no está disponible, tales como los
+incorporados en Python.</p>
+
+<p>A continuación hay ejemplos de llamadas al código de NVDA:</p>
+
+<ul>
+<li>Ver la definición de la función <code>speech.speech.speak</code>:
+<code>openCodeFile(speech.speech.speak)</code></li>
+<li>Ver la definición de la clase <code>TextInfo</code>:
+<code>openCodeFile(textInfos.TextInfo)</code></li>
+<li>Ver la definición del método <code>copyToClipboard</code> de la clase <code>TextInfo</code>:
+<code>openCodeFile(textInfos.TextInfo.copyToClipboard)</code></li>
+<li>Ver la definición de clase del objeto con el foco: <code>openCodeFile(focus)</code></li>
+<li>Abrir el archivo <code>api.py</code> que define el módulo <code>api</code>: <code>openCodeFile(api)</code></li>
+</ul>
+
+
+<h2>Registrar la pila de llamadas de la función de voz</h2>
+
+<p>A veces, puedes querer saber qué parte del código es responsable de
+verbalizar algo. Para ello, puedes habilitar el registro de traza de pila de
+la función de voz pulsando NVDA+control+alt+s. Cada vez que NVDA hable, se
+grabará una traza de pila en el registro.</p>
+
+<p>Nota: puedes modificar directamente el archivo del script para parchear otra
+función. Consulta las instrucciones en el propio archivo para más detalles.</p>
+
+<h2>Configuración de herramientas de depuración y pruebas de NVDA</h2>
+
+<p>Las órdenes del lector del registro y la extensión de la consola Python
+pueden requerir una configuración específica. Para usar funciones que
+permiten visualizar el código fuente en tu editor, primero deberías
+configurar la línea de órdenes de tu editor. Si es necesario visualizar un
+archivo de NVDA y no lo ejecutas desde el código fuente, también tienes que
+configurar la ruta al código fuente de NVDA.</p>
+
+<h3>Configuración de la línea de órdenes del editor</h3>
+
+<p>Para utilizar la orden 'Abrir código fuente' o la orden de consola
+<code>openCodeFile</code>, primero es necesario configurar el comando al que se llamará
+para abrir el archivo en tu editor favorito. Para ello, abre la consola de
+NVDA (NVDA+control+z), teclea la siguiente línea y pulsa intro:</p>
+
+<p><code>config.conf['ndtt']['sourceFileOpener'] =
+r'"C:\path\to\my\editor\editor.exe" "{path}":{line}'</code></p>
+
+<p>Por supuesto, deberías modificar esta línea con el nombre y ruta reales de
+tu editor y la sintaxis que usa para abrir archivos.</p>
+
+<p><code>{path}</code> será sustituida por la ruta completa del archivo a abrir, y
+<code>{line}</code> por el número de línea donde quieres que aparezca el cursor.</p>
+
+<p>Por ejemplo, para Notepad++, la orden a escribir en la consola sería:</p>
+
+<p><code>config.conf['ndtt']['sourceFileOpener'] = r'"C:\Program
+Files\Notepad++\notepad++.exe" "{path}" -n{line}'</code></p>
+
+<h3>Configuración de la ruta al código fuente de NVDA</h3>
+
+<p>Cuando un archivo relacionado con el código fuente de NVDA aparece en una
+traza, la línea tiene este formato:</p>
+
+<p><code>File "config\profileUpgrader.pyc", line 30, in upgrade</code></p>
+
+<p>Si no ejecutas NVDA desde el código fuente, puedes indicar una ubicación
+alternativa donde buscar el archivo de código fuente, como por ejemplo el
+lugar donde has clonado el repositorio de NVDA. En este caso, debes
+configurar la ruta donde tengas situados los archivos con el código fuente
+de NVDA.</p>
+
+<p>Para ello, abre la consola de NVDA (NVDA+control+z), teclea la siguiente
+línea y pulsa intro:</p>
+
+<p><code>config.conf['ndtt']['nvdaSourcePath'] = r'C:\pathExample\GIT\nvda\source'</code></p>
+
+<p>Por supuesto, reemplaza la ruta al código fuente de NVDA con la correcta.</p>
+
+<p>Asegúrate, no obstante, de que la versión de tu archivo fuente (por ejemplo,
+commit de Git) es la misma que la de la instancia de NVDA en ejecución.</p>
+
+<h2>Registro de cambios</h2>
+
+<h3>Versión 2.1</h3>
+
+<ul>
+<li>Diversas correcciones de fallos y refactorización y limpieza del código
+para tener en cuenta todos los casos de uso: todas las versiones
+soportadas, instalado vs. ejecutado desde el código fuente,
+etc. (colaboración de Łukasz Golonka)</li>
+<li>Reescritura del módulo compa (colaboración de Łukasz Golonka)</li>
+<li>Ahora, el diálogo para reiniciar se puede abrir sólo una vez.</li>
+<li>Los atajos del explorador de objetos ahora vienen por defecto sin asignar
+y deben ser asignados por el usuario.</li>
+<li>En el explorador de objetos, una pulsación doble para llamar al script que
+indica la propiedad del objeto ahora muestra la información indicada en un
+mensaje explorable.</li>
+</ul>
+
+
+<h3>Versión 2.0</h3>
+
+<ul>
+<li>Nueva función: diálogo de reiniciar mejorado para indicar algunas opciones
+extra al reiniciar NVDA.</li>
+<li>Nueva función: modo de descripción extendida.</li>
+<li>Función para reproducir sonidos de error armonizada entre las versiones
+anterior y posterior a la 2021.3 de NVDA.</li>
+<li>Nueva función: las órdenes del lector del registro ahora están disponibles
+en el visualizador del registro y, opcionalmente, en cualquier cuadro de
+edición y en páginas web.</li>
+<li>Nueva función: en la consola Python, está disponible una función
+<code>openCodeFile</code> para ver el código fuente de un objeto.</li>
+<li>Algunas funciones están ahora deshabilitadas en modo seguro por motivos de
+seguridad.</li>
+<li>Se ha extendido el rango de compatibilidad del complemento (de 2019.2 a
+2021.1).</li>
+<li>Las liberaciones ahora se llevan a cabo con una acción de GitHub en lugar
+de AppVeyor.</li>
+</ul>
+
+
+<h3>Versión 1.0</h3>
+
+<ul>
+<li>Versión inicial.</li>
+</ul>
+
+
+<p>https://www.nvaccess.org/files/nvda/documentation/userGuide.html#CommandLineOptions</p>
+
+<p>https://www.nvaccess.org/files/nvda/documentation/userGuide.html#PlayErrorSound</p>
+
+<p>https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#toc22</p>
+
