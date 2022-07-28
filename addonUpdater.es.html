@@ -11,8 +11,10 @@
 posibilidad de verificar, descargar y aplicar actualizaciones de
 complementos.</p>
 
-<p>Para verificar actualizaciones una vez instalado este complemento, ve a
-NVDA/Herramientas/Buscar actualizaciones de complementos. Si hay
+<p>Para buscar actualizaciones una vez instalado este complemento, ve al menú
+NVDA/Herramientas/Buscar actualizaciones de complementos (si NVDA avisó de
+actualizaciones, el elemento de menú dirá "Revisar actualizaciones de
+complementos", seguido de la cantidad de actualizaciones). Si hay
 actualizaciones disponibles, se mostrará una lista con las actualizaciones
 de complementos, consistiendo cada entrada en descripción, versión actual, y
 nueva versión. Selecciona Actualizar, y NVDA descargará y aplicará las
@@ -25,6 +27,7 @@ complemento:</p>
 
 <ul>
 <li>Braille Extender</li>
+<li>Tienda para NVDA (Tienda de la comunidad de NVDA en español)</li>
 <li>WeatherPlus</li>
 </ul>
 
@@ -48,6 +51,8 @@ complemento, cambia los complementos afectados al canal estable.</li>
 corporativo), la característica de comprobación de actualizaciones puede
 no funcionar adecuadamente, y por tanto se deben descargar a mano las
 actualizaciones de complementos.</li>
+<li>Algunas funciones requieren que NVDA esté instalado en el ordenador,
+idealmente en un equipo con Windows 10 o superior.</li>
 </ul>
 
 
@@ -59,16 +64,65 @@ Updater. Las opciones de Add-on Updater son las siguientes:</p>
 
 <ul>
 <li>Buscar actualizaciones de complementos automáticamente: si está marcada,
-NVDA buscará actualizaciones de complementos una vez al día.</li>
+NVDA buscará actualizaciones de complementos una vez al día. La
+comprobación de actualizaciones automáticas está habilitada en sistemas de
+Windows cliente y deshabilitada en sistemas de servidor.</li>
 <li>Notificación de actualización de complementos (Windows 10 y posterior):
 puedes elegir recibir la notificación de actualizaciones como un diálogo o
 un aviso emergente. En versiones de Windows anteriores a la 10 o en
-sistemas Windows Server, la notificación de actualizaciones se mostrará
-como un diálogo.</li>
+sistemas Windows Server, o en copias portables de NVDA en ejecución, la
+notificación de actualizaciones se mostrará como un diálogo.</li>
+<li>Actualizar complementos en segundo plano (Windows 10 o posterior con la
+notificación emergente configurada): si está marcada, Add-on Updater
+aplicará actualizaciones en segundo plano. Aparecerá un aviso informando
+de que se están descargando e instalando actualizaciones de complementos,
+seguido de otro mensaje anunciando los resultados de la
+actualización. Para que funcionen las actualizaciones en segundo plano, se
+debe configurar la notificación emergente en el tipo de notificación.</li>
 <li>No actualizar complementos: permite elegir complementos que no deberían
 actualizarse.</li>
 <li>Preferir versiones de desarrollo: los complementos marcados en esta lista
 recibirán versiones de desarrollo.</li>
+<li>Fuente de actualización de complementos: puedes elegir de dónde conseguir
+las actualizaciones. Actualmente Add-on Updater soporta la descarga de
+actualizaciones desde el sitio web de complementos de la comunidad y el
+catálogo de complementos de la comunidad en español. Se mostrará un
+mensaje de confirmación tras cambiar la fuente de actualizaciones.</li>
+</ul>
+
+
+<h2>Versión 22.08</h2>
+
+<ul>
+<li>Reorganización interna del código importante y reescrituras.</li>
+<li>En sistemas Windows Server, la función de actualización automática de
+complementos viene deshabilitada por defecto (afecta a las nuevas
+instalaciones).</li>
+<li>Añadida la posibilidad de seleccionar distintas fuentes de actualización
+de complementos. Add-on Updater puede buscar actualizaciones alojadas en
+el sitio web de la comunidad de complementos (addons.nvda-project.org) o
+en el catálogo de complementos de la comunidad de NVDA en español
+(nvda.es). Se ha añadido un nuevo cuadro combinado en el panel de opciones
+del complemento para elegir la fuente de actualización de complementos.</li>
+<li>En Windows 10 y posterior, es posible hacer que Add-on Updater busque,
+descargue e instale actualizaciones de complementos en segundo plano,
+siempre que NVDA esté instalado y la configuración de notificaciones esté
+en notificación emergente.</li>
+<li>Se ha rediseñado la experiencia de descarga e instalación de
+actualizaciones de varios complementos, incluyendo el uso de un único
+diálogo que muestra el progreso de descarga y la actualización de
+complementos después de descargarlos todos.</li>
+<li>Si NVDA está configurado para anunciar las actualizaciones en una
+notificación emergente, el elemento de menú "Buscar actualizaciones de
+complementos" se convertirá en "Revisar actualizaciones de complementos"
+cuando haya actualizaciones disponibles, incluyendo en el nuevo nombre la
+cantidad de actualizaciones.</li>
+<li>En NVDA 2022.1 y posterior, Add-on Updater puede procesar argumentos de la
+línea de órdenes para el complemento (actualmente no hay ninguno).</li>
+<li>En el diálogo de actualizaciones de complementos, los complementos
+deshabilitados por el usuario aparecen desmarcados por defecto, y se
+mostrará un mensaje de confirmación al marcar estos complementos e
+intentar actualizarlos, ya que al hacerlo se habilitarán.</li>
 </ul>
 
 
