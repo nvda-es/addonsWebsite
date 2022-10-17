@@ -26,7 +26,7 @@ qué se incluye):</p>
 <li>Mapas</li>
 <li>Teclado Moderno (panel de emojis / dictado / escritura por voz /
 sugerencias de entrada hardware / historial del portapapeles / acciones
-sugeridas (preview) / editores modernos de método de entrada)</li>
+sugeridas / editores modernos de método de entrada)</li>
 <li>Gente</li>
 <li>Opciones (opciones de sistema, Windows+I)</li>
 <li>Acceso por voz (Windows 11 22H2)</li>
@@ -51,10 +51,10 @@ Preview.</li>
 <li>Algunas de las características del complemento son o serán parte del
 lector de pantalla NVDA.</li>
 <li>Para las entradas que no se enumeren a continuación, puedes asumir que las
-características son parte de NVDA, no se aplican porque el complemento no
-da soporte a versiones de Windows no soportadas, como versiones antiguas
-de Windows 10, o se han hecho cambios a las aplicaciones que permiten que
-ya no sea necesario aplicarlas.</li>
+características son parte de NVDA, no se aplican porque el complemento ya
+no da soporte a versiones de Windows no soportadas, como versiones
+antiguas de Windows 10, o se han hecho cambios a Windows, las aplicaciones
+y NVDA que permiten que ya no sea necesario aplicarlas.</li>
 <li>Algunas aplicaciones soportan el modo de superposición compacta (siempre
 visible en la calculadora, por ejemplo), y este modo no funcionará
 adecuadamente con la versión portable de NVDA.</li>
@@ -72,27 +72,23 @@ complemento, consulta el documento <a href="https://github.com/josephsl/wintenap
 
 <ul>
 <li>Además de los manejadores de eventos UIA proporcionados por NVDA, se
-reconocen los siguientes eventos y propiedades UIA: drag complete, drag
-drop effect, drop target dropped. Con el nivel de registro de NVDA
-configurado en depuración, estos eventos se rastrearán y se registrarán.</li>
-<li>Al abrir, cerrar, reordenar (Windows 11) o cambiar entre escritorios
-virtuales, NVDA anunciará el nombre del escritorio virtual activo
-(escritorio 2, por ejemplo).</li>
+reconocen los siguientes eventos y propiedades UIA: drag
+start/cancel/complete (reconocido como evento de cambio de estado), drag
+drop effect, drag item is grabbed, drop target effect.</li>
+<li>Al abrir, cerrar o cambiar entre escritorios virtuales, NVDA anunciará el
+nombre del escritorio virtual activo (escritorio 2, por ejemplo).</li>
 <li>Al arrastrar y soltar elementos, como reordenar entradas ancladas (losas
 en Windows 10) del menú Inicio o acciones rápidas del centro de
 actividades con alt+shift+flechas, NVDA anunciará "arrastrando" o los
 efectos de arrastrar y soltar antes y mientras se arrastran,
-respectivamente. El anuncio "arrastrando" de NVDA forma parte ahora de
-NVDA 2022.4.</li>
-<li>Algunos anuncios, como los de cambio de brillo o volumen en el explorador
-de archivos y las notificaciones de actualización de aplicaciones de la
-tienda Microsoft pueden suprimirse desactivando Anunciar notificaciones
-desde las opciones de presentación de objetos de NVDA.</li>
-<li>En Windows 11 22H2 y posterior, el estado del interruptor para silenciar
-el micrófono (Windows+alt+k) se anuncia desde cualquier sitio.</li>
-<li>Los cambios de estado de los elementos se anuncian en más aplicaciones,
-incluyendo Visual Studio Community 2022. Esto ahora forma parte de NVDA
-2022.4.</li>
+respectivamente. Esto ahora forma parte de NVDA 2022.4.</li>
+<li>Anuncios como los de cambio de brillo, volumen o silencio del micrófono
+(Windows 11 22H2 y posterior) en el explorador de archivos y las
+notificaciones de actualización de aplicaciones de la tienda Microsoft
+pueden suprimirse desactivando Anunciar notificaciones desde las opciones
+de presentación de objetos de NVDA.</li>
+<li>En Windows 11, NVDA anunciará las búsquedas destacadas en el menú Inicio
+cuando se abra. Esto ahora forma parte de NVDA 2023.1.</li>
 </ul>
 
 
@@ -115,43 +111,37 @@ situaciones.</li>
 <h2>Teclado Moderno</h2>
 
 <p>Esto incluye el panel de emojis, historial del portapapeles, dictado /
-escritura por voz, sugerencias de entrada por hardware, acciones sugeridas
-(preview) y los editores modernos de métodos de entrada para ciertos idiomas
-en Windows 10 y 11. Al visualizar emojis, para una mejor experiencia, activa
-la opción del consorcio Unicode desde las opciones de voz de NVDA y
-configura el nivel de símbolos en "alguno" o más alto. Al pegar desde el
-portapapeles en Windows 10, pulsa la barra espaciadora en vez de intro para
-pegar el elemento seleccionado.</p>
+escritura por voz, sugerencias de entrada por hardware, acciones sugeridas y
+los editores modernos de métodos de entrada para ciertos idiomas en Windows
+10 y 11. Al visualizar emojis, para una mejor experiencia, activa la opción
+del consorcio Unicode desde las opciones de voz de NVDA y configura el nivel
+de símbolos en "alguno" o más alto. Al pegar desde el portapapeles en
+Windows 10, pulsa la barra espaciadora en vez de intro para pegar el
+elemento seleccionado.</p>
 
 <ul>
-<li>En Windows 10, cuando se seleccione un grupo de emojis (incluyendo kaomoji
-y el grupo de símbolos), NVDA ya no moverá el navegador de objetos a
-ciertos emojis.</li>
-<li>En Windows 11, vuelve a ser posible usar las flechas para revisar los
-emojis cuando se abre el panel de emojis. Esto ahora forma parte de NVDA
-2022.1.</li>
+<li>En el panel de emojis de Windows 10, cuando se seleccione un grupo de
+emojis (incluyendo kaomoji y el grupo de símbolos), NVDA ya no moverá el
+navegador de objetos a ciertos emojis.</li>
 <li>En el historial del portapapeles de Windows 11, se desactivará el modo
 exploración por defecto, diseñado para permitir que NVDA anuncie los
 elementos de menú con las entradas del historial del portapapeles.</li>
-<li>En la compilación Insider Preview 25115 y posterior (traído a Windows 11
-beta 22622), NVDA anunciará las acciones sugeridas cuando se copien al
-portapapeles datos compatibles, como números de teléfono.</li>
+<li>En Windows 11 22H2 Moment 1 y posterior, NVDA anunciará las acciones
+sugeridas cuando se copien al portapapeles datos compatibles, como números
+de teléfono.</li>
 </ul>
 
 
 <h2>Gente</h2>
 
 <ul>
-<li>Cuando se busquen contactos, se verbalizará la primera sugerencia,
-particularmente si se usan versiones recientes de las aplicaciones.</li>
+<li>Cuando se busquen contactos, se verbalizará la primera sugerencia.</li>
 </ul>
 
 
 <h2>Opciones</h2>
 
 <ul>
-<li>Corregidas etiquetas de controles defectuosas advertidas en ciertas
-instalaciones de Windows.</li>
 <li>NVDA anunciará el nombre del enlace de la actualización de calidad
 opcional si está presente (enlace Descargar e instalar ahora en Windows
 10, botón Descargar en Windows 11).</li>
