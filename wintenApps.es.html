@@ -4,7 +4,7 @@
 <li>Autores: Joseph Lee, Derek Riemer y otros</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10-dev">versión de desarrollo</a></li>
-<li>Compatibilidad con NVDA: de 2022.2 en adelante</li>
+<li>Compatibilidad con NVDA: de 2022.3 en adelante</li>
 </ul>
 
 
@@ -27,11 +27,11 @@ qué se incluye):</p>
 <li>Teclado Moderno (panel de emojis / dictado / escritura por voz /
 sugerencias de entrada hardware / historial del portapapeles / acciones
 sugeridas / editores modernos de método de entrada)</li>
-<li>Gente</li>
 <li>Opciones (opciones de sistema, Windows+I)</li>
 <li>Acceso por voz (Windows 11 22H2)</li>
 <li>El Tiempo</li>
-<li>Módulos varios para controles tales como los mosaicos del Menú Inicio</li>
+<li>Módulos varios para controles y funciones tales como los anuncios de
+escritorios virtuales</li>
 </ul>
 
 
@@ -40,21 +40,24 @@ sugeridas / editores modernos de método de entrada)</li>
 <ul>
 <li>Este complemento requiere Windows 10 Versión 21H2 (compilación 19044), 11
 21H2 (compilación 22000) o versiones posteriores.</li>
+<li>La duración del soporte de las actualizaciones de características está
+vinculada a la duración del soporte al cliente (ediciones Home, Pro, Pro
+Education, Pro for Workstations), y el complemento podría finalizar el
+soporte para una actualización de características antes del fin del
+soporte al cliente. Consulta aka.ms/WindowsTargetVersioninfo para más
+información y fechas de soporte.</li>
 <li>Aunque la instalación es posible, este complemento no soporta Windows
 Enterprise LTSC (canal de servicio a largo plazo) ni las versiones de
 Windows Server.</li>
-<li>Si está instalado Add-on Updater 22.08 o posterior y están activadas las
-actualizaciones en segundo plano, Windows App Essentials no se instalará
-en absoluto en versiones no soportadas de Windows.</li>
+<li>Si está instalado Add-on Updater y están activadas las actualizaciones en
+segundo plano, Windows App Essentials no se instalará en absoluto en
+versiones no soportadas de Windows.</li>
 <li>No se soportarán todas las funciones de las compilaciones Windows Insider
-Preview.</li>
+Preview, más si se introducen en un subconjunto de insiders de Windows en
+el canal de desarrollo. En el canal beta, sólo se soporta la última
+compilación (22623).</li>
 <li>Algunas de las características del complemento son o serán parte del
 lector de pantalla NVDA.</li>
-<li>Para las entradas que no se enumeren a continuación, puedes asumir que las
-características son parte de NVDA, no se aplican porque el complemento ya
-no da soporte a versiones de Windows no soportadas, como versiones
-antiguas de Windows 10, o se han hecho cambios a Windows, las aplicaciones
-y NVDA que permiten que ya no sea necesario aplicarlas.</li>
 <li>Algunas aplicaciones soportan el modo de superposición compacta (siempre
 visible en la calculadora, por ejemplo), y este modo no funcionará
 adecuadamente con la versión portable de NVDA.</li>
@@ -74,7 +77,8 @@ complemento, consulta el documento <a href="https://github.com/josephsl/wintenap
 <li>Además de los manejadores de eventos UIA proporcionados por NVDA, se
 reconocen los siguientes eventos y propiedades UIA: drag
 start/cancel/complete (reconocido como evento de cambio de estado), drag
-drop effect, drag item is grabbed, drop target effect.</li>
+drop effect, drag item is grabbed, drop target effect. Estos eventos ahora
+forman parte de NVDA 2022.4.</li>
 <li>Al abrir, cerrar o cambiar entre escritorios virtuales, NVDA anunciará el
 nombre del escritorio virtual activo (escritorio 2, por ejemplo).</li>
 <li>Al arrastrar y soltar elementos, como reordenar entradas ancladas (losas
@@ -82,13 +86,11 @@ en Windows 10) del menú Inicio o acciones rápidas del centro de
 actividades con alt+shift+flechas, NVDA anunciará "arrastrando" o los
 efectos de arrastrar y soltar antes y mientras se arrastran,
 respectivamente. Esto ahora forma parte de NVDA 2022.4.</li>
-<li>Anuncios como los de cambio de brillo, volumen o silencio del micrófono
-(Windows 11 22H2 y posterior) en el explorador de archivos y las
-notificaciones de actualización de aplicaciones de la tienda Microsoft
-pueden suprimirse desactivando Anunciar notificaciones desde las opciones
-de presentación de objetos de NVDA.</li>
 <li>En Windows 11, NVDA anunciará las búsquedas destacadas en el menú Inicio
 cuando se abra. Esto ahora forma parte de NVDA 2023.1.</li>
+<li>En Windows 11 22H2 Moment 2, el área flotante rediseñada de la bandeja del
+sistema se puede detectar adecuadamente al usar interacción táctil o del
+ratón.</li>
 </ul>
 
 
@@ -105,6 +107,8 @@ situaciones.</li>
 
 <ul>
 <li>NVDA reproduce pitidos de localización para lugares en el mapa.</li>
+<li>NVDA ya no interrumpirá la voz al tener el foco en elementos distintos al
+control del mapa en algunos casos.</li>
 </ul>
 
 
@@ -129,13 +133,6 @@ elementos de menú con las entradas del historial del portapapeles.</li>
 <li>En Windows 11 22H2 Moment 1 y posterior, NVDA anunciará las acciones
 sugeridas cuando se copien al portapapeles datos compatibles, como números
 de teléfono.</li>
-</ul>
-
-
-<h2>Gente</h2>
-
-<ul>
-<li>Cuando se busquen contactos, se verbalizará la primera sugerencia.</li>
 </ul>
 
 

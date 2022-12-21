@@ -1,9 +1,9 @@
 
 <h1>Rastreador de eventos</h1>
 <ul>
-<li>Autor: Joseph Lee</li>
+<li>Autor: Joseph Lee, Thiago Seus</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=evttracker">versión estable</a></li>
-<li>Compatibilidad con NVDA: de 2021.2 en adelante</li>
+<li>Compatibilidad con NVDA: de 2022.2 en adelante</li>
 </ul>
 
 
@@ -39,8 +39,9 @@ aplicación, interceptores de árbol y objetos de NVDA, en ese orden.</li>
 <li>Manipulación del foco: obtención de foco, pérdida de foco, foco
 introducido, primer plano</li>
 <li>Cambios: nombre, valor, estado, descripción, región viva</li>
-<li>Eventos UIA: controlador para, elemento seleccionado, estado del elemento,
-diseño invalidado, notificación, cambio de texto, globo de ayuda abierto,
+<li>Eventos UIA: controlador para, efectos de arrastrar y soltar y soltar en
+destino, elemento seleccionado, estado del elemento, diseño invalidado,
+notificación, alerta del sistema, cambio de texto, globo de ayuda abierto,
 ventana abierta</li>
 </ul>
 
@@ -57,7 +58,43 @@ ventana abierta</li>
 <li>En objetos IAccessible: nombre acc, ID del hijo</li>
 <li>En objetos UIA: Id de automatización, nombre de clase, propiedades de
 notificación si se registra información de eventos de notificación,
-cantidad de hijos para el evento de diseño invalidado</li>
+cantidad de hijos para el evento de diseño invalidado, propiedades de
+estado del elemento, arrastrar y soltar, y efecto de soltar en destino si
+se ha definido</li>
+</ul>
+
+
+<p>También se puede asignar un gesto para visualizar los eventos en una lista
+(menú NVDA / Preferencias / Gestos de entrada, categoría Rastreador de
+eventos). La lista guarda hasta los 100 últimos eventos procesados.</p>
+
+<h2>Versión 22.12</h2>
+
+<ul>
+<li>Añadido un diálogo de lista de eventos (orden sin asignar) para listar
+hasta los 100 eventos más recientes registrados por el complemento (Thiago
+Seus).</li>
+<li>La información adicional sobre el evento, como las propiedades de
+notificación UIA, se registra al mismo tiempo que el evento.</li>
+</ul>
+
+
+<h2>Versión 22.10</h2>
+
+<ul>
+<li>Se requiere NVDA 2022.2 o posterior por motivos de seguridad.</li>
+<li>Se rastrean los siguientes cambios de propiedades UIA: drag drop effect,
+drop target effect.</li>
+<li>Se registra el texto de la propiedad de estado del elemento UIA.</li>
+<li>NVDA ya no reproducirá tonos de error o parecerá hacer nada si un objeto
+no define un nombre de clase de ventana.</li>
+</ul>
+
+
+<h2>Versión 22.06</h2>
+
+<ul>
+<li>Se requiere NVDA 2021.3 o posterior por motivos de seguridad.</li>
 </ul>
 
 

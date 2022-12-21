@@ -23,6 +23,7 @@ descripción.</li>
 <li>Órdenes para ayudar con la lectura y el análisis del registro.</li>
 <li>En el espacio de trabajo de la consola Python, una función para abrir el
 código fuente de un objeto.</li>
+<li>Un script personalizado de inicio para la consola Python</li>
 <li>Una orden para registrar la pila de llamadas de la función speech.speak.</li>
 </ul>
 
@@ -173,9 +174,20 @@ anterior.</p>
 
 <h3>Abrir un archivo en tu editor</h3>
 
-<p>Al mirar una traza, puedes querer abrir uno de los archivos de código para
-entender la causa y el contexto del problema. Pulsa C para abrir el archivo
-de código fuente correspondiente a la línea actual de la traza.</p>
+<p>En el registro, alguna línea puede hacer referencia al código fuente:</p>
+
+<ul>
+<li>Una línea relacionada con una traza contiene la ruta y la línea en el
+archivo, por ejemplo:
+<code> File "virtualBuffers\__init__.pyc", line 226, in _getStoryLength</code></li>
+<li>La línea de cabecera de un mensaje registrado contiene la función que ha registrado el mensaje, p.ej.:<br />
+<code>INFO - config.ConfigManager._loadConfig (22:45:26.145) - MainThread (16580):</code></li>
+</ul>
+
+
+<p>Puedes querer que se abra el archivo que contiene el código para comprender
+el contexto de la traza o el mensaje registrado. Pulsa la C para abrir el
+archivo.</p>
 
 <p>Para que esta característica funcione, necesitas configurar el comando de tu
 editor favorito. Si no estás ejecutando NVDA desde el código fuente, la
@@ -185,10 +197,10 @@ herramientas de desarrollo y pruebas de NVDA.</p>
 
 <h2>Extensión de la consola Python</h2>
 
-<p>En la consola, puedes llamar a la siguiente función para ver el código
-fuente que define la variable <code>myVar</code>:</p>
+<h3>Función <code>openCodeFile</code></h3>
 
-<p><code>openCodeFile(myVar)</code></p>
+<p>En la consola, puedes llamar a la siguiente función para ver el código fuente que define la variable <code>myVar</code>:
+<code>openCodeFile(myVar)</code></p>
 
 <p>Para que esta característica funcione, necesitas configurar el comando de tu
 editor favorito. Si no estás ejecutando NVDA desde el código fuente, la
@@ -201,19 +213,46 @@ código de NVDA o en objetos definidos por los complementos. No se puede
 llamar en objetos cuyo código fuente no está disponible, tales como los
 incorporados en Python.</p>
 
+<p>Si todavía no has importado el objeto en la consola, también puedes pasar su
+nombre como parámetro a la función <code>openCodeFile</code>.</p>
+
 <p>A continuación hay ejemplos de llamadas al código de NVDA:</p>
 
 <ul>
 <li>Ver la definición de la función <code>speech.speech.speak</code>:
-<code>openCodeFile(speech.speech.speak)</code></li>
-<li>Ver la definición de la clase <code>TextInfo</code>:
+<code>openCodeFile(speech.speech.speak)</code><br />
+o con el nombre pasado como parámetro:<br />
+<code>openCodeFile("speech.speech.speak")</code></li>
+<li>Ver la definición de la clase <code>TextInfo</code>:<br />
 <code>openCodeFile(textInfos.TextInfo)</code></li>
 <li>Ver la definición del método <code>copyToClipboard</code> de la clase <code>TextInfo</code>:
 <code>openCodeFile(textInfos.TextInfo.copyToClipboard)</code></li>
-<li>Ver la definición de clase del objeto con el foco: <code>openCodeFile(focus)</code></li>
-<li>Abrir el archivo <code>api.py</code> que define el módulo <code>api</code>: <code>openCodeFile(api)</code></li>
+<li>Ver la definición de clase del objeto con el foco:
+<code>openCodeFile(focus)</code></li>
+<li>Abrir el archivo <code>api.py</code> que define el módulo <code>api</code>:
+<code>openCodeFile(api)</code></li>
 </ul>
 
+
+<h3>Script de inicio de la consola Python</h3>
+
+<p>Puedes definir un script personalizado, que se ejecutará en el espacio de
+nombres de la consola Python al abrirla por primera vez, o si se recarga el
+complemento (NVDA+control+f3) después de haber abierto ya la consola.</p>
+
+<p>Por ejemplo, el script te permite ejecutar importaciones y definir alias que podrás usar directamente en la consola, como se muestra a continuación:</p>
+
+<pre><code># Various import that I want in the console.
+import globalVars as gv
+import core
+import ui
+# Aliases
+ocf = openCodeFile
+</code></pre>
+
+<p>El script de la consola Python debería encontrarse en la siguiente ubicación: <code>RutaConfiguraciónNVDA\ndtt\consoleStartup.py</code><br />
+Por ejemplo:
+<code>C:\Users\myUserName\AppData\Roaming\nvda\ndtt\consoleStartup.py</code></p>
 
 <h2>Registrar la pila de llamadas de la función de voz</h2>
 
@@ -236,31 +275,24 @@ configurar la ruta al código fuente de NVDA.</p>
 
 <h3>Configuración de la línea de órdenes del editor</h3>
 
-<p>Para utilizar la orden 'Abrir código fuente' o la orden de consola
-<code>openCodeFile</code>, primero es necesario configurar el comando al que se llamará
-para abrir el archivo en tu editor favorito. Para ello, abre la consola de
-NVDA (NVDA+control+z), teclea la siguiente línea y pulsa intro:</p>
-
-<p><code>config.conf['ndtt']['sourceFileOpener'] =
-r'"C:\path\to\my\editor\editor.exe" "{path}":{line}'</code></p>
-
-<p>Por supuesto, deberías modificar esta línea con el nombre y ruta reales de
-tu editor y la sintaxis que usa para abrir archivos.</p>
-
-<p><code>{path}</code> será sustituida por la ruta completa del archivo a abrir, y
-<code>{line}</code> por el número de línea donde quieres que aparezca el cursor.</p>
-
-<p>Por ejemplo, para Notepad++, la orden a escribir en la consola sería:</p>
-
-<p><code>config.conf['ndtt']['sourceFileOpener'] = r'"C:\Program
-Files\Notepad++\notepad++.exe" "{path}" -n{line}'</code></p>
+<p>Para usar la orden <code>Abrir código fuente</code> o la orden de consola
+<code>openCodeFile</code>, primero debes configurar el comando al que se llamará para
+abrir el archivo en tu editor favorito. Para ello, abre la consola de NVDA
+(NVDA+control+Z), teclea la siguiente línea y pulsa intro:
+<code>config.conf['ndtt']['sourceFileOpener'] =
+r'"C:\path\to\my\editor\editor.exe" "{path}":{line}'</code> Por supuesto, deberías
+modificar esta línea en función de la ubicación y el nombre real de tu
+editor, y su sintaxis para abrir archivos. <code>{path}</code> será sustituida por la
+ruta completa del archivo que se abrirá, y <code>{line}</code> por el número de línea
+donde se situará el cursor. Por ejemplo, para configurar Notepad++ habría
+que escribir el siguiente comando: <code>config.conf['ndtt']['sourceFileOpener']
+= r'"C:\Program Files\Notepad++\notepad++.exe" "{path}" -n{line}'</code></p>
 
 <h3>Configuración de la ruta al código fuente de NVDA</h3>
 
-<p>Cuando un archivo relacionado con el código fuente de NVDA aparece en una
-traza, la línea tiene este formato:</p>
-
-<p><code>File "config\profileUpgrader.pyc", line 30, in upgrade</code></p>
+<p>Cuando un archivo relacionado con el núcleo de NVDA aparece en una traza, la
+línea tiene este formato: <code>File "config\profileUpgrader.pyc", line 30, in
+upgrade</code></p>
 
 <p>Si no ejecutas NVDA desde el código fuente, puedes indicar una ubicación
 alternativa donde buscar el archivo de código fuente, como por ejemplo el
@@ -268,17 +300,36 @@ lugar donde has clonado el repositorio de NVDA. En este caso, debes
 configurar la ruta donde tengas situados los archivos con el código fuente
 de NVDA.</p>
 
-<p>Para ello, abre la consola de NVDA (NVDA+control+z), teclea la siguiente
-línea y pulsa intro:</p>
-
-<p><code>config.conf['ndtt']['nvdaSourcePath'] = r'C:\pathExample\GIT\nvda\source'</code></p>
-
-<p>Por supuesto, reemplaza la ruta al código fuente de NVDA con la correcta.</p>
+<p>Para ello, abre la consola de NVDA (NVDA+control+Z), teclea la siguiente
+línea y pulsa intro: <code>config.conf['ndtt']['nvdaSourcePath'] =
+r'C:\RutaEjemplo\GIT\nvda\source'</code> Por supuesto, sustituye la ruta al código
+fuente de NVDA con la correcta.</p>
 
 <p>Asegúrate, no obstante, de que la versión de tu archivo fuente (por ejemplo,
 commit de Git) es la misma que la de la instancia de NVDA en ejecución.</p>
 
 <h2>Registro de cambios</h2>
+
+<h3>Versión 3.0</h3>
+
+<ul>
+<li>En un registro, ahora se puede pulsar la C en una línea de cabecera de
+mensaje para abrir el módulo o función que lo emitió.</li>
+<li>En la consola, la función <code>openCodeFile</code> puede recibir como parámetro el
+objeto o una cadena que contenga su nombre.</li>
+<li>Nueva función: archivo de inicio de la consola de NVDA: si existe, el
+archivo tuCarpetaDeConfiguraciónDeNVDA\ndtt\consoleStartup.py se ejecutará
+al abrir la consola Python por primera vez o cuando se recarguen los
+complementos.</li>
+<li>Diversas correcciones menores para la función de la consola Python
+<code>openCodeFile</code> y la orden para abrir el archivo de código fuente
+correspondiente a una línea del registro.</li>
+<li>Corregido un problema al intentar anunciar roles y estados en el
+explorador de objetos en versiones antiguas de NVDA.</li>
+<li>El complemento ya no causa problemas con el interceptor de árbol al usar
+UIA en Edge.</li>
+</ul>
+
 
 <h3>Versión 2.1</h3>
 
