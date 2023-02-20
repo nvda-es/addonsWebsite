@@ -4,7 +4,7 @@
 <li>Autores: Joseph Lee, Derek Riemer y otros</li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10">versión estable</a></li>
 <li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=w10-dev">versión de desarrollo</a></li>
-<li>Compatibilidad con NVDA: de 2022.3 en adelante</li>
+<li>Compatibilidad con NVDA: de 2022.4 en adelante</li>
 </ul>
 
 
@@ -24,9 +24,9 @@ qué se incluye):</p>
 <ul>
 <li>Cortana</li>
 <li>Mapas</li>
-<li>Teclado Moderno (panel de emojis / dictado / escritura por voz /
-sugerencias de entrada hardware / historial del portapapeles / acciones
-sugeridas / editores modernos de método de entrada)</li>
+<li>Teclado Moderno (panel de emojis / teclado táctil / dictado / escritura
+por voz / sugerencias de entrada hardware / historial del portapapeles /
+acciones sugeridas / editores modernos de método de entrada)</li>
 <li>Opciones (opciones de sistema, Windows+I)</li>
 <li>Acceso por voz (Windows 11 22H2)</li>
 <li>El Tiempo</li>
@@ -74,23 +74,27 @@ complemento, consulta el documento <a href="https://github.com/josephsl/wintenap
 <h2>General</h2>
 
 <ul>
-<li>Además de los manejadores de eventos UIA proporcionados por NVDA, se
-reconocen los siguientes eventos y propiedades UIA: drag
-start/cancel/complete (reconocido como evento de cambio de estado), drag
-drop effect, drag item is grabbed, drop target effect. Estos eventos ahora
-forman parte de NVDA 2022.4.</li>
 <li>Al abrir, cerrar o cambiar entre escritorios virtuales, NVDA anunciará el
 nombre del escritorio virtual activo (escritorio 2, por ejemplo).</li>
-<li>Al arrastrar y soltar elementos, como reordenar entradas ancladas (losas
-en Windows 10) del menú Inicio o acciones rápidas del centro de
-actividades con alt+shift+flechas, NVDA anunciará "arrastrando" o los
-efectos de arrastrar y soltar antes y mientras se arrastran,
-respectivamente. Esto ahora forma parte de NVDA 2022.4.</li>
 <li>En Windows 11, NVDA anunciará las búsquedas destacadas en el menú Inicio
 cuando se abra. Esto ahora forma parte de NVDA 2023.1.</li>
-<li>En Windows 11 22H2 Moment 2, el área flotante rediseñada de la bandeja del
-sistema se puede detectar adecuadamente al usar interacción táctil o del
-ratón.</li>
+<li>En Windows 11 22H2 y posterior, se puede interactuar con la ventana
+flotante rediseñada de la bandeja del sistema (Moment 2) y con el diálogo
+Abrir con al usar interacción táctil o del ratón. Esto ahora forma parte
+de NVDA 2023.1.</li>
+<li>NVDA registrará la arquitectura del procesador de la instalación actual de
+Windows (x86/32 bits, AMD64, ARM64) cuando se inicie. Esto ahora forma
+parte de NVDA 2023.1.</li>
+<li>Experiencia mejorada con la barra de tareas de Windows 11, incluyendo el
+anuncio de los resultados al reordenar iconos pulsando las teclas
+alt+shift+flechas izquierda y derecha (antes de la compilación 25267) e
+indicando la posición del elemento al moverse por iconos de la barra de
+tareas (Windows 10 y 11 antes de la compilación 25281).</li>
+<li>NVDA anunciará el texto de carpeta vacía dentro de las carpetas vacías en
+el explorador de archivos.</li>
+<li>En aplicaciones como el explorador de archivos y el bloc de notas, donde
+se soportan ventanas con pestañas, NVDA anunciará el nombre y la posición
+de las pestañas al pasar entre ellas.</li>
 </ul>
 
 
@@ -114,14 +118,14 @@ control del mapa en algunos casos.</li>
 
 <h2>Teclado Moderno</h2>
 
-<p>Esto incluye el panel de emojis, historial del portapapeles, dictado /
-escritura por voz, sugerencias de entrada por hardware, acciones sugeridas y
-los editores modernos de métodos de entrada para ciertos idiomas en Windows
-10 y 11. Al visualizar emojis, para una mejor experiencia, activa la opción
-del consorcio Unicode desde las opciones de voz de NVDA y configura el nivel
-de símbolos en "alguno" o más alto. Al pegar desde el portapapeles en
-Windows 10, pulsa la barra espaciadora en vez de intro para pegar el
-elemento seleccionado.</p>
+<p>Esto incluye el panel de emojis, historial del portapapeles, teclado táctil,
+dictado / escritura por voz, sugerencias de entrada por hardware, acciones
+sugeridas y los editores modernos de métodos de entrada para ciertos idiomas
+en Windows 10 y 11. Al visualizar emojis, para una mejor experiencia, activa
+la opción del consorcio Unicode desde las opciones de voz de NVDA y
+configura el nivel de símbolos en "alguno" o más alto. Al pegar desde el
+historial del portapapeles en Windows 10, pulsa la barra espaciadora en vez
+de intro para pegar el elemento seleccionado.</p>
 
 <ul>
 <li>En el panel de emojis de Windows 10, cuando se seleccione un grupo de
@@ -129,10 +133,11 @@ emojis (incluyendo kaomoji y el grupo de símbolos), NVDA ya no moverá el
 navegador de objetos a ciertos emojis.</li>
 <li>En el historial del portapapeles de Windows 11, se desactivará el modo
 exploración por defecto, diseñado para permitir que NVDA anuncie los
-elementos de menú con las entradas del historial del portapapeles.</li>
-<li>En Windows 11 22H2 Moment 1 y posterior, NVDA anunciará las acciones
-sugeridas cuando se copien al portapapeles datos compatibles, como números
-de teléfono.</li>
+elementos de menú con las entradas del historial del portapapeles. Esto
+ahora forma parte de NVDA 2023.1.</li>
+<li>En Windows 11 22H2 y posterior, NVDA anunciará las acciones sugeridas
+cuando se copien al portapapeles datos compatibles, como números de
+teléfono.</li>
 </ul>
 
 
