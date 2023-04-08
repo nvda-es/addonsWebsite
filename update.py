@@ -1,6 +1,8 @@
 import requests
 
 addresses=[
+"https://addons.nvda-project.org/addons/TeleNVDA.es.html",
+"https://addons.nvda-project.org/addons/nvdaRd.es.html",
 "https://addons.nvda-project.org/addons/ThunderbirdPlus.es.html",
 "https://addons.nvda-project.org/addons/officeDesk.es.html",
 "https://addons.nvda-project.org/addons/enhancedAnnotations.es.html",

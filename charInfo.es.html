@@ -2,14 +2,34 @@
 <h1>Informaci&#xF3;n del car&#xE1;cter</h1>
 <ul>
 <li>Autor: Cyrille Bougot</li>
-<li>Compatibilidad con NVDA: de 2019.3 en adelante</li>
-<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=chari">versión estable</a></li>
-<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=chari-dev">versión de desarrollo</a></li>
+<li>Compatibilidad con NVDA: de 2022.3.3 en adelante</li>
+<li>Descargar <a href="https://addons.nvda-project.org/files/get.php?file=charInfo">versión estable</a></li>
 </ul>
 
 
-<p>Este complemento permite presentar en un mensaje información del carácter
-como su nombre Unicode, número, categoría, etc.</p>
+<p>Este complemento permite presentar en un mensaje diversa información sobre
+un carácter.</p>
+
+<h2>Información presentada</h2>
+
+<p>La información presentada incluye las siguientes secciones:</p>
+
+<ul>
+<li>Unicode: información sobre la norma Unicode como nombre, nombre CLDR,
+valor, bloque, etc.</li>
+<li>Fuente MS, sólo para los caracteres escritos con fuentes propietarias de
+Microsoft (símbolo, Wingding 1, 2, 3 y Webding): nombre e información
+sobre el carácter Unicode equivalente.</li>
+<li>Descripción de símbolo de NVDA: información que permite entender cómo
+anuncia NVDA la descripción del símbolo. NVDA utiliza la información de
+las filas superiores que contienen la información disponible para
+proporcionar la descripción de un símbolo.</li>
+<li>Descripción del carácter de NVDA: información que permite comprender cómo
+anuncia NVDA la descripción del carácter (por ejemplo, "alfa" para la
+"A"). NVDA usa la información de las filas superiores que contengan la
+información disponible para proporcionar la descripción de un carácter.</li>
+</ul>
+
 
 <h2>Órdenes</h2>
 
@@ -18,44 +38,69 @@ como su nombre Unicode, número, categoría, etc.</p>
 NVDA+. (disposición portátil): si se pulsa 4 veces, muestra información
 del carácter bajo el cursor de revisión situado en el objeto actual del
 navegador de objetos.</li>
+<li>Sin asignar: presenta un mensaje con información detallada sobre el
+carácter situado bajo el cursor de revisión en el objeto donde está el
+navegador de objetos. Si no te sientes cómodo con el gesto de cuatro
+pulsaciones, puedes asignarle un gesto desde el diálogo Gestos de entrada
+de NVDA (categoría "Revisión de texto").</li>
+<li>Sin asignar: presenta un mensaje con información detallada del carácter en
+la posición del cursor (sólo funciona en lugares donde hay un cursor). Se
+puede encontrar en la categoría "Cursor del sistema" del diálogo Gestos de
+entrada de NVDA.</li>
 </ul>
 
 
 <h2>Notas</h2>
 
 <ul>
-<li><p>Este complemento también proporciona dos gestos que vienen sin asignar por
-defecto:</p>
-
-<ul>
-<li>Un script para mostrar directamente información del carácter bajo el
-cursor de revisión. Si no te sientes cómodo con el gesto de cuatro
-pulsaciones, puedes asignarle un gesto desde el diálogo Gestos de
-entrada de NVDA (categoría "Revisión de texto").</li>
-<li>Un script para mostrar la información del carácter en la posición del
-cursor (sólo funciona en lugares donde hay un cursor). Se puede
-encontrar en la categoría "Cursor del sistema" del diálogo Gestos de
-entrada de NVDA.</li>
-</ul>
-</li>
-<li><p>La información proporcionada está en inglés, ya que forma parte de la
-norma Unicode. Si existiera una traducción local de este complemento, la
-información continuaría proporcionándose en inglés.</p></li>
-<li>Para los caracteres escritos con el símbolo de fuentes propietarias de
-Microsoft, Wingding (1, 2, 3) y Webding, se proporciona alguna información
-adicional: nombre del carácter, nombre de la fuente e información del
-carácter Unicode correspondiente.</li>
+<li>Hay dos órdenes sin asignar por defecto. Se deben asignar desde el diálogo
+Gestos de entrada para poder usarlas.</li>
+<li>La información proporcionada en la sección Unicode está en inglés, ya que
+forma parte de la norma Unicode. Si existe una traducción local para este
+complemento, se proporciona esa información también aparte de la inglesa.</li>
 </ul>
 
 
 <h2>Registro de cambios</h2>
+
+<h3>Versión 2.1</h3>
+
+<ul>
+<li>Se han corregido algunos fallos que impedían mostrar la información del
+carácter cuando se usaban ciertas opciones.</li>
+<li>Traducciones actualizadas.</li>
+</ul>
+
+
+<h3>Versión 2.0</h3>
+
+<ul>
+<li>Se ha mejorado la información en el anuncio de caracteres con información
+de símbolo y descripción de caracteres de NVDA.</li>
+<li>Se ha añadido soporte para caracteres compuestos, como letras diacríticas
+que constan de dos o más caracteres Unicode.</li>
+<li>Se actualiza a Unicode 15.0</li>
+<li>Se han actualizado los datos del bloque francés.</li>
+<li>No se puede visualizar información del carácter en pantallas seguras ni en
+la pantalla de bloqueo.</li>
+<li>En la pantalla de bloqueo de Windows, el script para revisar el carácter
+actual puede operar con normalidad (única, doble o triple pulsación).</li>
+<li>Compatibilidad con NVDA 2023.1.</li>
+<li>Se elimina la compatibilidad con versiones de NVDA inferiores a la
+2022.3.3. La última versión compatible con NVDA 2019.3 es la
+<a>1.8</a>.</li>
+<li>Traducciones actualizadas.</li>
+</ul>
+
 
 <h3>Versión 1.8</h3>
 
 <ul>
 <li>Se actualiza a Unicode 14.0.</li>
 <li>Compatibilidad con NVDA 2022.1.</li>
-<li>Elimina la compatibilidad con versiones de NVDA anteriores a la 2019.3.</li>
+<li>Se elimina la compatibilidad con versiones de NVDA inferiores a la
+2019.3. La última versión compatible con NVDA 2017.3 es la
+<a>1.7</a>.</li>
 <li>La liberación se hace gracias a una acción de GitHub en vez de AppVeyor.</li>
 <li>Traducciones actualizadas.</li>
 </ul>
@@ -123,4 +168,8 @@ Python 2 y 3)</li>
 <li>Versión inicial.</li>
 </ul>
 
+
+<p>https://github.com/CyrilleB79/charInfo/releases/download/V1.7/charInfo-1.7.nvda-addon</p>
+
+<p>https://github.com/CyrilleB79/charInfo/releases/download/V1.8/charInfo-1.8.nvda-addon</p>
 
